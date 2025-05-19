@@ -166,6 +166,12 @@ $_displays: none, inline-block, block, flex;
   &-right-4 {
     border-radius: 0 4px 4px 0;
   }
+  &-left-4 {
+    border-radius: 4px 0 0 4px;
+  }
+  &-left-22 {
+    border-radius: 22px 0 0 22px;
+  }
 }
 
 @include media-below(lg) {
@@ -208,6 +214,9 @@ $_displays: none, inline-block, block, flex;
   }
   &-light {
     border: 1px solid var(--color-border) !important;
+  }
+  &-dashed {
+    border-style: dashed !important;
   }
 }
 
