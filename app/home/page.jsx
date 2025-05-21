@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,8 +16,11 @@ import Faq from "@/components/faq/Faq";
 import AttrEvents from "@/components/home/AttrEvents";
 import HolidayAmazing from "@/components/home/HolidayAmazing";
 import AppBanner from "@/components/home/AppBanner";
+import { useMediaQuery } from "react-responsive";
 
 const Home = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   return (
     <>
       {/* End Page Title */}
@@ -369,13 +374,16 @@ const Home = () => {
                   </button>
                 </span>
               </div>
-              <div className="col-md-5 d-flex justify-center items-center" style={{marginTop: "-150px", marginBottom: "-20px"}}>
+              {!isMobile && <div
+                className="col-md-5 d-flex justify-center items-center"
+                style={{ marginTop: "-150px", marginBottom: "-20px" }}
+              >
                 <img
                   src="/Images/vender_banner.svg"
                   alt=""
                   style={{ height: "100%" }}
                 />
-              </div>
+              </div>}
             </div>
           </div>
         </div>
