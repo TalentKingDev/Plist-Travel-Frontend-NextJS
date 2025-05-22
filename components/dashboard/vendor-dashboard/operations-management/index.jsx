@@ -4,45 +4,27 @@ import { useState } from "react";
 import Header from "@/components/header/dashboard-header";
 import Sidebar from "@/components/dashboard/vendor-dashboard/common/Sidebar";
 import Footer from "../common/Footer";
-import BasicInfo from "./BasicInfo";
-import LegalCompliance from "./LegalCompliance";
-import TechnicalSupport from "./TechnicalSupport";
-import Financial from "./Financial";
-import Services from "./Services";
-import Integration from "./Integration";
+import Availability from "./Availability";
+import Pricing from "./Pricing";
+import Settings from "./Settings";
 
 const index = () => {
-  const [activeTab, setActiveTab] = useState("basic-info");
+  const [activeTab, setActiveTab] = useState("availability");
   const tabs = [
     {
-      label: "Basic Info",
-      value: "basic-info",
-      content: <BasicInfo key={"basic-info"} />,
+      label: "Availability",
+      value: "availability",
+      content: <Availability key={"availability"} />,
     },
     {
-      label: "Legal & Compliance",
-      value: "legal-compliance",
-      content: <LegalCompliance key={"legal-compliance"} />,
+      label: "Pricing",
+      value: "pricing",
+      content: <Pricing key={"pricing"} />,
     },
     {
-      label: "Financial",
-      value: "financial",
-      content: <Financial key={"financial"} />,
-    },
-    {
-      label: "Services",
-      value: "services",
-      content: <Services key={"services"} />,
-    },
-    {
-      label: "Technical & Support",
-      value: "technical-support",
-      content: <TechnicalSupport key={"technical-support"} />,
-    },
-    {
-      label: "Integration",
-      value: "integration",
-      content: <Integration key={"integration"} />,
+      label: "Settings",
+      value: "settings",
+      content: <Settings key={"settings"} />,
     },
   ];
 
@@ -61,9 +43,9 @@ const index = () => {
           <div className="dashboard__content bg-light-2">
             <div className="row y-gap-20 justify-between items-center mb-5">
               <div className="col-auto">
-                <h1 className="text-30 lh-14 fw-600">Profile Management</h1>
+                <h1 className="text-30 lh-14 fw-600">Operations Management</h1>
                 <div className="text-15 text-light-1">
-                  Manage your vendor profile and business information.
+                  Manage your availability, pricing, and operational settings.
                 </div>
               </div>
             </div>

@@ -15,8 +15,8 @@ const Sidebar = () => {
     },
     {
       icon: "/img/dashboard/sidebar/map.svg",
-      title: "Manage Tour",
-      href: "#",
+      title: "Operations Management",
+      href: "/vendor/operations",
     },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",

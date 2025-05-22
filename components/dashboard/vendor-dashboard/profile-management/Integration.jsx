@@ -277,7 +277,10 @@ const UserAccessAndPermissions = () => {
       </div>
       {roles.map((role, idx) => (
         <div key={"role_" + idx} className="col-sm-6 px-15">
-          <div className="py-10 px-10 d-flex flex-column border-light rounded-8"></div>
+          <div className="py-15 px-15 d-flex flex-column border-light border-dashed rounded-8">
+            <div className="text-14 fw-500 lh-1 mb-10">{role.title}</div>
+            <div className="text-14 text-light-1 lh-1">{role.role}</div>
+          </div>
         </div>
       ))}
     </>
