@@ -24,7 +24,10 @@ const Location = () => {
       </div>
 
       <div className="col-12 mt-5">
-        <div className="border-light rounded-8">
+        <div
+          className="border-light rounded-8 px-10"
+          style={{ height: "300px"}}
+        >
           <MapFinder />
         </div>
       </div>
