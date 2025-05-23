@@ -20,8 +20,8 @@ const Sidebar = () => {
     },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",
-      title: "Manage Activity",
-      href: "#",
+      title: "Listings Management",
+      href: "/vendor/listings",
     },
     {
       icon: "/img/dashboard/sidebar/house.svg",

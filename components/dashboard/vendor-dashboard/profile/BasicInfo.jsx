@@ -124,8 +124,9 @@ const BasicInfo = () => {
               placeholder="Enter Address"
             />
             <button
+              disabled={locationCount === 1}
               className="ml-10 pt-5 px-5"
-              onClick={() => setLocationCount(Math.max(1, locationCount - 1))}
+              onClick={() => setLocationCount(locationCount - 1)}
             >
               <span className="material-symbols-outlined text-red-2 text-15 fw-500">
                 delete
@@ -193,8 +194,12 @@ const BasicInfo = () => {
       </div>
 
       <div className="d-flex justify-end mt-20 border-top-light pt-15">
-        <button className="button border-light rounded-8 text-12 py-10 px-15 mr-10">Cancel</button>
-        <button className="button bg-blue-1 text-white rounded-8 text-12 py-10 px-15">Save Changes</button>
+        <button className="button border-light rounded-8 text-12 py-10 px-15 mr-10">
+          Cancel
+        </button>
+        <button className="button bg-blue-1 text-white rounded-8 text-12 py-10 px-15">
+          Save Changes
+        </button>
       </div>
     </div>
   );

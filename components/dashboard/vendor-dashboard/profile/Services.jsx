@@ -73,8 +73,9 @@ const Services = () => {
               </div>
               <div className="col-12 d-flex justify-end">
                 <button
+                  disabled={services === 1}
                   className="button text-12 px-5 text-red-1 fw-400"
-                  onClick={() => setServices(Math.max(1, services - 1))}
+                  onClick={() => setServices(services - 1)}
                 >
                   <i className="icon-close mr-10 text-10"></i>Remove Service
                 </button>
