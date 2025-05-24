@@ -9,14 +9,14 @@ const ListingPrice = () => {
               <span className="text-16 fw-500 mb-5 lh-1">Single Room</span>
               <span className="text-14 fw-400 text-light-1 lh-1">2 Person</span>
             </div>
-            <span className="text-20 fw-700 lh-1">$50.00</span>
+            <span className="text-20 fw-600 lh-1">$50.00</span>
           </div>
           <div className="d-flex justify-between items-center mt-20">
             <div className="d-flex flex-column items-start">
               <span className="text-16 fw-500 mb-5 lh-1">Single Room</span>
               <span className="text-14 fw-400 text-light-1 lh-1">2 Person</span>
             </div>
-            <span className="text-20 fw-700 lh-1">$50.00</span>
+            <span className="text-20 fw-600 lh-1">$50.00</span>
           </div>
         </div>
       </div>

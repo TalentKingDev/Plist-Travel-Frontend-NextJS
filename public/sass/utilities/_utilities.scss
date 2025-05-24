@@ -221,6 +221,15 @@ $_displays: none, inline-block, block, flex;
   &-light {
     border: 1px solid var(--color-border) !important;
   }
+  &-green-1 {
+    border: 1px solid var(--color-green-1) !important;
+  }
+  &-green-2 {
+    border: 1px solid var(--color-green-2) !important;
+  }
+  &-green-3 {
+    border: 1px solid var(--color-green-3) !important;
+  }
   &-dashed {
     border-style: dashed !important;
   }

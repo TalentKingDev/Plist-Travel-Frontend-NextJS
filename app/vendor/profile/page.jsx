@@ -6,7 +6,7 @@ export const metadata = {
   description: "Vendor Operations Management for Plist Travel",
 };
 
-const VenderDashboard = () => {
+const index = () => {
   return (
     <>
       <DashboardPage />
@@ -14,6 +14,6 @@ const VenderDashboard = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(VenderDashboard), {
+export default dynamic(() => Promise.resolve(index), {
   ssr: false,
 });

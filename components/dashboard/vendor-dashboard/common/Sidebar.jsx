@@ -41,7 +41,7 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Subscription & Payments",
-      href: "#",
+      href: "/vendor/payment",
     },
     {
       icon: "/img/dashboard/sidebar/log-out.svg",

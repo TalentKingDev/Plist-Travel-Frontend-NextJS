@@ -464,4 +464,87 @@ module.exports = {
       />
     </svg>
   ),
+  subscription_plan: (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21 7.5V6C21 5.46957 20.7893 4.96086 20.4142 4.58579C20.0391 4.21071 19.5304 4 19 4H5C4.46957 4 3.96086 4.21071 3.58579 4.58579C3.21071 4.96086 3 5.46957 3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H8.5"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16 2V6"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 2V6"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M3 10H8"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M17.5 17.5L16 16.3V14"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16 22C19.3137 22 22 19.3137 22 16C22 12.6863 19.3137 10 16 10C12.6863 10 10 12.6863 10 16C10 19.3137 12.6863 22 16 22Z"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
+  fee_model: (
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19.666 5L5.66602 19"
+        stroke="#16A34A"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7.16602 9C8.54673 9 9.66602 7.88071 9.66602 6.5C9.66602 5.11929 8.54673 4 7.16602 4C5.7853 4 4.66602 5.11929 4.66602 6.5C4.66602 7.88071 5.7853 9 7.16602 9Z"
+        stroke="#16A34A"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M18.166 20C19.5467 20 20.666 18.8807 20.666 17.5C20.666 16.1193 19.5467 15 18.166 15C16.7853 15 15.666 16.1193 15.666 17.5C15.666 18.8807 16.7853 20 18.166 20Z"
+        stroke="#16A34A"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
 };

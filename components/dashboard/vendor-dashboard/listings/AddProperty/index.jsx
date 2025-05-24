@@ -8,7 +8,7 @@ import ListingDetails from "./ListingDetails";
 import ListingPrice from "./ListingPrice";
 import Calendar from "./Calendar";
 
-const AddProperty = ({ selectedService }) => {
+const index = ({ selectedService }) => {
   const propertySteps = [
     {
       id: 1,
@@ -109,4 +109,4 @@ const AddProperty = ({ selectedService }) => {
   );
 };
 
-export default AddProperty;
+export default index;
