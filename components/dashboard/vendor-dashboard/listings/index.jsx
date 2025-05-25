@@ -91,7 +91,7 @@ const index = () => {
               <div className="position-relative d-flex items-center mr-10">
                 <input
                   type="text"
-                  placeholder="Search listings"
+                  placeholder="Search listings..."
                   className="border-light rounded-8 px-10 py-5 pl-30"
                 />
                 <i

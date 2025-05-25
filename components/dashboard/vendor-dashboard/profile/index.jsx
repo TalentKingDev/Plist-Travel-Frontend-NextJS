@@ -5,7 +5,6 @@ import BasicInfo from "./BasicInfo";
 import LegalCompliance from "./LegalCompliance";
 import TechnicalSupport from "./TechnicalSupport";
 import Financial from "./Financial";
-import Services from "./Services";
 import Integration from "./Integration";
 import VenderDashboardLayout from "../common/layout";
 
@@ -26,11 +25,6 @@ const index = () => {
       label: "Financial",
       value: "financial",
       content: <Financial key={"financial"} />,
-    },
-    {
-      label: "Services",
-      value: "services",
-      content: <Services key={"services"} />,
     },
     {
       label: "Technical & Support",

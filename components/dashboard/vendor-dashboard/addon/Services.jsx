@@ -1,5 +1,6 @@
+"use client";
+
 import { useState } from "react";
-import FileUploadForm from "./components/FileUploadForm";
 
 const Services = () => {
   const [services, setServices] = useState(1);
@@ -74,7 +75,10 @@ const Services = () => {
               <div className="col-12 d-flex justify-end">
                 <button
                   disabled={services === 1}
-                  className="button text-12 px-5 text-red-1 fw-400"
+                  className={
+                    "button text-12 px-5 fw-400 " +
+                    (services === 1 ? "" : "text-red-1")
+                  }
                   onClick={() => setServices(services - 1)}
                 >
                   <i className="icon-close mr-10 text-10"></i>Remove Service

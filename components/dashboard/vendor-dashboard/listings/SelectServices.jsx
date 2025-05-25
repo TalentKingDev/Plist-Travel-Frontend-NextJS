@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ServiceCard from "@/components/dashboard/vendor-dashboard/common/ServiceCard";
-import index from "./AddProperty";
+import AddProperty from "./AddProperty";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
@@ -50,7 +50,7 @@ const SelectServices = ({ setIsListings }) => {
           </div>
         </div>
       ) : (
-        <index selectedService={selectedService} />
+        <AddProperty selectedService={selectedService} />
       )}
       <Snackbar
         anchorOrigin={{ horizontal: "right", vertical: "top" }}

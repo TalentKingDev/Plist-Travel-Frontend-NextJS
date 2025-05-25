@@ -24,19 +24,29 @@ const Sidebar = () => {
       href: "/vendor/listings",
     },
     {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Add-on Services",
+      href: "/vendor/addon",
+    },
+    {
       icon: "/img/dashboard/sidebar/house.svg",
       title: "Booking Management",
       href: "#",
     },
     {
+      icon: "/img/dashboard/sidebar/sneakers.svg",
+      title: "User Management",
+      href: "/vendor/user",
+    },
+    {
       icon: "/img/dashboard/sidebar/taxi.svg",
       title: "Messaging & Communication",
-      href: "#",
+      href: "/vendor/conversation",
     },
     {
       icon: "/img/dashboard/sidebar/canoe.svg",
       title: "Coupons & Promotions",
-      href: "#",
+      href: "/vendor/coupon",
     },
     {
       icon: "/img/dashboard/sidebar/airplane.svg",

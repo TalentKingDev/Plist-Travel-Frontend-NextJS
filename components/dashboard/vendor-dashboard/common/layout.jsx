@@ -15,8 +15,11 @@ const VenderDashboardLayout = ({ children }) => {
         </div>
 
         <div className="dashboard__main">
-          <div className="dashboard__content bg-light-2">
-            {children}
+          <div
+            className="dashboard__content bg-light-2 d-flex flex-column justify-between"
+            style={{ minHeight: "calc(100vh - 90px)" }}
+          >
+            <div className="flex-fill">{children}</div>
 
             <Footer />
           </div>
