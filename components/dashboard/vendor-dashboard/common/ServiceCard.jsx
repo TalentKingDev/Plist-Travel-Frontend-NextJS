@@ -38,7 +38,7 @@ const ServiceCard = ({ selectedService, setSelectedService }) => {
         <div key={index} className="col-xl-4 col-lg-6 col-md-6 col-sm-12">
           <div
             className={
-              "py-30 px-30 rounded-8 bg-white shadow-3 " +
+              "py-30 px-30 rounded-8 bg-white shadow-3 cursor-pointer " +
               (item.name == selectedService?.name
                 ? "border-blue-1"
                 : "border-light")
