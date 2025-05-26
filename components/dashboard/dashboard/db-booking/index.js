@@ -8,20 +8,14 @@ import BookingForm from "@/components/dashboard/dashboard/db-booking/components/
 const index = ({ serviceType }) => {
   return (
     <>
-      {/*  */}
-      {/* End Page Title */}
-
       <div className="header-margin"></div>
 
       <Header />
-      {/* End dashboard-header */}
 
       <div className="dashboard">
         <div className="dashboard__sidebar bg-white scroll-bar-1">
           <Sidebar />
-          {/* End sidebar */}
         </div>
-        {/* End dashboard__sidebar */}
 
         <div className="dashboard__main">
           <div className="dashboard__content bg-light-2">
@@ -32,22 +26,16 @@ const index = ({ serviceType }) => {
                 Add a new walk-in booking.
                 </div>
               </div>
-              {/* End .col-12 */}
             </div>
-            {/* End .row */}
 
             <div className="py-30 px-30 rounded-22 bg-white shadow-3 row x-gap-20 y-gap-20 items-center">
               <BookingForm serviceType={serviceType} />
-              {/* End tabs */}
             </div>
 
             <Footer />
           </div>
-          {/* End .dashboard__content */}
         </div>
-        {/* End dashbaord content */}
       </div>
-      {/* End dashbaord content */}
     </>
   );
 };

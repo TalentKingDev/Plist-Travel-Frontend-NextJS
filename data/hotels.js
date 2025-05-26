@@ -21,7 +21,7 @@ export const hotelsData = [
     img: "/img/hotels/2-1.png",
     title: "Mövenpick Hotel Ikoyi Lagos",
     location: "47 Alfred Rewane Road, Lagos 101233 Nigeria",
-    link: "/customer/property/1",
+    link: "/vendor/property/2",
     ratings: "4.8",
     numberOfReviews: "2345",
     price: "85",

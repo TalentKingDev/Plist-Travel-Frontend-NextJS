@@ -240,7 +240,7 @@ const AvailableRooms = ({ name, hotel, onShowRoomInfo }) => {
                     US${hotel?.price}
                   </div>
                   <a
-                    href="/customer/property/1/booking"
+                    href={hotel?.link + "/booking"}
                     className="button h-50 px-24 -dark-1 bg-blue-1 text-white mt-10"
                   >
                     Reserve <div className="icon-arrow-top-right ml-15" />
@@ -495,7 +495,7 @@ const AvailableRooms = ({ name, hotel, onShowRoomInfo }) => {
                     US${hotel?.price}
                   </div>
                   <a
-                    href="/customer/property/1/booking"
+                    href={hotel?.link + "/booking"}
                     className="button h-50 px-24 -dark-1 bg-blue-1 text-white mt-10"
                   >
                     Reserve <div className="icon-arrow-top-right ml-15" />
