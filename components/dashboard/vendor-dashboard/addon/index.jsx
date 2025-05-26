@@ -1,9 +1,9 @@
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import Services from "./Services";
 
 const index = () => {
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Add-On Services Management</h1>
@@ -16,7 +16,7 @@ const index = () => {
       <div className="px-15">
         <Services />
       </div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 export default index;

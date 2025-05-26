@@ -660,4 +660,71 @@ module.exports = {
       />
     </svg>
   ),
+  user_add: (
+    <svg
+      width="16"
+      height="17"
+      viewBox="0 0 16 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_307_62504)">
+        <path
+          d="M10.6673 14.5V13.1667C10.6673 12.4594 10.3864 11.7811 9.88627 11.281C9.38617 10.781 8.7079 10.5 8.00065 10.5H4.00065C3.29341 10.5 2.61513 10.781 2.11503 11.281C1.61494 11.7811 1.33398 12.4594 1.33398 13.1667V14.5"
+          stroke="#F8FAFC"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M6.00065 7.83333C7.47341 7.83333 8.66732 6.63943 8.66732 5.16667C8.66732 3.69391 7.47341 2.5 6.00065 2.5C4.52789 2.5 3.33398 3.69391 3.33398 5.16667C3.33398 6.63943 4.52789 7.83333 6.00065 7.83333Z"
+          stroke="#F8FAFC"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12.666 5.83203V9.83203"
+          stroke="#F8FAFC"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14.666 7.83203H10.666"
+          stroke="#F8FAFC"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_307_62504">
+          <rect
+            width="16"
+            height="16"
+            fill="white"
+            transform="translate(0 0.5)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  ),
+  filter_alt: (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.6673 2H1.33398L6.66732 8.30667V12.6667L9.33398 14V8.30667L14.6673 2Z"
+        stroke="#020817"
+        stroke-width="1.33333"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
 };

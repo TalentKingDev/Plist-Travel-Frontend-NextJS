@@ -1,9 +1,9 @@
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import svgIcon from "@/components/data/svgIcon";
 
 const index = () => {
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">User Management</h1>
@@ -18,7 +18,7 @@ const index = () => {
           <UserAccessAndPermissions />
         </div>
       </div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 

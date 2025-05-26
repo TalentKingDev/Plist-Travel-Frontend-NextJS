@@ -6,7 +6,7 @@ import LegalCompliance from "./LegalCompliance";
 import TechnicalSupport from "./TechnicalSupport";
 import Financial from "./Financial";
 import Integration from "./Integration";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("basic-info");
@@ -39,7 +39,7 @@ const index = () => {
   ];
 
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Profile Management</h1>
@@ -67,7 +67,7 @@ const index = () => {
       <div className="px-15">
         {tabs.map((item) => item.value === activeTab && item.content)}
       </div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 export default index;

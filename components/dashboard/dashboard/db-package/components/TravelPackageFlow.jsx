@@ -83,7 +83,7 @@ const TravelPackageFlow = () => {
               className={`tabs__button text-14 lg:text-14 text-light-1 fw-500 pb-5 lg:pb-0 js-tabs-button ${
                 activeTab === index ? "is-tab-el-active" : ""
               }`}
-              onClick={() => handleTabClick(index)}
+              // onClick={() => handleTabClick(index)}
             >
               {item.label}
             </button>

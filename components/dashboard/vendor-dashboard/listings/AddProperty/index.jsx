@@ -7,8 +7,11 @@ import Amenities from "./Amenities";
 import ListingDetails from "./ListingDetails";
 import ListingPrice from "./ListingPrice";
 import Calendar from "./Calendar";
+import { useRouter } from "next/navigation";
 
 const index = ({ selectedService }) => {
+  const router = useRouter();
+
   const propertySteps = [
     {
       id: 1,
@@ -43,7 +46,7 @@ const index = ({ selectedService }) => {
     {
       id: 7,
       name: "Calendar",
-      content: <Calendar/>,
+      content: <Calendar />,
     },
   ];
 
@@ -99,6 +102,8 @@ const index = ({ selectedService }) => {
           onClick={() => {
             if (activeStep < 7) {
               setActiveStep(activeStep + 1);
+            } else {
+              router.push("/vendor/property");
             }
           }}
         >

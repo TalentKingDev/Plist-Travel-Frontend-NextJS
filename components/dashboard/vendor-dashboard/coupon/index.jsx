@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import CouponCard from "./CouponCard";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import CouponList from "./CouponList";
 
 const index = () => {
@@ -41,7 +41,7 @@ const index = () => {
   ];
 
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">
@@ -97,7 +97,7 @@ const index = () => {
       <div className="py-30 px-30 rounded-8 bg-white shadow-3 h-100 mt-20">
         <CouponList />
       </div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 

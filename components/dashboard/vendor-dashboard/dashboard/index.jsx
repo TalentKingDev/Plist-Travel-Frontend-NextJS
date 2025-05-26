@@ -6,7 +6,7 @@ import Link from "next/link";
 import RercentBooking from "./components/RercentBooking";
 import { useState } from "react";
 import PopularList from "./components/PopularList";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -42,7 +42,7 @@ const index = () => {
     },
   ];
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Vendor Dashboard</h1>
@@ -123,7 +123,7 @@ const index = () => {
           </div>
         </div>
       </div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 

@@ -2,7 +2,7 @@ import Header from "@/components/header/dashboard-header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
-const VenderDashboardLayout = ({ children }) => {
+const VendorDashboardLayout = ({ children }) => {
   return (
     <>
       <div className="header-margin"></div>
@@ -28,4 +28,4 @@ const VenderDashboardLayout = ({ children }) => {
     </>
   );
 };
-export default VenderDashboardLayout;
+export default VendorDashboardLayout;

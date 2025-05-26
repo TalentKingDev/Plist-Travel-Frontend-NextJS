@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import Subscription from "./Subscription";
 import PaymentHistory from "./PaymentHistory";
 import BillingInfo from "./BillingInfo";
@@ -27,7 +27,7 @@ const index = () => {
   ];
 
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">
@@ -56,7 +56,7 @@ const index = () => {
       </div>
 
       {tabs.map((item) => item.value === activeTab && item.content)}
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 export default index;

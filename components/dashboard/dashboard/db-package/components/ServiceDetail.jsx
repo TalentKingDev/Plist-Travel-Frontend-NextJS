@@ -168,7 +168,7 @@ const FlightDetails = () => {
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12">
           <h1 className="text-15 lh-14 fw-500">Departure Date</h1>
-          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
             <DatePicker
               inputClass="custom_input-picker"
               containerClassName="custom_container-picker"
@@ -182,7 +182,7 @@ const FlightDetails = () => {
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12">
           <h1 className="text-15 lh-14 fw-500">Return Date</h1>
-          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
             <DatePicker
               inputClass="custom_input-picker"
               containerClassName="custom_container-picker"
@@ -251,7 +251,7 @@ const HotelDetails = () => {
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Check-in Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
             inputClass="custom_input-picker"
             containerClassName="custom_container-picker"
@@ -265,7 +265,7 @@ const HotelDetails = () => {
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Check-out Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
             inputClass="custom_input-picker"
             containerClassName="custom_container-picker"
@@ -393,7 +393,7 @@ const TransportationDetails = () => {
         </div>
         <div className="col-6">
           <h1 className="text-15 lh-14 fw-500">Date</h1>
-          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+          <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
             <DatePicker
               inputClass="custom_input-picker"
               containerClassName="custom_container-picker"
@@ -453,7 +453,7 @@ const ToursDetails = () => {
       </div>
       <div className="col-6 pl-40">
         <h1 className="text-15 lh-14 fw-500">Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
             inputClass="custom_input-picker"
             containerClassName="custom_container-picker"
@@ -512,7 +512,7 @@ const ActivitiesDetails = () => {
       </div>
       <div className="col-6">
         <h1 className="text-15 lh-14 fw-500">Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-gray-900 bg-white">
+        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
             inputClass="custom_input-picker"
             containerClassName="custom_container-picker"

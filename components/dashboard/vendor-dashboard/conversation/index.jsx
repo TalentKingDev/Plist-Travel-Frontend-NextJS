@@ -1,7 +1,7 @@
 "use client";
 
 import { act, useState } from "react";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import svgIcon from "@/components/data/svgIcon";
@@ -45,7 +45,7 @@ const Conversation = () => {
   ];
 
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div
         className="row y-gap-20 x-gap-20 justify-between"
         style={{ height: "calc(100vh - 300px)", minHeight: "300px" }}
@@ -159,7 +159,7 @@ const Conversation = () => {
         </div>
       </div>
       <div style={{ height: "50px" }}></div>
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 

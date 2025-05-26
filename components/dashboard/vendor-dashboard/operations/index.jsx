@@ -4,7 +4,7 @@ import { useState } from "react";
 import Availability from "./Availability";
 import Pricing from "./Pricing";
 import Settings from "./Settings";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("availability");
@@ -27,7 +27,7 @@ const index = () => {
   ];
 
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Operations Management</h1>
@@ -53,7 +53,7 @@ const index = () => {
       </div>
 
       {tabs.map((item) => item.value === activeTab && item.content)}
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 export default index;

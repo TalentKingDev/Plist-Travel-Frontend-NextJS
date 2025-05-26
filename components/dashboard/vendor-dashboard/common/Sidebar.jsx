@@ -31,7 +31,7 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/house.svg",
       title: "Booking Management",
-      href: "#",
+      href: "/vendor/booking",
     },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",

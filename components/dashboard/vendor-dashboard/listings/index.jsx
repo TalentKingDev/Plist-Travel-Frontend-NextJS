@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import VenderDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../common/layout";
 import SelectServices from "./SelectServices";
 
 const index = () => {
@@ -51,7 +51,7 @@ const index = () => {
     },
   ];
   return (
-    <VenderDashboardLayout>
+    <VendorDashboardLayout>
       {isListings ? (
         <>
           <div className="row y-gap-20 justify-between items-center mb-5">
@@ -92,7 +92,7 @@ const index = () => {
                 <input
                   type="text"
                   placeholder="Search listings..."
-                  className="border-light rounded-8 px-10 py-5 pl-30"
+                  className="border-light bg-white rounded-8 px-10 py-5 pl-30"
                 />
                 <i
                   className="icon-search text-light-1 position-absolute"
@@ -178,7 +178,7 @@ const index = () => {
       ) : (
         <SelectServices setIsListings={setIsListings} />
       )}
-    </VenderDashboardLayout>
+    </VendorDashboardLayout>
   );
 };
 export default index;
