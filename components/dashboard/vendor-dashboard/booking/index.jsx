@@ -9,11 +9,15 @@ import BookingList from "./BookingList";
 import svgIcon from "@/components/data/svgIcon";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 const index = () => {
-
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("all");
+  const [anchorEl, setAnchorEl] = useState(null);
+  const showBookingMenu = Boolean(anchorEl);
+
   const tabs = [
     { label: "All Bookings", value: "all" },
     { label: "Upcoming", value: "upcoming" },
@@ -68,12 +72,42 @@ const index = () => {
           </div>
         </div>
         <div className="col-auto ms-auto">
-          <button onClick={() => {
-            router.push("/vendor/booking/select-service");
-            // router.push("/vendor/booking/process");
-          }} className="bg-dark-blue text-white fw-400 text-13 py-5 px-15 rounded-8">
+          <button
+            id="booking-button"
+            aria-controls={showBookingMenu ? "booking-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={showBookingMenu ? "true" : undefined}
+            onClick={(event) => {
+              setAnchorEl(event.currentTarget);
+            }}
+            className="bg-dark-blue text-white fw-400 text-14 py-10 px-15 rounded-8"
+          >
             {svgIcon.user_add}&nbsp;&nbsp; New Walk-in Booking
           </button>
+          <Menu
+            id="booking-menu"
+            anchorEl={anchorEl}
+            open={showBookingMenu}
+            onClose={() => setAnchorEl(null)}
+            MenuListProps={{
+              "aria-labelledby": "booking-button",
+            }}
+          >
+            <MenuItem
+              onClick={() => {
+                router.push("/vendor/booking/select-service");
+              }}
+            >
+              Single Booking
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                router.push("/vendor/booking/process");
+              }}
+            >
+              Travel Package Builder
+            </MenuItem>
+          </Menu>
         </div>
       </div>
 
@@ -152,9 +186,15 @@ const index = () => {
           </div>
         </div>
         <div className="d-flex items-center mb-20">
-          <span className="bg-blue-1 text-white text-10 rounded-100 px-10 mr-5">Confirmed</span>
-          <span className="bg-dark-yellow text-white text-10 rounded-100 px-10 mr-5">Pending</span>
-          <span className="bg-red-1 text-white text-10 rounded-100 px-10 mr-5">Cancelled</span>
+          <span className="bg-blue-1 text-white text-10 rounded-100 px-10 mr-5">
+            Confirmed
+          </span>
+          <span className="bg-dark-yellow text-white text-10 rounded-100 px-10 mr-5">
+            Pending
+          </span>
+          <span className="bg-red-1 text-white text-10 rounded-100 px-10 mr-5">
+            Cancelled
+          </span>
         </div>
         <div className="border-light rounded-8 py-20 px-20">
           <FullCalendar

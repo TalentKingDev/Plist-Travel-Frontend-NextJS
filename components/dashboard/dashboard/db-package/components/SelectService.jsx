@@ -1,10 +1,17 @@
+import { useState } from "react";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import ServiceCard from "@/components/dashboard/dashboard/travel-package-builder/ServiceCard";
 
 export const SelectService = ({ data, setData, activeTab, setActiveTab }) => {
-
+  const [showSnackbar, setShowSnackbar] = useState(false);
   const handleContinue = () => {
+    if (data.filter((item) => item.selected).length === 0) {
+      setShowSnackbar(true);
+      return;
+    }
     setActiveTab(activeTab + 1);
-  }
+  };
 
   return (
     <div className="row y-gap-20 py-10 px-10 rounded-8 bg-white shadow-3">
@@ -40,7 +47,7 @@ export const SelectService = ({ data, setData, activeTab, setActiveTab }) => {
               <button className="button rounded-8 py-10 px-30 text-12 -dark-1 border-light text-light-1 col-auto">
                 <i className="icon icon-chevron-left mr-10" /> Back
               </button>
-              <button 
+              <button
                 className="button rounded-8 py-10 px-30 text-12 -dark-1 bg-dark-3 text-white col-auto"
                 onClick={handleContinue}
               >
@@ -48,6 +55,16 @@ export const SelectService = ({ data, setData, activeTab, setActiveTab }) => {
                 <i className="icon icon-chevron-right ml-10" />
               </button>
             </div>
+            <Snackbar
+              anchorOrigin={{ horizontal: "right", vertical: "top" }}
+              open={showSnackbar}
+              autoHideDuration={3000}
+              onClose={() => setShowSnackbar(false)}
+            >
+              <Alert severity="warning" variant="filled" sx={{ width: "100%" }}>
+                Please select at least a service to continue.
+              </Alert>
+            </Snackbar>
           </div>
         </div>
       </div>
