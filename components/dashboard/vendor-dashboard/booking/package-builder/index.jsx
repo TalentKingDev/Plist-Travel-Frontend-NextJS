@@ -3,7 +3,7 @@
 import VendorDashboardLayout from "../../common/layout";
 import TravelPackageFlow from "@/components/dashboard/dashboard/db-package/components/TravelPackageFlow";
 
-export const index = () => {
+const index = () => {
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-end mb-20">

@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import VendorDashboardLayout from "../common/layout";
 import SelectServices from "./SelectServices";
+import { Menu, MenuItem } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -18,6 +20,7 @@ const index = () => {
 
   const listings = [
     {
+      id: 1,
       image: "/img/testimonials/1/4.png",
       name: "Luxury Beach Resort",
       type: "Hotel",
@@ -26,6 +29,7 @@ const index = () => {
       status: "Active",
     },
     {
+      id: 2,
       image: "/img/testimonials/1/4.png",
       name: "City Walking Tour",
       type: "Tour",
@@ -34,6 +38,7 @@ const index = () => {
       status: "Active",
     },
     {
+      id: 3,
       image: "/img/testimonials/1/4.png",
       name: "Wine Tasting Experience",
       type: "Event",
@@ -42,6 +47,7 @@ const index = () => {
       status: "Active",
     },
     {
+      id: 4,
       image: "/img/testimonials/1/4.png",
       name: "Mountain Cabin Retreat",
       type: "Hotel",
@@ -50,6 +56,11 @@ const index = () => {
       status: "Inactive",
     },
   ];
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const showMoreMenu = Boolean(anchorEl);
+  const router = useRouter();
+
   return (
     <VendorDashboardLayout>
       {isListings ? (
@@ -164,9 +175,48 @@ const index = () => {
                         </span>
                       </td>
                       <td className="align-middle">
-                        <span className="material-symbols-outlined">
+                        <span
+                          id={row.id}
+                          className="material-symbols-outlined cursor-pointer"
+                          onClick={(event) => setAnchorEl(event.currentTarget)}
+                        >
                           more_horiz
                         </span>
+                        <Menu
+                          id="more-menu"
+                          anchorEl={anchorEl}
+                          open={showMoreMenu}
+                          onClose={() => setAnchorEl(null)}
+                        >
+                          <MenuItem
+                            onClick={() => {
+                              router.push(
+                                "/vendor/property/" + anchorEl.id + "/manage"
+                              );
+                            }}
+                            className="text-12"
+                          >
+                            Manage Property
+                          </MenuItem>
+                          <MenuItem
+                            onClick={() => {
+                              router.push("/vendor/property");
+                            }}
+                            className="text-12"
+                          >
+                            Accommendations
+                          </MenuItem>
+                          <MenuItem
+                            onClick={() => {
+                              router.push(
+                                "/vendor/property/" + anchorEl.id + "/setting"
+                              );
+                            }}
+                            className="text-12"
+                          >
+                            Setting
+                          </MenuItem>
+                        </Menu>
                       </td>
                     </tr>
                   ))}

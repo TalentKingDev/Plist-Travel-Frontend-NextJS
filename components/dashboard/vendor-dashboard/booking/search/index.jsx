@@ -7,7 +7,7 @@ import DatePicker, { DateObject } from "react-multi-date-picker";
 import Pagination from "@/components/hotel-list/common/Pagination";
 import { useState } from "react";
 
-export const index = () => {
+const index = () => {
   const [dates, setDates] = useState([
     new DateObject(),
     new DateObject().add(1, "month"),

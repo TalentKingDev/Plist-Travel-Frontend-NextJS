@@ -84,6 +84,39 @@ const ListingDetails = () => {
         />
       </div>
       <div className="col-12 mt-5">
+        <h1 className="text-14 lh-12 fw-500">
+          What’s the shortest number of nights travelers can book?
+        </h1>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type="number"
+          placeholder="Enter Minimum Stay"
+        />
+        <div className="text-12 text-light-1 lh-1 mt-5">
+          We suggest 3 or less for more bookings
+        </div>
+      </div>
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">
+          How many days before check-in will you accept bookings?
+        </h1>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type="text"
+          placeholder="Days before check-in"
+        />
+      </div>
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">
+          How many months before check-in will you accept bookings?
+        </h1>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type="text"
+          placeholder="Months before check-in"
+        />
+      </div>
+      <div className="col-12 mt-5">
         <div className="border-light rounded-8 px-15 py-15">
           <div className="text-16 fw-500 mb-10 lh-1">
             Rooms or Listings Type Image

@@ -8,6 +8,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import FormInput from "@/components/common/form/FormInput";
+import { useRouter } from "next/navigation";
+import { Menu, MenuItem } from "@mui/material";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -26,6 +28,7 @@ const index = () => {
 
   const listings = [
     {
+      id: 1,
       image: "/img/testimonials/1/4.png",
       name: "Hotel Executive Suite",
       type: "Suite",
@@ -36,6 +39,7 @@ const index = () => {
       status: "Active",
     },
     {
+      id: 2,
       image: "/img/testimonials/1/4.png",
       name: "Deluxe Room",
       type: "Room",
@@ -46,6 +50,7 @@ const index = () => {
       status: "Active",
     },
     {
+      id: 3,
       image: "/img/testimonials/1/4.png",
       name: "Standard Room",
       type: "Room",
@@ -56,6 +61,10 @@ const index = () => {
       status: "Inactive",
     },
   ];
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const showMoreMenu = Boolean(anchorEl);
+  const router = useRouter();
 
   return (
     <VendorDashboardLayout>
@@ -138,9 +147,30 @@ const index = () => {
                     </span>
                   </td>
                   <td className="align-middle">
-                    <span className="material-symbols-outlined">
+                    <span
+                      id={row.id}
+                      className="material-symbols-outlined cursor-pointer"
+                      onClick={(event) => setAnchorEl(event.currentTarget)}
+                    >
                       more_horiz
                     </span>
+                    <Menu
+                      id="more-menu"
+                      anchorEl={anchorEl}
+                      open={showMoreMenu}
+                      onClose={() => setAnchorEl(null)}
+                    >
+                      <MenuItem
+                        onClick={() => {
+                          router.push(
+                            "/vendor/property/" + anchorEl.id + "/manage"
+                          );
+                        }}
+                        className="text-12"
+                      >
+                        Manage Property
+                      </MenuItem>
+                    </Menu>
                   </td>
                 </tr>
               ))}
@@ -263,7 +293,10 @@ const index = () => {
                     />
                   ))}
               </div>
-              <button className="button rounded-8 text-14 fw-500 mt-10 border-light px-15 py-10" onClick={() => setRooms(rooms + 1)}>
+              <button
+                className="button rounded-8 text-14 fw-500 mt-10 border-light px-15 py-10"
+                onClick={() => setRooms(rooms + 1)}
+              >
                 <i className="icon-plus mr-15 text-14 fw-400"></i> Add Room
               </button>
             </div>
@@ -281,7 +314,7 @@ const index = () => {
             onClick={handleClose}
             autoFocus
           >
-             Save and Add
+            Save and Add
           </button>
         </DialogActions>
       </Dialog>

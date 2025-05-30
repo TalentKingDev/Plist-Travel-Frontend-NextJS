@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const Sidebar = () => {
   const sidebarData = [
@@ -13,25 +14,38 @@ const Sidebar = () => {
       title: "Profile Management",
       href: "/vendor/profile",
     },
-    {
-      icon: "/img/dashboard/sidebar/map.svg",
-      title: "Operations Management",
-      href: "/vendor/operations",
-    },
+    // {
+    //   icon: "/img/dashboard/sidebar/map.svg",
+    //   title: "Operations Management",
+    //   href: "/vendor/operations",
+    // },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",
       title: "Listings Management",
       href: "/vendor/listings",
     },
     {
-      icon: "/img/dashboard/sidebar/booking.svg",
+      icon: "/img/dashboard/sidebar/house.svg",
       title: "Add-on Services",
       href: "/vendor/addon",
     },
     {
-      icon: "/img/dashboard/sidebar/house.svg",
+      icon: "/img/dashboard/sidebar/booking.svg",
       title: "Booking Management",
-      href: "/vendor/booking",
+      links: [
+        {
+          title: "Booking List",
+          href: "/vendor/booking",
+        },
+        {
+          title: "Booking Calendar",
+          href: "/vendor/booking/calendar",
+        },
+        {
+          title: "Rate Plan",
+          href: "/vendor/rateplan",
+        },
+      ],
     },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",
@@ -65,20 +79,61 @@ const Sidebar = () => {
       <div className="sidebar -dashboard" id="vendorSidebarMenu">
         {sidebarData.map((item, index) => (
           <div className="sidebar__item" key={index}>
-            <Link
-              href={item.href}
-              className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
-            >
-              <Image
-                width={20}
-                height={20}
-                src={item.icon}
-                alt="image"
-                className="mr-15"
-                unoptimized
-              />
-              {item.title}
-            </Link>
+            {item.links ? (
+              <div className="accordion -db-sidebar js-accordion">
+                <div className="accordion__item">
+                  <div
+                    className="accordion__button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#sidebarItem${index}`}
+                  >
+                    <div className="sidebar__button col-12 d-flex items-center justify-between">
+                      <div className="d-flex items-center text-15 lh-1 fw-500">
+                        <Image
+                          width={20}
+                          height={20}
+                          src={item.icon}
+                          alt="image"
+                          className="mr-10"
+                        />
+                        {item.title}
+                      </div>
+                      <div className="icon-chevron-sm-down text-7" />
+                    </div>
+                  </div>
+                  <div
+                    id={`sidebarItem${index}`}
+                    className="collapse"
+                    data-bs-parent="#vendorSidebarMenu"
+                  >
+                    <ul className="list-disc pb-5 pl-40">
+                      {item.links.map((link, linkIndex) => (
+                        <li key={linkIndex}>
+                          <Link href={link.href} className="text-15">
+                            {link.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                href={item.href}
+                className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
+              >
+                <Image
+                  width={20}
+                  height={20}
+                  src={item.icon}
+                  alt="image"
+                  className="mr-15"
+                  unoptimized
+                />
+                {item.title}
+              </Link>
+            )}
           </div>
         ))}
       </div>

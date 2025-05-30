@@ -4,6 +4,7 @@ import Description from "./Description";
 import PropertyImage from "./PropertyImage";
 import Location from "./Location";
 import Amenities from "./Amenities";
+import Rates from "./Rates";
 import ListingDetails from "./ListingDetails";
 import ListingPrice from "./ListingPrice";
 import Calendar from "./Calendar";
@@ -40,11 +41,16 @@ const index = ({ selectedService }) => {
     },
     {
       id: 6,
+      name: "Competitive Rates",
+      content: <Rates />,
+    },
+    {
+      id: 7,
       name: "Price",
       content: <ListingPrice />,
     },
     {
-      id: 7,
+      id: 8,
       name: "Calendar",
       content: <Calendar />,
     },
@@ -100,14 +106,14 @@ const index = ({ selectedService }) => {
         <button
           className="rounded-8 py-5 px-20 bg-dark-4 text-white text-14"
           onClick={() => {
-            if (activeStep < 7) {
+            if (activeStep < propertySteps.length) {
               setActiveStep(activeStep + 1);
             } else {
               router.push("/vendor/property");
             }
           }}
         >
-          {activeStep < 7 ? "Continue" : "Save"}
+          {activeStep < propertySteps.length ? "Continue" : "Save"}
         </button>
       </div>
     </div>
