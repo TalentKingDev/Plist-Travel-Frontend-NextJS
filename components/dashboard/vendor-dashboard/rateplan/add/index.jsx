@@ -27,7 +27,7 @@ const index = () => {
           </div>
           <button
             className="text-14 lh-14 text-blue-1"
-            onClick={() => router.push("/vendor/rateplan/add/customize")}
+            onClick={() => router.push("/vendor/rateplan/add/custom")}
           >
             Add a new rate plan
           </button>

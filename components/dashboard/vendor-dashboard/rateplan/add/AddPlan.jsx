@@ -8,117 +8,141 @@ import { useState } from "react";
 const index = ({ type }) => {
   const router = useRouter();
 
+  const hourlySteps =
+    type === "hourly"
+      ? [
+          {
+            title: "Would you like to put a restriction on the length of stay?",
+            content: (
+              <div className="d-flex items-center gap-2 ml-20 mt-10">
+                <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10" selected>
+                    10
+                  </option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                </select>
+                <div className="text-14 lh-14 ml-5">hour(s)</div>
+              </div>
+            ),
+          },
+          {
+            title: "Would you like to set an earliest check-in time?",
+            content: (
+              <div className="ml-20 mt-10">
+                <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
+                  <option value="1">1:00</option>
+                  <option value="2">2:00</option>
+                  <option value="3">3:00</option>
+                  <option value="4">4:00</option>
+                  <option value="5">5:00</option>
+                  <option value="6">6:00</option>
+                  <option value="7">7:00</option>
+                  <option value="8">8:00</option>
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12" selected>
+                    12:00
+                  </option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                  <option value="18">18:00</option>
+                  <option value="19">19:00</option>
+                  <option value="20">20:00</option>
+                  <option value="21">21:00</option>
+                  <option value="22">22:00</option>
+                  <option value="23">23:00</option>
+                  <option value="24">24:00</option>
+                </select>
+              </div>
+            ),
+          },
+          {
+            title: "Would you like to set a latest check-out time?",
+            content: (
+              <div className="ml-20 mt-10">
+                <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
+                  <option value="1">1:00</option>
+                  <option value="2">2:00</option>
+                  <option value="3">3:00</option>
+                  <option value="4">4:00</option>
+                  <option value="5">5:00</option>
+                  <option value="6">6:00</option>
+                  <option value="7">7:00</option>
+                  <option value="8">8:00</option>
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                  <option value="18">18:00</option>
+                  <option value="19">19:00</option>
+                  <option value="20">20:00</option>
+                  <option value="21">21:00</option>
+                  <option value="22" selected>
+                    22:00
+                  </option>
+                  <option value="23">23:00</option>
+                  <option value="24">24:00</option>
+                </select>
+              </div>
+            ),
+          },
+        ]
+      : [];
+
+  const monthlySteps =
+    type === "monthly"
+      ? [
+          {
+            title: "Min. Length of Stay",
+            content: <MinLengthStay />,
+          },
+        ]
+      : [];
+
+  const mealSteps =
+    type !== "hourly"
+      ? [
+          {
+            title: "Are meals included in the rate?",
+            content: <MealsIncluded />,
+          },
+        ]
+      : [];
+
   const steps = [
-    type === "hourly" && {
-      title: "Would you like to put a restriction on the length of stay?",
-      content: (
-        <div className="d-flex items-center gap-2 ml-20 mt-10">
-          <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10" selected>
-              10
-            </option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-          </select>
-          <div className="text-14 lh-14 ml-5">hour(s)</div>
-        </div>
-      ),
-    },
-    type === "hourly" && {
-      title: "Would you like to set an earliest check-in time?",
-      content: (
-        <div className="ml-20 mt-10">
-          <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
-            <option value="1">1:00</option>
-            <option value="2">2:00</option>
-            <option value="3">3:00</option>
-            <option value="4">4:00</option>
-            <option value="5">5:00</option>
-            <option value="6">6:00</option>
-            <option value="7">7:00</option>
-            <option value="8">8:00</option>
-            <option value="9">9:00</option>
-            <option value="10">10:00</option>
-            <option value="11">11:00</option>
-            <option value="12" selected>
-              12:00
-            </option>
-            <option value="13">13:00</option>
-            <option value="14">14:00</option>
-            <option value="15">15:00</option>
-            <option value="16">16:00</option>
-            <option value="17">17:00</option>
-            <option value="18">18:00</option>
-            <option value="19">19:00</option>
-            <option value="20">20:00</option>
-            <option value="21">21:00</option>
-            <option value="22">22:00</option>
-            <option value="23">23:00</option>
-            <option value="24">24:00</option>
-          </select>
-        </div>
-      ),
-    },
-    type === "hourly" && {
-      title: "Would you like to set a latest check-out time?",
-      content: (
-        <div className="ml-20 mt-10">
-          <select className="border-light form-select rounded-8 bg-white px-10 h-50 w-140">
-            <option value="1">1:00</option>
-            <option value="2">2:00</option>
-            <option value="3">3:00</option>
-            <option value="4">4:00</option>
-            <option value="5">5:00</option>
-            <option value="6">6:00</option>
-            <option value="7">7:00</option>
-            <option value="8">8:00</option>
-            <option value="9">9:00</option>
-            <option value="10">10:00</option>
-            <option value="11">11:00</option>
-            <option value="12">12:00</option>
-            <option value="13">13:00</option>
-            <option value="14">14:00</option>
-            <option value="15">15:00</option>
-            <option value="16">16:00</option>
-            <option value="17">17:00</option>
-            <option value="18">18:00</option>
-            <option value="19">19:00</option>
-            <option value="20">20:00</option>
-            <option value="21">21:00</option>
-            <option value="22" selected>
-              22:00
-            </option>
-            <option value="23">23:00</option>
-            <option value="24">24:00</option>
-          </select>
-        </div>
-      ),
-    },
-    type === "monthly" && {
-      title: "Min. Length of Stay",
-      content: <MinLengthStay />,
-    },
+    ...hourlySteps,
+    ...monthlySteps,
     {
       title: "Select a cancellation policy",
       subtitle: (
@@ -136,10 +160,7 @@ const index = ({ type }) => {
         </div>
       ),
     },
-    type !== "hourly" && {
-      title: "Are meals included in the rate?",
-      content: <MealsIncluded />,
-    },
+    ...mealSteps,
     {
       title:
         "Would you like to set up reservation restrictions for this rate plan? (Including reservation time, length of stay, exclusive company)",
@@ -170,6 +191,7 @@ const index = ({ type }) => {
           <div className="w-180">
             <input
               type="text"
+              placeholder="Enter rate plan name"
               className="border-light rounded-8 bg-white px-10 py-5"
             />
           </div>
@@ -198,7 +220,10 @@ const index = ({ type }) => {
           ))}
         </div>
         <div className="border-top-light mt-15 pt-15 d-flex justify-end gap-2">
-          <button className="text-white bg-blue-1 rounded-8 px-15 py-5 text-14">
+          <button
+            className="text-white bg-blue-1 rounded-8 px-15 py-5 text-14"
+            onClick={() => router.push("/vendor/rateplan/preview/" + type)}
+          >
             Preview
           </button>
         </div>
