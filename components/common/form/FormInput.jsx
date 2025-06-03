@@ -1,4 +1,6 @@
 const FormInput = ({
+  min,
+  max,
   label,
   type,
   rows,
@@ -6,9 +8,14 @@ const FormInput = ({
   gridClass = "col-12",
   otherClass = "",
   placeholder,
-  options,
+  options = [],
+  value,
+  defaultValue,
+  onChange,
+  disable,
+  readOnly,
 }) => {
-  let form = null;
+  let form;
 
   switch (type) {
     case "textarea":
@@ -18,7 +25,11 @@ const FormInput = ({
           rows={rows}
           name={name}
           placeholder={placeholder}
-        ></textarea>
+          value={value}
+          onChange={onChange}
+          disabled={disable}
+          readOnly={readOnly}
+        />
       );
       break;
 
@@ -27,6 +38,9 @@ const FormInput = ({
         <select
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           name={name}
+          disabled={disable}
+          onChange={onChange}
+          value={value}
         >
           <option value="">{placeholder}</option>
           {options.map((option, index) => (
@@ -44,9 +58,14 @@ const FormInput = ({
           <input
             className="form-check-input"
             type="checkbox"
-            id="flexCheckDefault"
+            id={name}
+            name={name}
+            onChange={onChange}
+            checked={!!value}
+            disabled={disable}
+            readOnly={readOnly}
           />
-          <label className="form-check-label" htmlFor="flexCheckDefault">
+          <label className="form-check-label" htmlFor={name}>
             {name}
           </label>
         </div>
@@ -57,7 +76,14 @@ const FormInput = ({
       form = (
         <div className="form-radio">
           <div className="radio d-flex items-center">
-            <input type="radio" name="flight-type" value={name} />
+            <input
+              type="radio"
+              name={name}
+              value={value}
+              onChange={onChange}
+              disabled={disable}
+              readOnly={readOnly}
+            />
             <div className="radio__mark">
               <div className="radio__icon" />
             </div>
@@ -73,7 +99,13 @@ const FormInput = ({
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type={type}
           name={name}
+          value={value}
           placeholder={placeholder}
+          onChange={onChange}
+          readOnly={readOnly}
+          disabled={disable}
+          min={min}
+          max={max}
         />
       );
       break;

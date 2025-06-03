@@ -6,13 +6,14 @@ import SelectServices from "./SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const index = () => {
+const index = ({ isProperty = true }) => {
   const [activeTab, setActiveTab] = useState("all");
   const [isListings, setIsListings] = useState(true);
 
   const tabs = [
     { label: "All Listings", value: "all" },
     { label: "Hotels", value: "hotels" },
+    { label: "Space", value: "space" },
     { label: "Tours", value: "tours" },
     { label: "Activities", value: "activities" },
     { label: "Events", value: "events" },
@@ -77,7 +78,8 @@ const index = () => {
                 className="button -md bg-blue-1 px-15 py-10 fw-400 text-14 text-white rounded-8"
                 onClick={() => setIsListings(false)}
               >
-                <i className="icon-plus mr-10"></i> Add New Property
+                <i className="icon-plus mr-10"></i> Add New{" "}
+                {isProperty ? "Property" : "Listing"}
               </button>
             </div>
           </div>
@@ -97,9 +99,9 @@ const index = () => {
             ))}
           </div>
 
-          <div className="row y-gap-20 justify-between items-center mb-5">
-            <div className="col-md-auto d-flex">
-              <div className="position-relative d-flex items-center mr-10">
+          <div className="row y-gap-10 x-gap-10 items-center mb-5">
+            <div className="col-sm-auto d-flex">
+              <div className="position-relative d-flex items-center w-180 sm:w-full">
                 <input
                   type="text"
                   placeholder="Search listings..."
@@ -114,17 +116,33 @@ const index = () => {
                   }}
                 ></i>
               </div>
-              <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140">
+            </div>
+            <div className="col-sm-auto">
+              <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140 sm:w-full">
                 <option value="all">All Statuses</option>
                 <option value="active">Active</option>
                 <option value="inactive">Inactive</option>
               </select>
             </div>
-            <div className="col-md-auto d-flex justify-content-end">
-              <button
-                className="button -md px-15 py-10 fw-400 text-14 bg-white border-light rounded-8"
-                onClick={() => setIsListings(false)}
-              >
+
+            <div className="col-sm-auto">
+              <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140 sm:w-full">
+                <option value="all">Listing Type</option>
+              </select>
+            </div>
+
+            <div className="col-sm-auto">
+              <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140 sm:w-full">
+                <option value="all">Category</option>
+              </select>
+            </div>
+            <div className="col-sm-auto">
+              <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140 sm:w-full">
+                <option value="all">Sub Category</option>
+              </select>
+            </div>
+            <div className="col-sm-auto ms-auto">
+              <button className="button -md px-15 py-10 fw-400 text-14 bg-white border-light rounded-8 sm:w-full">
                 Export Listings
               </button>
             </div>
@@ -196,16 +214,16 @@ const index = () => {
                             }}
                             className="text-12"
                           >
-                            Manage Property
+                            Manage {isProperty ? "Property" : "Listing"}
                           </MenuItem>
-                          <MenuItem
+                          {/* <MenuItem
                             onClick={() => {
                               router.push("/vendor/property");
                             }}
                             className="text-12"
                           >
                             Accommendations
-                          </MenuItem>
+                          </MenuItem> */}
                           <MenuItem
                             onClick={() => {
                               router.push(

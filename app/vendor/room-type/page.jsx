@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/property";
+import DashboardPage from "@/components/dashboard/vendor-dashboard/roomtype";
 
 export const metadata = {
-  title: "Property Management || Plist Travel",
-  description: "Vendor Property Management for Plist Travel",
+  title: "Listings Management || Plist Travel",
+  description: "Vendor Listings Management for Plist Travel",
 };
 
 const index = () => {

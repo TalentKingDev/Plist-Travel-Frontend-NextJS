@@ -25,24 +25,6 @@ const Description = () => {
         </select>
       </div>
 
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">City</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter city"
-        />
-      </div>
-
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Neighborhood/Area</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter neighborhood or area"
-        />
-      </div>
-
       <div className="col-sm-12 mt-5">
         <h1 className="text-14 lh-12 fw-500">Listing Description</h1>
         <textarea

@@ -134,13 +134,34 @@ const index = ({ type }) => {
     type !== "hourly"
       ? [
           {
-            title: "Are meals included in the rate?",
+            title: "Are Add-On services included in the rate?",
             content: <MealsIncluded />,
           },
         ]
       : [];
 
   const steps = [
+    {
+      title: "Name your rate plan",
+      subtitle: (
+        <div className="text-12 text-light-1 lh-14">
+          The site plan name is for your reference and won't appear to Trip.com
+          users
+        </div>
+      ),
+      content: (
+        <div className="ml-20 mt-10">
+          <div className="w-180">
+            <input
+              type="text"
+              placeholder="Enter rate plan name"
+              className="border-light rounded-8 bg-white px-10 py-5"
+            />
+          </div>
+          <div className="text-12 text-light-1 lh-14 mt-5">Rate plan name</div>
+        </div>
+      ),
+    },
     ...hourlySteps,
     ...monthlySteps,
     {
@@ -148,7 +169,7 @@ const index = ({ type }) => {
       subtitle: (
         <div className="text-12 text-light-1 lh-14">
           If there is no suitable cancellation policy for you, you can
-          <span className="text-blue-1 ml-5">modify new</span>
+          <span className="text-blue-1 ml-5 cursor-pointer">modify new</span>
         </div>
       ),
       content: (
@@ -177,27 +198,6 @@ const index = ({ type }) => {
     {
       title: "Create this rate plan for the following room types",
       content: <RoomType />,
-    },
-    {
-      title: "Name your rate plan",
-      subtitle: (
-        <div className="text-12 text-light-1 lh-14">
-          The site plan name is for your reference and won't appear to Trip.com
-          users
-        </div>
-      ),
-      content: (
-        <div className="ml-20 mt-10">
-          <div className="w-180">
-            <input
-              type="text"
-              placeholder="Enter rate plan name"
-              className="border-light rounded-8 bg-white px-10 py-5"
-            />
-          </div>
-          <div className="text-12 text-light-1 lh-14 mt-5">Rate plan name</div>
-        </div>
-      ),
     },
   ].filter(Boolean);
 

@@ -1,8 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-
+import { useState } from "react";
 import { Checkbox } from "@mui/material";
+import DatePicker, { DateObject } from "react-multi-date-picker";
+
 import VendorDashboardLayout from "../common/layout";
 
 const index = () => {
@@ -46,6 +48,9 @@ const index = () => {
 
   const router = useRouter();
 
+  const [startDate, setStartDate] = useState(new DateObject());
+  const [endDate, setEndDate] = useState(new DateObject());
+
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-10 justify-between items-end mb-10">
@@ -70,12 +75,57 @@ const index = () => {
               <option value="">Select room type</option>
             </select>
           </div>
+          <div className="position-relative col-sm-auto">
+            <div className="border-light rounded-8 pt-15 px-15 w-full h-50 cursor-text text-light-1 bg-white">
+              <DatePicker
+                inputClass="custom_input-picker"
+                containerClassName="custom_container-picker"
+                value={startDate}
+                onChange={(date) => {
+                  setStartDate(date);
+                }}
+                numberOfMonths={1}
+                offsetY={10}
+                format="MMMM DD"
+              />
+            </div>
+            <label
+              className="position-absolute lh-1 text-12 text-light-1 px-5"
+              style={{ left: "15px", top: "0px", backgroundColor: "white" }}
+            >
+              Start date
+            </label>
+          </div>
+          <div className="position-relative col-sm-auto">
+            <div className="border-light rounded-8 pt-15 px-15 w-full h-50 cursor-text text-light-1 bg-white">
+              <DatePicker
+                inputClass="custom_input-picker"
+                containerClassName="custom_container-picker"
+                value={endDate}
+                onChange={(date) => {
+                  setEndDate(date);
+                }}
+                numberOfMonths={1}
+                offsetY={10}
+                format="MMMM DD"
+              />
+            </div>
+            <label
+              className="position-absolute lh-1 text-12 text-light-1 px-5"
+              style={{ left: "15px", top: "0px", backgroundColor: "white" }}
+            >
+              End date
+            </label>
+          </div>
           <div className="col-auto d-flex items-center">
             <Checkbox />
             <div className="text-14 lh-14">Hide inactive rate plans</div>
           </div>
           <div className="col-auto ms-auto">
-            <button className="bg-blue-1 text-white text-14 rounded-8 px-15 py-5" onClick={() => router.push("/vendor/rateplan/add")}>
+            <button
+              className="bg-blue-1 text-white text-14 rounded-8 px-15 py-5"
+              onClick={() => router.push("/vendor/rateplan/add")}
+            >
               Add
             </button>
           </div>

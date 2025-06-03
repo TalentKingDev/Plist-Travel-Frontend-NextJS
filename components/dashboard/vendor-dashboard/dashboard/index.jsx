@@ -7,40 +7,19 @@ import RercentBooking from "./components/RercentBooking";
 import { useState } from "react";
 import PopularList from "./components/PopularList";
 import VendorDashboardLayout from "../common/layout";
+import data from "./details/data";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const tabs = [
-    { label: "Overview", value: "overview" },
-    { label: "Analytics", value: "analytics" },
-    { label: "Reports", value: "reports" },
+    { label: "Overview", value: "overview", data: data.overview },
+    { label: "Property", value: "property", data: data.property },
+    { label: "Vacation", value: "vacation", data: data.vacation },
+    { label: "Tour", value: "tour", data: data.tour },
+    { label: "Event", value: "event", data: data.event },
+    { label: "Attraction", value: "attraction", data: data.attraction },
   ];
-  const data = [
-    {
-      title: "Total Sales",
-      amount: "$24,231.89",
-      improve: "+15.2% from last month",
-      icon: "/img/dashboard/icons/1.svg",
-    },
-    {
-      title: "Total Bookings",
-      amount: "432",
-      improve: "+8.2% from last month",
-      icon: "/img/dashboard/icons/3.svg",
-    },
-    {
-      title: "Net Earnings",
-      amount: "$18,565.00",
-      improve: "+12.5% from last month",
-      icon: "/img/dashboard/icons/2.svg",
-    },
-    {
-      title: "Active Listings",
-      amount: "12",
-      improve: "+2 new listings this month",
-      icon: "/img/dashboard/icons/4.svg",
-    },
-  ];
+
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
@@ -65,7 +44,9 @@ const index = () => {
           </div>
         ))}
       </div>
-      <DashboardCard data={data} />
+      <DashboardCard
+        data={tabs.find((item) => item.value === activeTab).data}
+      />
 
       <div className="row y-gap-30 pt-20 chart_responsive">
         <div className="col-xl-7 col-lg-6">

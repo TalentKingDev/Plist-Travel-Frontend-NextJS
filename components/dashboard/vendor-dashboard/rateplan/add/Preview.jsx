@@ -45,6 +45,10 @@ const index = ({ type }) => {
       : [];
 
   const steps = [
+    {
+      title: "Rate plan name",
+      description: type + " Rate Plan",
+    },
     ...hourlySteps,
     ...monthlySteps,
     {
@@ -82,10 +86,6 @@ const index = ({ type }) => {
     {
       title: "Room types",
       description: "Luxurious & Spacious & Bed Duplex Getaway in Denton, TX",
-    },
-    {
-      title: "Rate plan name",
-      description: "Custom Rate Plan",
     },
   ];
 

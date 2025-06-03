@@ -22,7 +22,11 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",
       title: "Listings Management",
-      href: "/vendor/listings",
+      links: [
+        { title: "Property Listings", href: "/vendor/listings/property" },
+        { title: "Non-Property Listings", href: "/vendor/listings/non-property" },
+        { title: "Room Type", href: "/vendor/room-type" },
+      ],
     },
     {
       icon: "/img/dashboard/sidebar/house.svg",

@@ -3,8 +3,8 @@
 import { act, useState } from "react";
 import VendorDashboardLayout from "../common/layout";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import svgIcon from "@/components/data/svgIcon";
+import { useRouter } from "next/navigation";
 
 const Conversation = () => {
   const [activeChat, setActiveChat] = useState(null);
@@ -44,16 +44,28 @@ const Conversation = () => {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <VendorDashboardLayout>
       <div
         className="row y-gap-20 x-gap-20 justify-between"
         style={{ height: "calc(100vh - 300px)", minHeight: "300px" }}
       >
-        <div className="col-12">
-          <h1 className="text-30 lh-14 fw-600">Messaging & Communication</h1>
-          <div className="text-15 text-light-1">
-            Communicate with customers, agents, and platform administrators.
+        <div className="col-12 d-flex sm:d-block justify-between items-center mb-10">
+          <div className="flex-shrink-0">
+            <h1 className="text-30 lh-14 fw-600">Messaging & Communication</h1>
+            <div className="text-15 text-light-1">
+              Communicate with customers, agents, and platform administrators.
+            </div>
+          </div>
+          <div className="flex-grow-0">
+            <button
+              className="button -md bg-blue-1 px-15 py-10 fw-400 text-14 text-white rounded-8"
+              onClick={() => router.push("/vendor/conversation/manage")}
+            >
+              Go to Message Management
+            </button>
           </div>
         </div>
         <div className="col-4 h-100">

@@ -34,26 +34,26 @@ const index = ({ selectedService }) => {
       name: "Property Amenities",
       content: <Amenities />,
     },
-    {
-      id: 5,
-      name: "Room / Listing Details",
-      content: <ListingDetails />,
-    },
-    {
-      id: 6,
-      name: "Competitive Rates",
-      content: <Rates />,
-    },
-    {
-      id: 7,
-      name: "Price",
-      content: <ListingPrice />,
-    },
-    {
-      id: 8,
-      name: "Calendar",
-      content: <Calendar />,
-    },
+    // {
+    //   id: 5,
+    //   name: "Room / Listing Details",
+    //   content: <ListingDetails />,
+    // },
+    // {
+    //   id: 6,
+    //   name: "Competitive Rates",
+    //   content: <Rates />,
+    // },
+    // {
+    //   id: 7,
+    //   name: "Price",
+    //   content: <ListingPrice />,
+    // },
+    // {
+    //   id: 8,
+    //   name: "Calendar",
+    //   content: <Calendar />,
+    // },
   ];
 
   const [activeStep, setActiveStep] = useState(1);
@@ -61,7 +61,7 @@ const index = ({ selectedService }) => {
   return (
     <div className="row y-gap-20 py-10 px-10 rounded-8 bg-white shadow-3">
       <h1 className="text-30 lh-14 fw-600">
-        Add Your Property
+        Add Your Listing
         <span className="text-12 text-white rounded-100 px-10 bg-dark-4 ml-10 fw-400">
           {selectedService.name}
         </span>
@@ -109,7 +109,7 @@ const index = ({ selectedService }) => {
             if (activeStep < propertySteps.length) {
               setActiveStep(activeStep + 1);
             } else {
-              router.push("/vendor/property");
+              router.push("/vendor/property/2/manage");
             }
           }}
         >

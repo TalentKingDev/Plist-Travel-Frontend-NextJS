@@ -143,7 +143,7 @@ const Publish = () => {
       <div className="col-auto">
         <button className="text-white bg-blue-1 rounded-8 px-15 py-5 text-14" 
         onClick={() => {
-          router.push("/vendor/property");
+          router.push("/vendor/listings/property");
         }}>
           Go live
         </button>
