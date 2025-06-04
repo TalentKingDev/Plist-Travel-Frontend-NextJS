@@ -75,7 +75,7 @@ const index = () => {
               <option value="">Select room type</option>
             </select>
           </div>
-          <div className="position-relative col-sm-auto">
+          {/* <div className="position-relative col-sm-auto">
             <div className="border-light rounded-8 pt-15 px-15 w-full h-50 cursor-text text-light-1 bg-white">
               <DatePicker
                 inputClass="custom_input-picker"
@@ -116,7 +116,7 @@ const index = () => {
             >
               End date
             </label>
-          </div>
+          </div> */}
           <div className="col-auto d-flex items-center">
             <Checkbox />
             <div className="text-14 lh-14">Hide inactive rate plans</div>

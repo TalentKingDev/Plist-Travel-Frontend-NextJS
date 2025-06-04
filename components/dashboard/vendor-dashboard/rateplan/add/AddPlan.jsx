@@ -1,12 +1,14 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
-import { Checkbox, Radio } from "@mui/material";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Checkbox, Radio, Dialog } from "@mui/material";
+import DatePicker, { DateObject } from "react-multi-date-picker";
+import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
 
 const index = ({ type }) => {
   const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
 
   const hourlySteps =
     type === "hourly"
@@ -169,16 +171,16 @@ const index = ({ type }) => {
       subtitle: (
         <div className="text-12 text-light-1 lh-14">
           If there is no suitable cancellation policy for you, you can
-          <span className="text-blue-1 ml-5 cursor-pointer">modify new</span>
+          <span
+            className="text-blue-1 ml-5 cursor-pointer"
+            onClick={() => setShowModal(true)}
+          >
+            modify new
+          </span>
         </div>
       ),
       content: (
-        <div className="d-flex items-center">
-          <Radio checked={true} />
-          <div className="text-14 lh-14 ml-5">
-            Flexible until 1 day before arrival
-          </div>
-        </div>
+        <CancellationPolicy showModal={showModal} setShowModal={setShowModal} />
       ),
     },
     ...mealSteps,
@@ -191,6 +193,7 @@ const index = ({ type }) => {
       title: "Select payment method",
       content: <PaymentMethod />,
     },
+    { title: "Set Booking Period", content: <OptionalPeriod /> },
     {
       title: "How will you manage this rate plan?",
       content: <RatePlan />,
@@ -229,6 +232,65 @@ const index = ({ type }) => {
         </div>
       </div>
     </VendorDashboardLayout>
+  );
+};
+
+const CancellationPolicy = ({ showModal, setShowModal }) => {
+  const handleClose = () => {
+    setShowModal(false);
+  };
+  const [policyText, setPolicyText] = useState("");
+  const [policies, setPolicies] = useState([
+    "Flexible until 1 day before arrival",
+  ]);
+  const [selectedPolicy, setSelectedPolicy] = useState(0);
+
+  return (
+    <>
+      {policies.map((policy, index) => (
+        <div className="d-flex items-center" key={index}>
+          <Radio
+            checked={selectedPolicy === index}
+            onClick={() => setSelectedPolicy(index)}
+          />
+          <div className="text-14 lh-14 ml-5">{policy}</div>
+        </div>
+      ))}
+      <Dialog
+        open={showModal}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-title"
+      >
+        <div className="px-20 py-20" style={{ width: "500px" }}>
+          <h1 className="text-20 fw-500 mb-10">Cancellation Policy</h1>
+          <textarea
+            className="text-14 border-light rounded-8 bg-white px-10 py-5 mb-10"
+            placeholder="Enter your custom cancellation policy"
+            value={policyText}
+            onChange={(e) => setPolicyText(e.target.value)}
+          />
+          <div className="d-flex justify-end gap-2">
+            <button
+              className="text-14 border-light rounded-8 px-10 py-5"
+              onClick={handleClose}
+            >
+              Cancel
+            </button>
+            <button
+              className="text-14 bg-blue-1 text-white fw-500 rounded-8 px-10 py-5"
+              onClick={() => {
+                setPolicies([...policies, policyText]);
+                setPolicyText("");
+                setShowModal(false);
+              }}
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </Dialog>
+    </>
   );
 };
 
@@ -557,6 +619,58 @@ const PaymentMethod = () => {
         <div className="text-14 lh-14 ml-5">Postpay</div>
       </div>
     </>
+  );
+};
+
+const OptionalPeriod = () => {
+  const [startDate, setStartDate] = useState(new DateObject());
+  const [endDate, setEndDate] = useState(new DateObject());
+
+  return (
+    <div className="pl-20 d-flex items-center gap-2 mt-10">
+      <div className="position-relative col-sm-auto">
+        <div className="border-light rounded-8 pt-15 px-15 w-full h-50 cursor-text text-light-1 bg-white">
+          <DatePicker
+            inputClass="custom_input-picker"
+            containerClassName="custom_container-picker"
+            value={startDate}
+            onChange={(date) => {
+              setStartDate(date);
+            }}
+            numberOfMonths={1}
+            offsetY={10}
+            format="MMMM DD"
+          />
+        </div>
+        <label
+          className="position-absolute lh-1 text-12 text-light-1 px-5"
+          style={{ left: "10px", top: "-5px", backgroundColor: "white" }}
+        >
+          Start date
+        </label>
+      </div>
+      <div className="position-relative col-sm-auto">
+        <div className="border-light rounded-8 pt-15 px-15 w-full h-50 cursor-text text-light-1 bg-white">
+          <DatePicker
+            inputClass="custom_input-picker"
+            containerClassName="custom_container-picker"
+            value={endDate}
+            onChange={(date) => {
+              setEndDate(date);
+            }}
+            numberOfMonths={1}
+            offsetY={10}
+            format="MMMM DD"
+          />
+        </div>
+        <label
+          className="position-absolute lh-1 text-12 text-light-1 px-5"
+          style={{ left: "10px", top: "-5px", backgroundColor: "white" }}
+        >
+          End date
+        </label>
+      </div>
+    </div>
   );
 };
 

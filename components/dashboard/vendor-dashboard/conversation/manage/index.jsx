@@ -1,16 +1,20 @@
 "use client";
 
-import { act, useState } from "react";
+import React, { useState } from "react";
 import VendorDashboardLayout from "../../common/layout";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import svgIcon from "@/components/data/svgIcon";
+import { Dialog } from "@mui/material";
 
 const Management = () => {
-  const quickReplies = [
+  const [replyText, setReplyText] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => {
+    setShowModal(false);
+  };
+  const [quickReplies, setQuickReplies] = useState([
     "Thank you for your inquiry!",
     "Your booking is confirmed. We’re looking forward to your stay at our property.",
     "We hope you enjoyed your stay. Please consider leaving a review",
-  ];
+  ]);
 
   const scheduledMessages = [
     {
@@ -43,7 +47,10 @@ const Management = () => {
             </div>
           </div>
           <div className="flex-grow-0">
-            <button className="button -md bg-blue-1 px-15 py-10 fw-400 text-14 text-white rounded-8">
+            <button
+              className="button -md bg-blue-1 px-15 py-10 fw-400 text-14 text-white rounded-8"
+              onClick={() => setShowModal(true)}
+            >
               Create quick reply
             </button>
           </div>
@@ -53,7 +60,7 @@ const Management = () => {
         <div className="col-12 px-10">
           <div className="bg-white rounded-8 border-light py-5">
             {quickReplies.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 <div className="d-flex justify-between items-start gap-2 px-20 py-15">
                   <div className="text-16 lh-14">{item}</div>
                   <div className="text-16 lh-14 text-blue-1 cursor-pointer">
@@ -63,16 +70,51 @@ const Management = () => {
                 {index === quickReplies.length - 1 ? null : (
                   <div className="border-top-light"></div>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
+
+        <Dialog
+          open={showModal}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-title"
+        >
+          <div className="px-20 py-20" style={{ width: "500px" }}>
+            <h1 className="text-20 fw-500 mb-10">Quick Reply</h1>
+            <textarea
+              className="text-14 border-light rounded-8 bg-white px-10 py-5 mb-10"
+              placeholder="Enter your quick reply"
+              value={replyText}
+              onChange={(e) => setReplyText(e.target.value)}
+            />
+            <div className="d-flex justify-end gap-2">
+              <button
+                className="text-14 border-light rounded-8 px-10 py-5"
+                onClick={handleClose}
+              >
+                Cancel
+              </button>
+              <button
+                className="text-14 bg-blue-1 text-white fw-500 rounded-8 px-10 py-5"
+                onClick={() => {
+                  setQuickReplies([...quickReplies, replyText]);
+                  setReplyText("");
+                  setShowModal(false);
+                }}
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </Dialog>
 
         <h1 className="text-20 lh-14 fw-600">Scheduled Messages</h1>
         <div className="col-12 px-10">
           <div className="bg-white rounded-8 border-light py-5">
             {scheduledMessages.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 <div className="d-flex justify-between items-start gap-2 px-20 py-15">
                   <div className="text-16 lh-14 w-25">{item.title}</div>
                   <div className="w-75 d-flex justify-between items-start gap-2">
@@ -87,7 +129,7 @@ const Management = () => {
                 {index === scheduledMessages.length - 1 ? null : (
                   <div className="border-top-light"></div>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
