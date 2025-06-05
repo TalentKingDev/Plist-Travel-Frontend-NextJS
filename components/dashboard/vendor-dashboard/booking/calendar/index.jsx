@@ -5,7 +5,7 @@ import VendorDashboardLayout from "../../common/layout";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { Eventcalendar, setOptions } from "@mobiscroll/react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
 setOptions({
@@ -16,9 +16,7 @@ setOptions({
 const index = () => {
   const myView = useMemo(
     () => ({
-      timeline: {
-        type: "month",
-      },
+      timeline: { type: "month" },
     }),
     []
   );
@@ -89,7 +87,7 @@ const index = () => {
         start: "2025-06-08T00:00",
         end: "2025-06-13T00:00",
         title: "Event 8",
-        resource: 15,
+        resource: 2,
       },
       {
         start: "2025-06-25T00:00",
@@ -101,7 +99,7 @@ const index = () => {
         start: "2025-06-20T00:00",
         end: "2025-06-23T00:00",
         title: "Event 10",
-        resource: 12,
+        resource: 9,
       },
     ],
     []
@@ -159,35 +157,78 @@ const index = () => {
         name: "Resource J",
         color: "#f7961e",
       },
-      {
-        id: 11,
-        name: "Resource K",
-        color: "#34c8e0",
-      },
-      {
-        id: 12,
-        name: "Resource L",
-        color: "#af0000",
-      },
-      {
-        id: 13,
-        name: "Resource M",
-        color: "#446f1c",
-      },
-      {
-        id: 14,
-        name: "Resource N",
-        color: "#073138",
-      },
-      {
-        id: 15,
-        name: "Resource O",
-        color: "#4caf00",
-      },
     ],
     []
   );
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  function generateRawEvents(startDateStr, days = 80) {
+    const rawEvents = [];
+    const startDate = new Date(startDateStr);
 
+    for (let i = 0; i < days; i++) {
+      const currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + i);
+      const dateStr = currentDate.toISOString().split("T")[0];
+
+      const availability = Math.round(random(0, 1));
+      const price = Math.round(random(40, 60));
+
+      rawEvents.push(
+        { title: `Availability: ${availability}`, start: dateStr, color: "#ffc107" },
+        { title: `Price: ${price}`, start: dateStr, color: "#6ea8fe" }
+      );
+    }
+
+    return rawEvents;
+  }
+
+  const events = generateRawEvents("2025-05-30");
+
+  function renderEventContent(eventInfo) {
+    return <span className="text-14 fw-500 lh-1">{eventInfo.event.title}</span>;
+  }
+
+  const [activeTab, setActiveTab] = useState("events");
+  const tabs = [
+    {
+      label: "Events",
+      value: "events",
+      content: (
+        <Eventcalendar
+          clickToCreate={true}
+          dragToCreate={true}
+          dragToMove={true}
+          dragToResize={true}
+          eventDelete={true}
+          view={myView}
+          data={myEvents}
+          resources={myResources}
+        />
+      ),
+    },
+    {
+      label: "Availability",
+      value: "availability",
+      content: (
+        <div className="px-20">
+          <FullCalendar
+            plugins={[dayGridPlugin]}
+            initialView="dayGridMonth"
+            weekends={true}
+            headerToolbar={{
+              start: "prev,next,today",
+              center: "title",
+              end: "dayGridMonth,dayGridWeek,dayGridDay",
+            }}
+            events={events}
+            eventContent={renderEventContent}
+          />
+        </div>
+      ),
+    },
+  ];
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-10 justify-between items-end mb-10">
@@ -215,7 +256,7 @@ const index = () => {
             </select>
           </div>
         </div>
-        <div className="d-flex items-center mb-20">
+        {/* <div className="d-flex items-center mb-20">
           <span className="bg-blue-1 text-white text-10 rounded-100 px-10 mr-5">
             Confirmed
           </span>
@@ -225,28 +266,24 @@ const index = () => {
           <span className="bg-red-1 text-white text-10 rounded-100 px-10 mr-5">
             Cancelled
           </span>
+        </div> */}
+        <div className="d-flex">
+          <div className="px-5 mt-20 mb-20 py-5 bg-light-2 rounded-8">
+            {tabs.map((item) => (
+              <button
+                className={`text-14 px-10 fw-500 py-5 rounded-8 ${
+                  activeTab === item.value ? "bg-white" : "text-light-1"
+                }`}
+                key={item.value}
+                onClick={() => setActiveTab(item.value)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="border-light rounded-8 py-20 px-20">
-          <Eventcalendar
-            clickToCreate={true}
-            dragToCreate={true}
-            dragToMove={true}
-            dragToResize={true}
-            eventDelete={true}
-            view={myView}
-            data={myEvents}
-            resources={myResources}
-          />
-          {/* <FullCalendar
-            plugins={[dayGridPlugin]}
-            initialView="dayGridMonth"
-            weekends={true}
-            headerToolbar={{
-              start: "prev,next,today",
-              center: "title",
-              end: "dayGridMonth,dayGridWeek,dayGridDay",
-            }}
-          /> */}
+        <div className="border-light rounded-8 py-20">
+          {tabs.map((item) => item.value == activeTab && item.content)}
         </div>
       </div>
     </VendorDashboardLayout>
