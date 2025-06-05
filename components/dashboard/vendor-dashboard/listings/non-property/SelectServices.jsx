@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ServiceCard from "@/components/dashboard/vendor-dashboard/common/ServiceCard";
-import AddProperty from "./AddProperty";
+import AddProperty from "../AddProperty";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 

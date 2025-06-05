@@ -1,7 +1,7 @@
 "use client";
 
 import { use, useState } from "react";
-import VendorDashboardLayout from "../common/layout";
+import VendorDashboardLayout from "../../common/layout";
 import SelectServices from "./SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -12,11 +12,9 @@ const index = ({ isProperty = true }) => {
 
   const tabs = [
     { label: "All Listings", value: "all" },
-    { label: "Hotels", value: "hotels" },
-    { label: "Space", value: "space" },
-    { label: "Tours", value: "tours" },
-    { label: "Activities", value: "activities" },
-    { label: "Events", value: "events" },
+    { label: "Tours", value: "hotels" },
+    { label: "Attraction/Event", value: "attraction_event" },
+    { label: "Rides", value: "rides" },
   ];
 
   const listings = [
@@ -68,9 +66,9 @@ const index = ({ isProperty = true }) => {
         <>
           <div className="row y-gap-20 justify-between items-center mb-5">
             <div className="col-md-auto">
-              <h1 className="text-30 lh-14 fw-600">Listings Management</h1>
+              <h1 className="text-30 lh-14 fw-600">Non-Property Listings Management</h1>
               <div className="text-15 text-light-1">
-                Manage your property and service listings.
+                Manage your non-property and service listings.
               </div>
             </div>
             <div className="col-md-auto d-flex justify-content-end">
