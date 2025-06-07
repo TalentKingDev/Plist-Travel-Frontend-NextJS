@@ -13,8 +13,8 @@ const index = ({ isProperty = true }) => {
   const tabs = [
     { label: "All Listings", value: "all" },
     { label: "Tours", value: "hotels" },
-    { label: "Attraction/Event", value: "attraction_event" },
-    { label: "Rides", value: "rides" },
+    { label: "Events", value: "events" },
+    { label: "Activities", value: "activities" },
   ];
 
   const listings = [
