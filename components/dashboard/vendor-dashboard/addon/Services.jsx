@@ -1,9 +1,16 @@
 "use client";
 
+import { Checkbox } from "@mui/material";
 import { useState } from "react";
+import { LocalizationProvider } from "@mui/x-date-pickers-pro/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
+import { TimeRangePicker } from "@mui/x-date-pickers-pro/TimeRangePicker";
 
 const Services = () => {
   const [services, setServices] = useState(1);
+  const [schedulingNeed, setSchedulingNeed] = useState(false);
+  const hours = Array.from({ length: 48 }, (_, i) => (i + 1) * 0.5);
+
   return (
     <div className="row y-gap-15 bg-white px-10 py-20 rounded-8">
       <div className="text-20 fw-600 lh-1">Service Details</div>
@@ -38,7 +45,7 @@ const Services = () => {
             className="col-12 border-light rounded-8 px-15 py-15 mt-10"
             key={index}
           >
-            <div className="row justify-between items-center y-gap-10">
+            <div className="row x-gap-15 y-gap-15 justify-between items-center y-gap-10">
               <div className="col-md-4 col-sm-12">
                 <h1 className="text-13 lh-14 fw-500">Service Name</h1>
                 <input
@@ -64,6 +71,44 @@ const Services = () => {
                   placeholder="Enter Base Price"
                 />
               </div>
+              <div className="col-12 d-flex gap-2 items-center">
+                <Checkbox
+                  className="px-0 py-0"
+                  value={schedulingNeed}
+                  onChange={() => setSchedulingNeed(!schedulingNeed)}
+                />
+                <h1 className="text-14 lh-14 fw-500">Scheduling Needed</h1>
+              </div>
+              {schedulingNeed && (
+                <>
+                  <div className="col-md-4">
+                    <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <TimeRangePicker format="HH:mm" className="mt-5" />
+                    </LocalizationProvider>
+                  </div>
+                  <div className="col-md-4 col-sm-6">
+                    <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
+                    <select className="form-select rounded-8 border-light px-15 justify-between fw-400 py-10 h-55 w-full text-14 mt-5">
+                      {hours.map((hour) => (
+                        <option key={hour} value={hour}>
+                          {hour} {hour <= 1 ? "hour" : "hours"}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="col-md-4 col-sm-6">
+                    <h1 className="text-13 lh-14 fw-500">
+                      Availability Per Timeframe
+                    </h1>
+                    <input
+                      className="border-light rounded-8 py-5 px-15 w-full h-55 mt-5"
+                      type="text"
+                      placeholder="Enter Availability Per Timeframe"
+                    />
+                  </div>
+                </>
+              )}
               <div className="col-12">
                 <h1 className="text-13 lh-14 fw-500">Description</h1>
                 <textarea

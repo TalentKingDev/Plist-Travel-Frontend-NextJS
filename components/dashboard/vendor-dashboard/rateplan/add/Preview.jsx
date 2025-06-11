@@ -136,7 +136,16 @@ const index = ({ type }) => {
         </button>
         <button
           className="text-white bg-blue-1 rounded-8 px-15 py-5 text-14"
-          onClick={() => router.push("/vendor/rateplan")}
+          onClick={() => {
+            const property_id = localStorage.getItem(
+              "add-rateplan-property-id"
+            );
+            const navigation = property_id
+              ? "/vendor/property/" + property_id + "/manage"
+              : "/vendor/rateplan";
+            localStorage.removeItem("add-rateplan-property-id");
+            router.push(navigation);
+          }}
         >
           Activate the rate plan
         </button>

@@ -12,12 +12,18 @@ import data from "./details/data";
 const index = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const tabs = [
-    { label: "Overview", value: "overview", data: data.overview },
-    { label: "Property", value: "property", data: data.property },
-    { label: "Vacation", value: "vacation", data: data.vacation },
-    { label: "Tour", value: "tour", data: data.tour },
-    { label: "Event", value: "event", data: data.event },
-    { label: "Attraction", value: "attraction", data: data.attraction },
+    { label: "Overview", value: "overview" },
+    { label: "Analytics", value: "analytics" },
+    { label: "Reports", value: "reports" },
+  ];
+
+  const [option, setOption] = useState("hotel");
+  const options = [
+    { label: "Hotel", value: "hotel" },
+    { label: "Vacation Rental", value: "vacation_rental" },
+    { label: "Event Venue", value: "event_venue" },
+    { label: "Tour Operator", value: "tour_operator" },
+    { label: "Activity Operator", value: "activity_operator" },
   ];
 
   return (
@@ -44,9 +50,7 @@ const index = () => {
           </div>
         ))}
       </div>
-      <DashboardCard
-        data={tabs.find((item) => item.value === activeTab).data}
-      />
+      <DashboardCard data={data.overview} />
 
       <div className="row y-gap-30 pt-20 chart_responsive">
         <div className="col-xl-7 col-lg-6">
@@ -87,11 +91,21 @@ const index = () => {
         <div className="col-12">
           <div className="py-30 px-30 rounded-8 bg-white shadow-3">
             <div className="d-flex justify-between items-center">
-              <div>
-                <h2 className="text-18 lh-1 fw-500">Popular Listings</h2>
-                <div className="text-12 text-light-1">
-                  Your most booked listings this month
+              <div className="d-flex items-center gap-2">
+                <div>
+                  <h2 className="text-18 lh-1 fw-500">Popular Listings</h2>
+                  <div className="text-12 text-light-1">
+                    Your most booked listings this month
+                  </div>
                 </div>
+                <select
+                  className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 w-200 sm:w-full text-14"
+                  onChange={(e) => setOption(e.target.value)}
+                >
+                  {options.map((item) => (
+                    <option value={item.value}>{item.label}</option>
+                  ))}
+                </select>
               </div>
               <div>
                 <Link href="#" className="text-14 text-blue-1 fw-500 underline">

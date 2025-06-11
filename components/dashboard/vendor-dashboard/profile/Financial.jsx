@@ -7,6 +7,15 @@ const Financial = () => {
       </div>
       <div className="text-18 fw-500 lh-1 mt-15">Bank Account Details</div>
 
+      <div className="col-md-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Bank Location</h1>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-5"
+          type="text"
+          placeholder="Banking country/region"
+        />
+      </div>
+
       <div className="col-md-6 col-sm-12">
         <h1 className="text-13 lh-14 fw-500">Account Holder Name</h1>
         <input
@@ -60,6 +69,8 @@ const Financial = () => {
           <option value="eur">EUR - Euro</option>
         </select>
       </div>
+
+      <div className="col-md-6"></div>
 
       <div className="col-md-6 col-sm-12 px-30 mt-10">
         <div className="row border-light rounded-8 px-15 py-15">

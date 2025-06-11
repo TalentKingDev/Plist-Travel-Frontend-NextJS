@@ -4,10 +4,6 @@ import Description from "./Description";
 import PropertyImage from "./PropertyImage";
 import Location from "./Location";
 import Amenities from "./Amenities";
-import Rates from "./Rates";
-import ListingDetails from "./ListingDetails";
-import ListingPrice from "./ListingPrice";
-import Calendar from "./Calendar";
 import { useRouter } from "next/navigation";
 
 const index = ({ selectedService }) => {
@@ -109,7 +105,8 @@ const index = ({ selectedService }) => {
             if (activeStep < propertySteps.length) {
               setActiveStep(activeStep + 1);
             } else {
-              router.push("/vendor/property/2/manage");
+              localStorage.setItem("add-rateplan-property-id", 2);
+              router.push("/vendor/rateplan/add");
             }
           }}
         >

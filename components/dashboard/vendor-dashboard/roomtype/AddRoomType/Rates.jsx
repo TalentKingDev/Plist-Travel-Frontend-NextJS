@@ -29,19 +29,6 @@ const Description = () => {
       </div>
 
       <div className="col-md-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Where is your bank located?</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Banking country/region"
-        />
-        <div className="text-12 text-light-1 lh-1 mt-5">
-          This is the location for the account you'll use to accept payments
-          from us. This can't be changed after your listing is live.
-        </div>
-      </div>
-
-      <div className="col-md-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">
           What do you want to charge per night?
         </h1>
@@ -56,7 +43,7 @@ const Description = () => {
         </div>
       </div>
 
-      <div className="col-md-6 mt-5">
+      <div className="col-12 mt-5">
         <h1 className="text-14 lh-12 fw-500">
           Do you want to add an optional 20% discount?
         </h1>

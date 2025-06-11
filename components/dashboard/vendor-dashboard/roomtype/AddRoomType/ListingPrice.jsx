@@ -78,17 +78,20 @@ const ListingPrice = () => {
           add
         </span>
       </div>
-      {additionalPricesByGuests && (
-        <div className="col-sm-6 mt-5">
-          <h1 className="text-14 lh-1 fw-500">{guests} Guests Price</h1>
-          <input
-            className="border-light rounded-8 py-5 px-15 w-full mt-10"
-            type="number"
-            step={0.01}
-            placeholder={`Enter ${guests} Guests Price`}
-          />
-        </div>
-      )}
+      {additionalPricesByGuests &&
+        Array(guests)
+          .fill(null)
+          .map((_, index) => (
+            <div className="col-md-6 mt-5" key={index}>
+              <h1 className="text-14 lh-1 fw-500">{index + 1} Guests Price</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                type="number"
+                step={0.01}
+                placeholder={`$${100 + index * 20}`}
+              />
+            </div>
+          ))}
     </div>
   );
 };
