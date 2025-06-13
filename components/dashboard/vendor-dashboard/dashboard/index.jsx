@@ -7,7 +7,7 @@ import RercentBooking from "./components/RercentBooking";
 import { useState } from "react";
 import PopularList from "./components/PopularList";
 import VendorDashboardLayout from "../common/layout";
-import data from "./details/data";
+import data from "./data";
 
 const index = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -17,23 +17,33 @@ const index = () => {
     { label: "Reports", value: "reports" },
   ];
 
-  const [option, setOption] = useState("hotel");
+  const [option, setOption] = useState("property");
   const options = [
-    { label: "Hotel", value: "hotel" },
-    { label: "Vacation Rental", value: "vacation_rental" },
-    { label: "Event Venue", value: "event_venue" },
-    { label: "Tour Operator", value: "tour_operator" },
-    { label: "Activity Operator", value: "activity_operator" },
+    { label: "Property", value: "property" },
+    { label: "Vacation Rental", value: "vacation" },
+    { label: "Event Venue", value: "event" },
+    { label: "Tour Operator", value: "tour" },
+    { label: "Activity Operator", value: "activity" },
   ];
 
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-20 justify-between items-center mb-5">
         <div className="col-auto">
-          <h1 className="text-30 lh-14 fw-600">Vendor Dashboard</h1>
+          <h1 className="text-30 lh-14 fw-600">Dashboard</h1>
           <div className="text-15 text-light-1">
-            Overview of your listings, bookings, and performance metrics.
+            Monitor your business performance with industry-specific metrics
           </div>
+        </div>
+        <div className="col-auto">
+          <select
+            className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-50 w-200 sm:w-full text-14"
+            onChange={(e) => setOption(e.target.value)}
+          >
+            {options.map((item) => (
+              <option value={item.value}>{item.label}</option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="row px-10 mb-20">
@@ -50,10 +60,10 @@ const index = () => {
           </div>
         ))}
       </div>
-      <DashboardCard data={data.overview} />
+      <DashboardCard data={data[option][activeTab]} />
 
       <div className="row y-gap-30 pt-20 chart_responsive">
-        <div className="col-xl-7 col-lg-6">
+        <div className="col-xl-7">
           <div className="py-30 px-30 rounded-8 bg-white shadow-3">
             <div className="d-flex justify-between items-center">
               <h2 className="text-18 lh-1 fw-500">
@@ -68,7 +78,7 @@ const index = () => {
           </div>
         </div>
 
-        <div className="col-xl-5 col-lg-6">
+        <div className="col-xl-5">
           <div className="py-30 px-30 rounded-8 bg-white shadow-3 h-100">
             <div className="d-flex justify-between items-center">
               <div>
