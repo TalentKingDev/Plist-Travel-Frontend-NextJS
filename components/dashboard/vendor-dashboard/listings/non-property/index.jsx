@@ -2,7 +2,7 @@
 
 import { use, useState } from "react";
 import VendorDashboardLayout from "../../common/layout";
-import SelectServices from "./SelectServices";
+import SelectServices from "../../common/SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
@@ -66,7 +66,9 @@ const index = ({ isProperty = true }) => {
         <>
           <div className="row y-gap-20 justify-between items-center mb-5">
             <div className="col-md-auto">
-              <h1 className="text-30 lh-14 fw-600">Non-Property Listings Management</h1>
+              <h1 className="text-30 lh-14 fw-600">
+                Non-Property Listings Management
+              </h1>
               <div className="text-15 text-light-1">
                 Manage your non-property and service listings.
               </div>

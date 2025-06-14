@@ -414,114 +414,13 @@ const MealsIncluded = () => {
       </div>
 
       {value === "yes" && (
-        <div className="ml-40 bg-light-2 rounded-8 py-10 px-10">
-          {/* Basic Meal Options */}
-          <div className="d-flex items-center">
-            <Checkbox className="px-0 py-0" />
-            <div className="text-14 lh-14 ml-5">Lunch</div>
-          </div>
-          <div className="d-flex items-center">
-            <Checkbox className="px-0 py-0" />
-            <div className="text-14 lh-14 ml-5">Dinner</div>
-          </div>
-
-          {/* Advanced Meal Packages */}
-          <div className="mt-10">
-            <div className="text-12 text-light-1 mb-5">Other settings:</div>
-
-            <div className="d-flex items-center">
-              <Radio
-                className="px-0 py-0"
-                name="meal-package"
-                value="all"
-                checked={mealPackage === "all"}
-                onChange={handlePackageChange}
-              />
-              <div className="text-14 lh-14 ml-5">
-                All inclusive (breakfast + lunch + dinner, with snacks and
-                beverages)
-              </div>
-            </div>
-
-            <div className="d-flex items-center mt-5">
-              <Radio
-                className="px-0 py-0"
-                name="meal-package"
-                value="twoOptions"
-                checked={mealPackage === "twoOptions"}
-                onChange={handlePackageChange}
-              />
-              <div className="text-14 lh-14 ml-5">
-                Two options from breakfast, lunch and dinner
-              </div>
-            </div>
-
-            <div className="d-flex items-center mt-5">
-              <Radio
-                className="px-0 py-0"
-                name="meal-package"
-                value="lunchDinner"
-                checked={mealPackage === "lunchDinner"}
-                onChange={handlePackageChange}
-              />
-              <div className="text-14 lh-14 ml-5">Lunch or dinner</div>
-            </div>
-
-            <div className="d-flex items-center mt-5">
-              <Radio
-                className="px-0 py-0"
-                name="meal-package"
-                value="breakfastLunchDinner"
-                checked={mealPackage === "breakfastLunchDinner"}
-                onChange={handlePackageChange}
-              />
-              <div className="text-14 lh-14 ml-5">
-                Breakfast & lunch or breakfast & dinner
-              </div>
-            </div>
-          </div>
-
-          {/* Guest Coverage Options */}
-          <div className="mt-10">
-            <div className="text-12 text-light-1 mb-5">
-              How many guests are meals included for?
-            </div>
-
-            <div className="d-flex items-center">
-              <Radio
-                className="px-0 py-0"
-                name="guest-coverage"
-                value={"all"}
-                checked={guestCoverage === "all"}
-                onChange={handleGuestCoverageChange}
-              />
-              <div className="text-14 lh-14 ml-5">
-                All guests in the reservation
-              </div>
-            </div>
-
-            <div className="d-flex items-center mt-5">
-              <Radio
-                className="px-0 py-0"
-                name="guest-coverage"
-                value={"fixed"}
-                checked={guestCoverage === "fixed"}
-                onChange={handleGuestCoverageChange}
-              />
-              <div className="text-14 lh-14 ml-5">Fixed number</div>
-            </div>
-            {guestCoverage === "fixed" && (
-              <div className="mt-5 pl-30">
-                <select className="form-select px-10 py-5 w-210 ">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </div>
-            )}
-          </div>
+        <div className="pl-40">
+          <select className="form-select px-10 py-10 w-full text-14 mt-5">
+            <option value="1">Add-On 1</option>
+            <option value="2">Add-On 2</option>
+            <option value="3">Add-On 3</option>
+            <option value="4">Add-on 4</option>
+          </select>
         </div>
       )}
     </>

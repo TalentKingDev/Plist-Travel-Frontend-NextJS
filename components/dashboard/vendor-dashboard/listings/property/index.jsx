@@ -2,7 +2,7 @@
 
 import { use, useState } from "react";
 import VendorDashboardLayout from "../../common/layout";
-import SelectServices from "./SelectServices";
+import SelectServices from "../../common/SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 

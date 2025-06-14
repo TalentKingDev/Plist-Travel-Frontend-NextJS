@@ -4,31 +4,26 @@ const ServiceCard = ({ selectedService, setSelectedService }) => {
       name: "Flights",
       image: "/img/dashboard/services/flight_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
     },
     {
-      name: "Properties",
+      name: "Hotel",
       image: "/img/dashboard/services/property_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
     },
     {
       name: "Rides",
       image: "/img/dashboard/services/ride_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
     },
     {
       name: "Tours",
       image: "/img/dashboard/services/tour_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
     },
     {
       name: "Attractions/Events",
       image: "/img/dashboard/services/attr_events_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
     },
   ];
 
