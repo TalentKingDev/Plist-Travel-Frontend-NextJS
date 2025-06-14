@@ -12,17 +12,20 @@ import VendorDashboardLayout from "../../common/layout";
 
 const index = () => {
   const router = useRouter();
+  const [bookingType, setBookingType] = useState("day-night");
 
   const propertySteps = [
     {
       id: 1,
       name: "Basic Info",
-      content: <BasicInfo />,
+      content: (
+        <BasicInfo bookingType={bookingType} setBookingType={setBookingType} />
+      ),
     },
     {
       id: 2,
       name: "Room / Listing Details",
-      content: <ListingDetails />,
+      content: <ListingDetails bookingType={bookingType} />,
     },
     {
       id: 3,

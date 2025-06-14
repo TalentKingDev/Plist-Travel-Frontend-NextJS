@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ListingDetails = () => {
+const ListingDetails = ({ bookingType }) => {
   const [rooms, setRooms] = useState(1);
 
   return (
@@ -98,12 +98,15 @@ const ListingDetails = () => {
       </div>
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">
-          How many days before check-in will you accept bookings?
+          How many {bookingType == "hour" ? "hours" : "days"} before check-in
+          will you accept bookings?
         </h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Days before check-in"
+          placeholder={
+            (bookingType == "hour" ? "Hours" : "Days") + " before check-in"
+          }
         />
       </div>
       <div className="col-sm-6 mt-5">

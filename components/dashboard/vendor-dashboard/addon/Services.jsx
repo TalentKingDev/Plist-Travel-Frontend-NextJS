@@ -152,7 +152,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="col-12">
+      {/* <div className="col-12">
         <div className="text-18 fw-500 mt-10 col-auto">
           Cancellation Policies
         </div>
@@ -178,7 +178,7 @@ const Services = () => {
             placeholder="Add custom policy details..."
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="d-flex justify-end mt-20 border-top-light pt-15">
         <button className="button border-light rounded-8 text-12 py-10 px-15 mr-10">

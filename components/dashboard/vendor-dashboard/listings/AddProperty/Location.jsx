@@ -7,11 +7,18 @@ const Location = () => {
 
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">Address</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter address"
-        />
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option value="" defaulValue>
+            Select address
+          </option>
+          <option value="1">
+            1523 Willow Creek Rd Asheville, NC 28806, USA
+          </option>
+          <option value="2">8712 Maple Hollow Dr Plano, TX 75024, USA</option>
+          <option value="3">
+            4307 Sunset Ridge Blvd San Diego, CA 92117, USA
+          </option>
+        </select>
       </div>
 
       <div className="col-sm-6 mt-5">

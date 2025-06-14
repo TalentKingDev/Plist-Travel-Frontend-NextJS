@@ -3,7 +3,7 @@
 import { useState } from "react";
 import FormInput from "@/components/common/form/FormInput";
 
-const Description = () => {
+const Description = ({ bookingType, setBookingType }) => {
   const [rooms, setRooms] = useState(3);
   const [maxAdults, setMaxAdults] = useState(2);
   const [maxChildren, setMaxChildren] = useState(1);
@@ -21,7 +21,13 @@ const Description = () => {
         </div>
         <div className="col-sm-6 mt-5">
           <h1 className="text-14 lh-1 fw-500">Booking Type</h1>
-          <select className="form-select rounded-8 border-light px-15 py-10 justify-between w-full mt-10">
+          <select
+            className="form-select rounded-8 border-light px-15 py-10 justify-between w-full mt-10"
+            value={bookingType}
+            onChange={(event) => {
+              setBookingType(event.target.value);
+            }}
+          >
             <option value="day-night">Book by Day/Night</option>
             <option value="hour">Book by Hour</option>
           </select>

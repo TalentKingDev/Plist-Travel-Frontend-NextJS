@@ -22,6 +22,17 @@ const Description = () => {
         <h1 className="text-14 lh-12 fw-500">Listing Type</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
           <option defaultValue>Select listing type</option>
+          <optgroup label="Property List">
+            <option value="hotel">Hotel</option>
+            <option value="vacation-rental">Vacation Rental</option>
+            <option value="event-venue">Event Venue</option>
+            <option value="spaces">Spaces</option>
+          </optgroup>
+          <optgroup label="Non-Property List">
+            <option value="tour">Tour</option>
+            <option value="activity">Activity</option>
+            <option value="event">Event</option>
+          </optgroup>
         </select>
       </div>
 
