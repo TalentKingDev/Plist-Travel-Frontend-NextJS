@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import FormInput from "@/components/common/form/FormInput";
+import { Alert, Snackbar } from "@mui/material";
 
 const Description = ({ bookingType, setBookingType }) => {
   const [rooms, setRooms] = useState(3);
   const [maxAdults, setMaxAdults] = useState(2);
   const [maxChildren, setMaxChildren] = useState(1);
   const [maxOccupancy, setMaxOccupancy] = useState(3);
+  const [showSnackbar, setShowSnackbar] = useState(false);
 
   return (
     <div className="row y-gap-10 x-gap-10">
@@ -25,12 +27,24 @@ const Description = ({ bookingType, setBookingType }) => {
             className="form-select rounded-8 border-light px-15 py-10 justify-between w-full mt-10"
             value={bookingType}
             onChange={(event) => {
+              setShowSnackbar(true);
               setBookingType(event.target.value);
             }}
           >
             <option value="day-night">Book by Day/Night</option>
             <option value="hour">Book by Hour</option>
           </select>
+
+          <Snackbar
+            anchorOrigin={{ horizontal: "right", vertical: "top" }}
+            open={showSnackbar}
+            autoHideDuration={3000}
+            onClose={() => setShowSnackbar(false)}
+          >
+            <Alert severity="warning" variant="filled" sx={{ width: "100%" }}>
+              All prices would need to be reviewed.
+            </Alert>
+          </Snackbar>
         </div>
         <FormInput
           label="Room Type"
@@ -114,7 +128,7 @@ const Description = ({ bookingType, setBookingType }) => {
           gridClass="col-12"
         />
         <div className="col-12">
-          <h1 className="text-14 lh-12 fw-500">Images</h1>
+          <h1 className="text-14 lh-12 fw-500">Photos</h1>
           <div className="border-light rounded-8 px-15 py-15 mt-10">
             <div className="border-light rounded-8 border-dashed py-30 text-center">
               <span className="material-symbols-outlined text-light-1 text-40">

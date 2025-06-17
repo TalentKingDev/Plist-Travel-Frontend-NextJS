@@ -30,7 +30,7 @@ const index = () => {
     {
       id: 3,
       name: "Competitive Rates",
-      content: <Rates />,
+      content: <Rates bookingType={bookingType}  />,
     },
     {
       id: 4,
@@ -97,7 +97,14 @@ const index = () => {
               if (activeStep < propertySteps.length) {
                 setActiveStep(activeStep + 1);
               } else {
-                router.push("/vendor/room-type");
+                const property_id = localStorage.getItem(
+                  "add-rateplan-property-id"
+                );
+                if (property_id) {
+                  router.push("/vendor/rateplan/add");
+                } else {
+                  router.push("/vendor/room-type");
+                }
               }
             }}
           >

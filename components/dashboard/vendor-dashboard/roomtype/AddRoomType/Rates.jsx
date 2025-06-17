@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Checkbox, Radio } from "@mui/material";
 
-const Description = () => {
+const Rates = ({ bookingType }) => {
   const [activeOption, setActiveOption] = useState(1);
   const discountOptions = [
     {
@@ -30,12 +30,14 @@ const Description = () => {
 
       <div className="col-md-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">
-          What do you want to charge per night?
+          Pricing per {bookingType === "day-night" ? "night" : "hour"}
         </h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Nightly base rate"
+          placeholder={
+            (bookingType === "day-night" ? "Night" : "Hour") + "ly base rate"
+          }
         />
         <div className="text-12 text-light-1 lh-1 mt-5">
           To attract travelers, it’s best to charge a lower nightly rate than
@@ -44,13 +46,9 @@ const Description = () => {
       </div>
 
       <div className="col-12 mt-5">
-        <h1 className="text-14 lh-12 fw-500">
-          Do you want to add an optional 20% discount?
-        </h1>
+        <h1 className="text-14 lh-12 fw-500">Special Offers</h1>
         <div className="text-12 text-light-1 lh-1 mt-5">
-          This can help you gain more visibility when travelers are searching
-          for places. The discount is active for the first 3 bookings or 90
-          days, whichever comes first.
+          Any special offers or discounts available.
         </div>
         <div className="text-blue-1 underline text-12 lh-1 mt-5 mb-10">
           Learn more about managing discounts
@@ -131,4 +129,4 @@ const Description = () => {
   );
 };
 
-export default Description;
+export default Rates;

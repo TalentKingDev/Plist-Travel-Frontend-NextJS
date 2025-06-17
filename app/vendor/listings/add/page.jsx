@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/listings/AddListing";
+import AddHotel from "@/components/dashboard/vendor-dashboard/listings/AddHotel";
 import { useSearchParams } from "next/navigation";
 
 // export const metadata = {
@@ -13,7 +13,7 @@ const index = () => {
   const service = useSearchParams().get("service");
   return (
     <>
-      <DashboardPage service={service} />
+      <AddHotel service={service} />
     </>
   );
 };

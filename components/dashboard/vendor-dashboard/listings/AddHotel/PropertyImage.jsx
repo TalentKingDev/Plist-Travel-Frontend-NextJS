@@ -3,7 +3,7 @@ import ImageUploadForm from "@/components/dashboard/vendor-dashboard/common/Imag
 const PropertyImage = () => {
   return (
     <div className="row y-gap-20 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">Image</h1>
+      <h1 className="text-20 lh-14 fw-600">Photos</h1>
 
       <div className="col-12">
         <ImageUploadForm />

@@ -31,7 +31,7 @@ const Calendar = () => {
 
   return (
     <div className="row y-gap-10 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">When is your listing available</h1>
+      <h1 className="text-20 lh-14 fw-600">Availability Calendar</h1>
       <div className="col-12 mt-10">
         {calendarTypes.map((type, index) => (
           <div className="d-flex items-end mt-5" key={index}>

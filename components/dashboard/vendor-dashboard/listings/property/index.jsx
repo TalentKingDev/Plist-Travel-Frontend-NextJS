@@ -83,7 +83,7 @@ const index = ({ isProperty = true }) => {
             </div>
           </div>
 
-          <div className="row px-10 mb-20">
+          {/* <div className="row px-10 mb-20">
             {tabs.map((item) => (
               <div className="col-auto px-5" key={item.value}>
                 <button
@@ -96,7 +96,7 @@ const index = ({ isProperty = true }) => {
                 </button>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="row y-gap-10 x-gap-10 items-center mb-5">
             <div className="col-sm-auto d-flex">

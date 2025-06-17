@@ -4,6 +4,7 @@ import Description from "./Description";
 import PropertyImage from "./PropertyImage";
 import Location from "./Location";
 import Amenities from "./Amenities";
+import GuestReviews from "./GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../common/layout";
 
@@ -31,26 +32,11 @@ const index = ({ service }) => {
       name: "Property Amenities",
       content: <Amenities />,
     },
-    // {
-    //   id: 5,
-    //   name: "Room / Listing Details",
-    //   content: <ListingDetails />,
-    // },
-    // {
-    //   id: 6,
-    //   name: "Competitive Rates",
-    //   content: <Rates />,
-    // },
-    // {
-    //   id: 7,
-    //   name: "Price",
-    //   content: <ListingPrice />,
-    // },
-    // {
-    //   id: 8,
-    //   name: "Calendar",
-    //   content: <Calendar />,
-    // },
+    {
+      id: 5,
+      name: "Guest Reviews & Ratings",
+      content: <GuestReviews />,
+    },
   ];
 
   const [activeStep, setActiveStep] = useState(1);
@@ -108,7 +94,7 @@ const index = ({ service }) => {
                 setActiveStep(activeStep + 1);
               } else {
                 localStorage.setItem("add-rateplan-property-id", 2);
-                router.push("/vendor/rateplan/add");
+                router.push("/vendor/room-type/add?service=" + service);
               }
             }}
           >

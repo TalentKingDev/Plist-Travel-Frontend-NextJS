@@ -1,8 +1,10 @@
+import { Checkbox } from "@mui/material";
+
 const Amenities = () => {
   return (
     <div className="row y-gap-10 x-gap-20">
       <h1 className="text-20 lh-14 fw-600">Amenities and Features</h1>
-      <div className="text-16 lh-14 fw-500">Other Features</div>
+      <div className="text-16 lh-14 fw-500">Amenities</div>
       {Array(10)
         .fill(null)
         .map((_, index) => (
@@ -42,6 +44,19 @@ const Amenities = () => {
             </div>
           </div>
         ))}
+      <div className="text-16 lh-14 fw-500 mt-10">Other Features</div>
+      <div className="px-10 mt-5">
+        <div className="d-flex items-center gap-1">
+          <Checkbox className="px-0 py-0" />
+          <h1 className="text-14 lh-12 fw-500">Accessibility</h1>
+        </div>
+        <textarea
+          rows={2}
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type="text"
+          placeholder="Describe Accessibility"
+        />
+      </div>
     </div>
   );
 };
