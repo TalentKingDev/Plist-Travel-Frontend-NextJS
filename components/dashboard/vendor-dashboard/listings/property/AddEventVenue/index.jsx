@@ -1,12 +1,12 @@
 import svgIcon from "@/components/data/svgIcon";
 import { useState } from "react";
 import Description from "./Description";
-import PropertyImage from "./PropertyImage";
+import Image from "./Image";
 import Location from "./Location";
 import Amenities from "./Amenities";
 import GuestReviews from "./GuestReviews";
 import { useRouter } from "next/navigation";
-import VendorDashboardLayout from "../../common/layout";
+import VendorDashboardLayout from "../../../common/layout";
 
 const index = ({ service }) => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const index = ({ service }) => {
     {
       id: 2,
       name: "Property Images",
-      content: <PropertyImage />,
+      content: <Image />,
     },
     {
       id: 3,

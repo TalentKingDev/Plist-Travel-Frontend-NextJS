@@ -24,7 +24,7 @@ const ListingDetails = ({ bookingType }) => {
         />
       </div>
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Bedrooms</h1>
+        <h1 className="text-14 lh-12 fw-500">Number of Bedrooms</h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
@@ -32,7 +32,7 @@ const ListingDetails = ({ bookingType }) => {
         />
       </div>
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Bathrooms</h1>
+        <h1 className="text-14 lh-12 fw-500">Number of Bathrooms</h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"

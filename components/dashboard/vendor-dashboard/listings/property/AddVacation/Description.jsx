@@ -6,12 +6,12 @@ const Description = () => {
   return (
     <div className="row y-gap-10 x-gap-10">
       <h1 className="text-20 lh-14 fw-600">Property Description</h1>
-      <div className="col-12 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Property Name</h1>
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Listing Title</h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Enter property title"
+          placeholder="Enter listing title"
         />
       </div>
 
@@ -40,28 +40,19 @@ const Description = () => {
         </select>
       </div>
 
-      <h1 className="text-14 lh-12 fw-500 mt-10">Contact Information</h1>
-
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Email</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter your email"
-        />
-      </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Phone Number</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter your email"
-        />
+        <h1 className="text-14 lh-12 fw-500">Property Type</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select property type</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="cabin">Cabin</option>
+        </select>
       </div>
 
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">Star Rating</h1>
-        <div className="d-flex items-center gap-1">
+        <div className="d-flex items-center gap-1 mt-10">
           {Array(5)
             .fill(null)
             .map((_, index) => (
@@ -73,6 +64,15 @@ const Description = () => {
               </span>
             ))}
         </div>
+      </div>
+
+      <div className="col-12 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Host Profile</h1>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type="text"
+          placeholder="Enter your host profile"
+        />
       </div>
 
       <div className="col-sm-12 mt-5">

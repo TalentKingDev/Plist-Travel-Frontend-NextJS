@@ -1,32 +1,4 @@
-const ServiceCard = ({ selectedService, setSelectedService }) => {
-  const data = [
-    {
-      name: "Flights",
-      image: "/img/dashboard/services/flight_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
-    },
-    {
-      name: "Hotel",
-      image: "/img/dashboard/services/property_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
-    },
-    {
-      name: "Rides",
-      image: "/img/dashboard/services/ride_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
-    },
-    {
-      name: "Tours",
-      image: "/img/dashboard/services/tour_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
-    },
-    {
-      name: "Attractions/Events",
-      image: "/img/dashboard/services/attr_events_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
-    },
-  ];
-
+const ServiceCard = ({ selectedService, setSelectedService, data = [] }) => {
   return (
     <div className="row y-gap-30">
       {data.map((item, index) => (

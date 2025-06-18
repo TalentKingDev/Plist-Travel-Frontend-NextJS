@@ -13,7 +13,7 @@ const Description = ({ bookingType, setBookingType }) => {
 
   return (
     <div className="row y-gap-10 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">Property Description</h1>
+      <h1 className="text-20 lh-14 fw-600">Basic Information</h1>
       <div className="row y-gap-20 x-gap-10 justify-between items-center">
         <div className="col-sm-6 mt-5">
           <h1 className="text-14 lh-1 fw-500">Property</h1>
@@ -52,40 +52,30 @@ const Description = ({ bookingType, setBookingType }) => {
           name="roomType"
           placeholder="Hotel ABC Executive Suite"
         />
-        <FormInput
-          onChange={(e) => {
-            setMaxAdults(Number(e.target.value));
-            setMaxOccupancy(Number(e.target.value) + maxChildren);
-          }}
-          label="Max no. of Adults"
-          type="number"
-          name="maxAdults"
-          gridClass="col-sm-4"
-          placeholder="2"
-          min={1}
-          defaultValue={maxAdults}
-        />
-        <FormInput
-          onChange={(e) => {
-            setMaxChildren(Number(e.target.value));
-            setMaxOccupancy(Number(e.target.value) + maxAdults);
-          }}
-          label="Max no. of Children"
-          type="number"
-          name="maxChildren"
-          gridClass="col-sm-4"
-          placeholder="1"
-          min={0}
-          defaultValue={maxChildren}
-        />
-        <FormInput
-          label="Max no. of Occupancy"
-          type="number"
-          name="maxOccupancy"
-          gridClass="col-sm-4"
-          placeholder="3"
-          value={maxOccupancy}
-        />
+
+        <div className="col-12 px-10 mt-10">
+          <div className="row border-light rounded-8 px-10 py-10 y-gap-10 x-gap-10">
+            <h1 className="text-18 lh-12 fw-500">Capacity</h1>
+
+            <div className="col-sm-6 mt-5">
+              <h1 className="text-14 lh-12 fw-500">Standing</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                type="text"
+                placeholder="Enter number of standing"
+              />
+            </div>
+            <div className="col-sm-6 mt-5">
+              <h1 className="text-14 lh-12 fw-500">Sitting</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                type="text"
+                placeholder="Enter number of sitting"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="col-12 mt-5">
           <h1 className="text-14 lh-12 fw-500">Amenities</h1>
           <div className="row mt-10">

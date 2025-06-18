@@ -1,11 +1,33 @@
 import { useState } from "react";
 import ServiceCard from "@/components/dashboard/vendor-dashboard/common/ServiceCard";
-import AddProperty from "../listings/property/AddHotel";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useRouter } from "next/navigation";
 
 const SelectServices = ({ setIsListings }) => {
+  const data = [
+    {
+      name: "Spaces",
+      image: "/img/dashboard/services/flight_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Hotels",
+      image: "/img/dashboard/services/property_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Event Venues",
+      image: "/img/dashboard/services/ride_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Vacation Rentals",
+      image: "/img/dashboard/services/tour_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+  ];
+  
   const [selectedService, setSelectedService] = useState();
   const [showSnackbar, setShowSnackbar] = useState(false);
 
@@ -22,6 +44,7 @@ const SelectServices = ({ setIsListings }) => {
         </div>
         <div className="col-12">
           <ServiceCard
+            data={data}
             selectedService={selectedService}
             setSelectedService={setSelectedService}
           />
@@ -39,8 +62,7 @@ const SelectServices = ({ setIsListings }) => {
               onClick={() => {
                 if (selectedService) {
                   router.push(
-                    "/vendor/listings/add?service=" +
-                      selectedService?.name
+                    "/vendor/listings/add?service=" + selectedService?.name
                   );
                 } else {
                   setShowSnackbar(true);

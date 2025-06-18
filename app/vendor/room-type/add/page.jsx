@@ -1,7 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/roomtype/AddRoomType";
+import AddHotel from "@/components/dashboard/vendor-dashboard/roomtype/AddHotel";
+import AddSpace from "@/components/dashboard/vendor-dashboard/roomtype/AddSpace";
+import AddVacation from "@/components/dashboard/vendor-dashboard/roomtype/AddVacation";
+import AddEventVenue from "@/components/dashboard/vendor-dashboard/roomtype/AddEventVenue";
 import { useSearchParams } from "next/navigation";
 
 // export const metadata = {
@@ -11,11 +14,15 @@ import { useSearchParams } from "next/navigation";
 
 const index = () => {
   const service = useSearchParams().get("service");
-  return (
-    <>
-      <DashboardPage service={service} />
-    </>
-  );
+
+  const addListing = {
+    Hotels: <AddHotel service={"Hotels"} />,
+    Spaces: <AddSpace service={"Spaces"} />,
+    "Vacation Rentals": <AddVacation service={"Vacation Rentals"} />,
+    "Event Venues": <AddEventVenue service={"Event Venues"} />,
+  };
+
+  return <>{addListing[service]}</>;
 };
 
 export default dynamic(() => Promise.resolve(index), {

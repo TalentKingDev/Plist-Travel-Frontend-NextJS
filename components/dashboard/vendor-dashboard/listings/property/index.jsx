@@ -2,21 +2,12 @@
 
 import { use, useState } from "react";
 import VendorDashboardLayout from "../../common/layout";
-import SelectServices from "../../common/SelectServices";
+import SelectServices from "./SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const index = ({ isProperty = true }) => {
-  const [activeTab, setActiveTab] = useState("all");
   const [isListings, setIsListings] = useState(true);
-
-  const tabs = [
-    { label: "All Listings", value: "all" },
-    { label: "Hotels", value: "hotels" },
-    { label: "Vacation Rental", value: "vacation_rental" },
-    { label: "Event Venue", value: "event_venue" },
-    { label: "Spaces", value: "spaces" },
-  ];
 
   const listings = [
     {
@@ -82,21 +73,6 @@ const index = ({ isProperty = true }) => {
               </button>
             </div>
           </div>
-
-          {/* <div className="row px-10 mb-20">
-            {tabs.map((item) => (
-              <div className="col-auto px-5" key={item.value}>
-                <button
-                  className={`text-14 px-10 fw-500 py-5 rounded-8 ${
-                    activeTab === item.value ? "bg-white" : "text-light-1"
-                  }`}
-                  onClick={() => setActiveTab(item.value)}
-                >
-                  {item.label}
-                </button>
-              </div>
-            ))}
-          </div> */}
 
           <div className="row y-gap-10 x-gap-10 items-center mb-5">
             <div className="col-sm-auto d-flex">

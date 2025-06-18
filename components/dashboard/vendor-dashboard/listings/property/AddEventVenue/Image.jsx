@@ -1,6 +1,6 @@
 import ImageUploadForm from "@/components/dashboard/vendor-dashboard/common/ImageUploadForm";
 
-const PropertyImage = () => {
+const Image = () => {
   return (
     <div className="row y-gap-20 x-gap-10">
       <h1 className="text-20 lh-14 fw-600">Photos</h1>
@@ -38,4 +38,4 @@ const PropertyImage = () => {
   );
 };
 
-export default PropertyImage;
+export default Image;
