@@ -114,24 +114,76 @@ const BasicInfo = () => {
           </div>
         </div>
         {Array.from({ length: locationCount }).map((_, index) => (
-          <div
-            className="d-flex justify-between items-center mt-10"
-            key={index}
-          >
-            <input
-              className="border-light rounded-8 py-5 px-15 w-full"
-              type="text"
-              placeholder="Enter Address"
-            />
-            <button
-              disabled={locationCount === 1}
-              className="ml-10 pt-5 px-5"
-              onClick={() => setLocationCount(locationCount - 1)}
+          <div className="row">
+            {/* <div
+              className="row justify-between items-center mt-10"
+              key={index}
             >
-              <span className="material-symbols-outlined text-red-2 text-15 fw-500">
-                delete
-              </span>
-            </button>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full"
+                type="text"
+                placeholder="Enter Address"
+              />
+              <button
+                disabled={locationCount === 1}
+                className="ml-10 pt-5 px-5"
+                onClick={() => setLocationCount(locationCount - 1)}
+              >
+                <span className="material-symbols-outlined text-red-2 text-15 fw-500">
+                  delete
+                </span>
+              </button>
+            </div> */}
+            <div className="col-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">Address</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter Address"
+              />
+            </div>
+            <div className="col-md-6 col-sm-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">City</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter City"
+              />
+            </div>
+            <div className="col-md-6 col-sm-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">State/Province</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter State/Province"
+              />
+            </div>
+            <div className="col-md-6 col-sm-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">Zip Code / Postal Code</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter Zip Code / Postal Code"
+              />
+            </div>
+            <div className="col-md-6 col-sm-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">Country</h1>
+              <select className="form-select rounded-8 border-light justify-between py-10 mt-5 px-20 w-full text-14">
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Mexico">Mexico</option>
+              </select>
+            </div>
+            <div className="col-md-6 col-sm-12 mt-15">
+              <h1 className="text-13 lh-14 fw-500">Region</h1>
+              <select className="form-select rounded-8 border-light justify-between py-10 mt-5 px-20 w-full text-14">
+                <option value="northeast">Northeast</option>
+                <option value="southeast">Southeast</option>
+                <option value="midwest">Midwest</option>
+                <option value="southwest">Southwest</option>
+                <option value="west">West</option>
+              </select>
+            </div>
           </div>
         ))}
       </div>

@@ -2,9 +2,9 @@
 
 import { Checkbox } from "@mui/material";
 import { useState } from "react";
-import { LocalizationProvider } from "@mui/x-date-pickers-pro/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
-import { TimeRangePicker } from "@mui/x-date-pickers-pro/TimeRangePicker";
+// import { LocalizationProvider } from "@mui/x-date-pickers-pro/LocalizationProvider";
+// import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
+// import { TimeRangePicker } from "@mui/x-date-pickers-pro/TimeRangePicker";
 
 const Services = () => {
   const [services, setServices] = useState(1);
@@ -83,9 +83,9 @@ const Services = () => {
                 <>
                   <div className="col-md-4">
                     <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <TimeRangePicker format="HH:mm" className="mt-5" />
-                    </LocalizationProvider>
+                    </LocalizationProvider> */}
                   </div>
                   <div className="col-md-4 col-sm-6">
                     <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
