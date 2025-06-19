@@ -821,29 +821,142 @@ const RatePlan = () => {
 };
 
 const RoomType = () => {
-  const [paymentMethod, setPaymentMethod] = useState("all");
-  return (
-    <>
-      <div className="d-flex items-center">
-        <Radio
-          checked={paymentMethod === "all"}
-          onChange={() => setPaymentMethod("all")}
-          value="all"
-        />
-        <div className="text-14 lh-14 ml-5">All</div>
-      </div>
-      <div className="d-flex items-center">
-        <Radio
-          checked={paymentMethod === "dentonDuplex"}
-          onChange={() => setPaymentMethod("dentonDuplex")}
-          value="dentonDuplex"
-        />
-        <div className="text-14 lh-14 ml-5">
-          Luxurious & Spacious 4 Bed Duplex Getaway in Denton, TX
+  const [treeData, setTreeData] = useState([
+    {
+      id: "all",
+      label: "All",
+      children: [
+        {
+          id: "property",
+          label: "Property",
+          children: [
+            {
+              id: "hotels",
+              label: "Hotels",
+              children: [
+                {
+                  id: "subcategory-a1a",
+                  label: "Subcategory A1a",
+                  children: [
+                    {
+                      id: "listing-a1a-1",
+                      label: "Listing A1a-1",
+                    },
+                    {
+                      id: "listing-a1a-2",
+                      label: "Listing A1a-2",
+                    },
+                  ],
+                },
+                {
+                  id: "subcategory-a1b",
+                  label: "Subcategory A1b",
+                  children: [{ id: "listing-a1b-1", label: "Listing A1b-1" }],
+                },
+              ],
+            },
+            { id: "vacation-rental", label: "Vacation Rentals" },
+            { id: "spaces", label: "Spaces" },
+            { id: "event-venues", label: "Event Venues" },
+          ],
+        },
+        {
+          id: "non-property",
+          label: "Non-Property",
+          children: [
+            { id: "events", label: "Events" },
+            { id: "tours", label: "Tours" },
+            { id: "activities", label: "Activities" },
+          ]
+        },
+      ],
+    },
+  ]);
+
+  const updateNodeAndChildren = (nodes, id, checked) => {
+    return nodes.map((node) => {
+      if (node.id === id) {
+        return {
+          ...node,
+          checked,
+          children: node.children
+            ? updateNodeAndChildren(node.children, "found", checked)
+            : undefined,
+        };
+      }
+
+      if (id == "found") {
+        if (node.children) {
+          return {
+            ...node,
+            checked,
+            children: updateNodeAndChildren(node.children, "found", checked),
+          };
+        }
+        return {
+          ...node,
+          checked,
+        };
+      }
+
+      if (node.children) {
+        return {
+          ...node,
+          children: updateNodeAndChildren(node.children, id, checked),
+        };
+      }
+
+      return node;
+    });
+  };
+
+  const updateParentStates = (nodes) => {
+    return nodes.map((node) => {
+      if (node.children && node.children.length > 0) {
+        const updatedChildren = updateParentStates(node.children);
+        const allChecked = updatedChildren.every((child) => child.checked);
+
+        return {
+          ...node,
+          checked: allChecked,
+          children: updatedChildren,
+        };
+      }
+      return node;
+    });
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { id, checked } = event.target;
+    console.log("id", id, "value", checked);
+
+    setTreeData((prevData) => {
+      const updatedData = updateNodeAndChildren(prevData, id, checked);
+      console.log("updatedData", updatedData);
+
+      return updateParentStates(updatedData);
+    });
+  };
+
+  const renderCheckboxes = (items) => {
+    return items.map((item, key) => (
+      <div key={key}>
+        <div className="d-flex items-center">
+          <Checkbox
+            id={item.id}
+            checked={item.checked ? true : false}
+            onChange={handleCheckboxChange}
+          />
+          <div className="text-14 lh-14 ml-5">{item.label}</div>
         </div>
+        {item.children && (
+          <div className="ml-30">{renderCheckboxes(item.children)}</div>
+        )}
       </div>
-    </>
-  );
+    ));
+  };
+
+  return <div>{renderCheckboxes(treeData)}</div>;
 };
 
 const MinLengthStay = () => {

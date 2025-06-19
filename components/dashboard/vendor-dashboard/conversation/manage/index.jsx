@@ -36,6 +36,15 @@ const Management = () => {
     },
   ];
 
+  const dynamicFields = [
+    { value: "{{property_name}}", label: "Name of booked property" },
+    { value: "{{guest_name}}", label: "Guest Name" },
+    { value: "{{check_in_date}}", label: "Check-in Date" },
+    { value: "{{check_out_date}}", label: "Check-out Date" },
+    { value: "{{booking_id}}", label: "Booking ID" },
+    { value: "{{nights}}", label: "Total nights booked" },
+  ];
+
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-10 x-gap-20 justify-between">
@@ -83,6 +92,17 @@ const Management = () => {
         >
           <div className="px-20 py-20" style={{ width: "500px" }}>
             <h1 className="text-20 fw-500 mb-10">Quick Reply</h1>
+            <div className="d-flex items-center flex-wrap gap-2 mb-10">
+              {dynamicFields.map((item, index) => (
+                <span
+                  className="text-12 fw-500 rounded-100 bg-blue-2 px-10 text-blue-1 cursor-pointer"
+                  key={index}
+                  onClick={() => setReplyText(replyText + item.value)}
+                >
+                  {item.label}
+                </span>
+              ))}
+            </div>
             <textarea
               className="text-14 border-light rounded-8 bg-white px-10 py-5 mb-10"
               placeholder="Enter your quick reply"
