@@ -61,11 +61,11 @@ const ListingDetails = ({ bookingType }) => {
         />
       </div>
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Outdoor facilities</h1>
+        <h1 className="text-14 lh-12 fw-500">Additional Note about this Room Type</h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Enter outdoor facilities"
+          placeholder="Enter additional note about this room type"
         />
       </div>
       <div className="col-sm-6 mt-5">
@@ -74,14 +74,6 @@ const ListingDetails = ({ bookingType }) => {
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
           placeholder="Enter number of extra people allowed"
-        />
-      </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Availability</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="text"
-          placeholder="Enter availability"
         />
       </div>
       <div className="col-12 mt-5">

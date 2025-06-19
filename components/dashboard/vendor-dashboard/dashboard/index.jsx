@@ -20,14 +20,7 @@ const index = () => {
     { label: "Reports", value: "reports" },
   ];
 
-  const [option, setOption] = useState("property");
-  const options = [
-    { label: "Property", value: "property" },
-    { label: "Vacation Rental", value: "vacation" },
-    { label: "Event Venue", value: "event" },
-    { label: "Tour Operator", value: "tour" },
-    { label: "Activity Operator", value: "activity" },
-  ];
+  const [option, setOption] = useState("hotel");
 
   return (
     <VendorDashboardLayout>
@@ -43,9 +36,17 @@ const index = () => {
             className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-50 w-200 sm:w-full text-14"
             onChange={(e) => setOption(e.target.value)}
           >
-            {options.map((item) => (
-              <option value={item.value}>{item.label}</option>
-            ))}
+            <optgroup label="Property List">
+            <option value="hotel">Hotel</option>
+            <option value="vacation">Vacation Rental</option>
+            <option value="venue">Event Venue</option>
+            <option value="spaces">Spaces</option>
+          </optgroup>
+          <optgroup label="Non-Property List">
+            <option value="tour">Tour</option>
+            <option value="activity">Activity</option>
+            <option value="event">Event</option>
+          </optgroup>
           </select>
         </div>
       </div>
@@ -65,6 +66,11 @@ const index = () => {
       </div>
 
       <div className="row y-gap-10 x-gap-10 mb-10">
+        {activeTab === "reports" &&<div className="col-md-2 col-sm-6">
+          <select className="form-select rounded-4 border-light justify-between text-16 fw-500 h-50 px-20 w-full text-14">
+            <option value="category">Select Reports</option>
+          </select>
+        </div>}
         <div className="col-md-2 col-sm-6">
           <select className="form-select rounded-4 border-light justify-between text-16 fw-500 h-50 px-20 w-full text-14">
             <option value="category">Select Category</option>

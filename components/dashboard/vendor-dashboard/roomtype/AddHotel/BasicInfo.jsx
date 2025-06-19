@@ -140,6 +140,17 @@ const Description = ({ bookingType, setBookingType }) => {
             </div>
           </div>
         </div>
+        <div className="col-sm-6 mt-5">
+          <h1 className="text-14 lh-12 fw-500">
+            Number of Available Rooms of this Type
+          </h1>
+          <input
+            className="border-light rounded-8 py-5 px-15 w-full mt-10"
+            type="text"
+            placeholder="Enter number of rooms available"
+            onChange={(e) => setRooms(Number(e.target.value))}
+          />
+        </div>
         <div className="col-12 mt-5">
           <h1 className="text-14 lh-12 fw-500">Room Numbers</h1>
           <div className="row">

@@ -27,7 +27,7 @@ const SelectServices = ({ setIsListings }) => {
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
   ];
-  
+
   const [selectedService, setSelectedService] = useState();
   const [showSnackbar, setShowSnackbar] = useState(false);
 
@@ -36,11 +36,11 @@ const SelectServices = ({ setIsListings }) => {
   return (
     <>
       <div className="row y-gap-20 py-10 px-10 rounded-8 bg-white shadow-3">
-        <h1 className="text-20 lh-14 fw-600">Select Services</h1>
-        <h1 className="text-18 lh-14 fw-500">Select Type of Services</h1>
+        <h1 className="text-18 lh-14 fw-500">
+          Select Property Listing Type
+        </h1>
         <div className="text-15 text-light-1">
-          Choose one or more services to include in your booking. Selecting
-          multiple services will create a package.
+          Choose one property type you will like to list
         </div>
         <div className="col-12">
           <ServiceCard
