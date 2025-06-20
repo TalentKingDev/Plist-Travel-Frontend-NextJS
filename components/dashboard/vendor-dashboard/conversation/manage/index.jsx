@@ -38,9 +38,12 @@ const Management = () => {
 
   const dynamicFields = [
     { value: "{{property_name}}", label: "Name of booked property" },
-    { value: "{{guest_name}}", label: "Guest Name" },
+    { value: "{{guest_first_name}}", label: "Guest First Name" },
+    { value: "{{guest_last_name}}", label: "Guest Last Name" },
     { value: "{{check_in_date}}", label: "Check-in Date" },
+    { value: "{{check_in_time}}", label: "Check-in Time" },
     { value: "{{check_out_date}}", label: "Check-out Date" },
+    { value: "{{check_out_time}}", label: "Check-out Time" },
     { value: "{{booking_id}}", label: "Booking ID" },
     { value: "{{nights}}", label: "Total nights booked" },
   ];

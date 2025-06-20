@@ -67,17 +67,17 @@ const index = () => {
 
       <div className="row y-gap-10 x-gap-10 mb-10">
         {activeTab === "reports" &&<div className="col-md-2 col-sm-6">
-          <select className="form-select rounded-4 border-light justify-between text-16 fw-500 h-50 px-20 w-full text-14">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
             <option value="category">Select Reports</option>
           </select>
         </div>}
         <div className="col-md-2 col-sm-6">
-          <select className="form-select rounded-4 border-light justify-between text-16 fw-500 h-50 px-20 w-full text-14">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
             <option value="category">Select Category</option>
           </select>
         </div>
         <div className="col-md-2 col-sm-6">
-          <select className="form-select rounded-4 border-light justify-between text-16 fw-500 h-50 px-20 w-full text-14">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
             <option value="category">Select Subcategory</option>
           </select>
         </div>

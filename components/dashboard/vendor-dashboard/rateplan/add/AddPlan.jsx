@@ -928,11 +928,9 @@ const RoomType = () => {
 
   const handleCheckboxChange = (event) => {
     const { id, checked } = event.target;
-    console.log("id", id, "value", checked);
 
     setTreeData((prevData) => {
       const updatedData = updateNodeAndChildren(prevData, id, checked);
-      console.log("updatedData", updatedData);
 
       return updateParentStates(updatedData);
     });

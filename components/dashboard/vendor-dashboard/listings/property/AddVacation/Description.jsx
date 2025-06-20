@@ -16,14 +16,17 @@ const Description = () => {
       </div>
 
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Category</h1>
+        <h1 className="text-14 lh-12 fw-500">Vacation Rental Category</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
           <option defaultValue>Select category</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="cabin">Cabin</option>
         </select>
       </div>
 
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Subcategory</h1>
+        <h1 className="text-14 lh-12 fw-500">Vacation Rental Subcategory</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
           <option defaultValue>Select subcategory type</option>
           {/* <optgroup label="Property List">
@@ -37,16 +40,6 @@ const Description = () => {
             <option value="activity">Activity</option>
             <option value="event">Event</option>
           </optgroup> */}
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Property Type</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select property type</option>
-          <option value="apartment">Apartment</option>
-          <option value="house">House</option>
-          <option value="cabin">Cabin</option>
         </select>
       </div>
 

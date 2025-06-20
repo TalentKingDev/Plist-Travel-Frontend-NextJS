@@ -14,6 +14,7 @@ const FormInput = ({
   onChange,
   disable,
   readOnly,
+  required = false,
 }) => {
   let form;
 
@@ -113,7 +114,10 @@ const FormInput = ({
 
   return (
     <div className={`mt-5 ${gridClass} ${otherClass}`}>
-      <h1 className="text-14 lh-12 fw-500">{label}</h1>
+      <h1 className="text-14 lh-12 fw-500">
+        {label}
+        {required ? <span className="text-red-1">*</span> : null}
+      </h1>
       {form}
     </div>
   );

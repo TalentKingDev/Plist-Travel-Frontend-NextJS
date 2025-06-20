@@ -37,7 +37,7 @@ const Services = () => {
       <div className="col-12">
         <div className="row justify-between items-center">
           <div className="text-18 fw-500 mt-10 col-auto">Service & Pricing</div>
-          <div className="d-flex col-sm-auto">
+          {/* <div className="d-flex col-sm-auto">
             <button
               className="button border-light rounded-4 text-13 fw-500 px-10 py-5"
               onClick={() => setServices(services + 1)}
@@ -47,100 +47,75 @@ const Services = () => {
               </span>
               Add Service
             </button>
+          </div> */}
+        </div>
+        <div className="col-12 border-light rounded-8 px-15 py-15 mt-10">
+          <div className="row x-gap-15 y-gap-15 justify-between items-center y-gap-10">
+            <div className="col-md-4 col-sm-12">
+              <h1 className="text-13 lh-14 fw-500">Service Name</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter Service Name"
+              />
+            </div>
+            <div className="col-md-4 col-sm-12">
+              <h1 className="text-13 lh-14 fw-500">Service Type</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                type="text"
+                placeholder="Enter Service Type"
+              />
+            </div>
+            <div className="col-md-4 col-sm-12">
+              <h1 className="text-13 lh-14 fw-500">Base Price</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full mt-5"
+                prefix="$"
+                type="text"
+                placeholder="Enter Base Price"
+              />
+            </div>
+            <div className="col-12 d-flex gap-2 items-center">
+              <Checkbox
+                className="px-0 py-0"
+                value={schedulingNeed}
+                onChange={() => setSchedulingNeed(!schedulingNeed)}
+              />
+              <h1 className="text-14 lh-14 fw-500">Scheduling Needed</h1>
+            </div>
+            {schedulingNeed && (
+              <>
+                {/* <div className="col-md-4">
+                  <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <TimeRangePicker format="HH:mm" className="mt-5" />
+                    </LocalizationProvider>
+                </div> */}
+                <div className="col-sm-6">
+                  <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
+                  <select className="form-select rounded-8 border-light px-15 justify-between fw-400 py-10 h-55 w-full text-14 mt-5">
+                    {hours.map((hour) => (
+                      <option key={hour} value={hour}>
+                        {hour} {hour <= 1 ? "hour" : "hours"}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="col-sm-6">
+                  <h1 className="text-13 lh-14 fw-500">
+                    Availability Per Timeframe
+                  </h1>
+                  <input
+                    className="border-light rounded-8 py-5 px-15 w-full h-55 mt-5"
+                    type="text"
+                    placeholder="Enter Availability Per Timeframe"
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
-        {Array.from({ length: services }).map((_, index) => (
-          <div
-            className="col-12 border-light rounded-8 px-15 py-15 mt-10"
-            key={index}
-          >
-            <div className="row x-gap-15 y-gap-15 justify-between items-center y-gap-10">
-              <div className="col-md-4 col-sm-12">
-                <h1 className="text-13 lh-14 fw-500">Service Name</h1>
-                <input
-                  className="border-light rounded-8 py-5 px-15 w-full mt-5"
-                  type="text"
-                  placeholder="Enter Service Name"
-                />
-              </div>
-              <div className="col-md-4 col-sm-12">
-                <h1 className="text-13 lh-14 fw-500">Service Type</h1>
-                <input
-                  className="border-light rounded-8 py-5 px-15 w-full mt-5"
-                  type="text"
-                  placeholder="Enter Service Type"
-                />
-              </div>
-              <div className="col-md-4 col-sm-12">
-                <h1 className="text-13 lh-14 fw-500">Base Price</h1>
-                <input
-                  className="border-light rounded-8 py-5 px-15 w-full mt-5"
-                  prefix="$"
-                  type="text"
-                  placeholder="Enter Base Price"
-                />
-              </div>
-              <div className="col-12 d-flex gap-2 items-center">
-                <Checkbox
-                  className="px-0 py-0"
-                  value={schedulingNeed}
-                  onChange={() => setSchedulingNeed(!schedulingNeed)}
-                />
-                <h1 className="text-14 lh-14 fw-500">Scheduling Needed</h1>
-              </div>
-              {schedulingNeed && (
-                <>
-                  <div className="col-md-4">
-                    <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
-                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                      <TimeRangePicker format="HH:mm" className="mt-5" />
-                    </LocalizationProvider> */}
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                    <h1 className="text-13 lh-14 fw-500">Hours Available</h1>
-                    <select className="form-select rounded-8 border-light px-15 justify-between fw-400 py-10 h-55 w-full text-14 mt-5">
-                      {hours.map((hour) => (
-                        <option key={hour} value={hour}>
-                          {hour} {hour <= 1 ? "hour" : "hours"}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                    <h1 className="text-13 lh-14 fw-500">
-                      Availability Per Timeframe
-                    </h1>
-                    <input
-                      className="border-light rounded-8 py-5 px-15 w-full h-55 mt-5"
-                      type="text"
-                      placeholder="Enter Availability Per Timeframe"
-                    />
-                  </div>
-                </>
-              )}
-              <div className="col-12">
-                <h1 className="text-13 lh-14 fw-500">Description</h1>
-                <textarea
-                  className="border-light rounded-8 py-5 px-15 w-full mt-5"
-                  type="text"
-                  placeholder="Enter Description"
-                />
-              </div>
-              <div className="col-12 d-flex justify-end">
-                <button
-                  disabled={services === 1}
-                  className={
-                    "button text-12 px-5 fw-400 " +
-                    (services === 1 ? "" : "text-red-1")
-                  }
-                  onClick={() => setServices(services - 1)}
-                >
-                  <i className="icon-close mr-10 text-10"></i>Remove Service
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       <div className="col-12">
@@ -225,7 +200,7 @@ const Services = () => {
           Cancel
         </button>
         <button className="button bg-blue-1 text-white rounded-8 text-12 py-10 px-15">
-          Save Changes
+          Save
         </button>
       </div>
     </div>

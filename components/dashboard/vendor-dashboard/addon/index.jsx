@@ -7,25 +7,36 @@ const index = () => {
   const router = useRouter();
   const data = [
     {
-      code: "SUMMER2023",
-      description: "Summer Sale Discount",
-      discount: "20%",
-      usage: "45/100",
-      expiry: "Aug 31, 2023",
+      description: "Basic Cleaning Package",
+      name: "Standard Cleaning",
+      type: "Residential",
+      basePrice: "$120",
+      hourAvailable: "2 hours",
+      availabilityPerTimeframe: "50",
     },
     {
-      code: "WELCOME50",
-      description: "New Customer Discount",
-      discount: "$50",
-      usage: "32/50",
-      expiry: "Dec 31, 2023",
+      description: "Premium Interior Detailing",
+      name: "Car Detailing",
+      type: "Automotive",
+      basePrice: "$250",
+      hourAvailable: "4 hours",
+      availabilityPerTimeframe: "30",
     },
     {
-      code: "FLASH25",
-      description: "Flash Sale",
-      discount: "25%",
-      usage: "18/20",
-      expiry: "Jul 15, 2023",
+      description: "Full Body Massage",
+      name: "Spa Treatment",
+      type: "Wellness",
+      basePrice: "$90",
+      hourAvailable: "1.5 hours",
+      availabilityPerTimeframe: "80",
+    },
+    {
+      description: "Annual Maintenance Check",
+      name: "HVAC Service",
+      type: "Home Maintenance",
+      basePrice: "$150",
+      hourAvailable: "1 hour",
+      availabilityPerTimeframe: "60",
     },
   ];
 
@@ -53,22 +64,24 @@ const index = () => {
           <table className="table-2 col-12">
             <thead>
               <tr className="text-light-1 fw-600">
-                <th>Code</th>
+                <th>Name</th>
                 <th>Description</th>
-                <th>Discount</th>
-                <th>Usage</th>
-                <th>Expiry</th>
+                <th>Type</th>
+                <th>Base Price</th>
+                <th>Hour Available</th>
+                <th>Availability Per Timeframe</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, index) => (
                 <tr key={index}>
-                  <td className="align-middle">{row.code}</td>
+                  <td className="align-middle">{row.name}</td>
                   <td className="align-middle">{row.description}</td>
-                  <td className="align-middle">{row.discount}</td>
-                  <td className="align-middle">{row.usage}</td>
-                  <td className="align-middle">{row.expiry}</td>
+                  <td className="align-middle">{row.type}</td>
+                  <td className="align-middle">{row.basePrice}</td>
+                  <td className="align-middle">{row.hourAvailable}</td>
+                  <td className="align-middle">{row.availabilityPerTimeframe}</td>
                   <td className="align-middle">
                     <span className="material-symbols-outlined">
                       more_horiz
