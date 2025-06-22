@@ -3,7 +3,7 @@ import { useState } from "react";
 import Description from "./Description";
 import Image from "./Image";
 import Location from "./Location";
-import Amenities from "./Amenities";
+import Amenities from "../../common/Amenities";
 import GuestReviews from "../../common/GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
