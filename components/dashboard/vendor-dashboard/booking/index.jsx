@@ -11,6 +11,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Filter from "../common/Filter";
 
 const index = () => {
   const router = useRouter();
@@ -111,9 +112,7 @@ const index = () => {
         </div>
       </div>
 
-      <BookingCard data={data} />
-
-      <div className="row px-10 mt-20 mb-20">
+      <div className="row px-10 mb-10">
         {tabs.map((item) => (
           <div className="col-auto px-5" key={item.value}>
             <button
@@ -128,8 +127,12 @@ const index = () => {
         ))}
       </div>
 
+      <Filter />
+
+      <BookingCard data={data} />
+
       <div className="py-20 px-30 rounded-8 bg-white shadow-3 h-100 mt-20">
-        <div className="row y-gap-20 x-gap-10 justify-between items-center mb-20">
+        <div className="row y-gap-20 x-gap-10 justify-between items-center mb-10">
           <div className="col-md-auto position-relative d-flex items-center">
             <input
               type="text"
@@ -143,21 +146,7 @@ const index = () => {
                 top: "50%",
                 transform: "translateY(-50%)",
               }}
-            ></i>
-          </div>
-          <div className="col-auto">
-            <select className="form-select rounded-8 border-light justify-between text-16 px-15 h-50 w-140 text-14">
-              <option value="" defaultValue>
-                All Statuses
-              </option>
-            </select>
-          </div>
-          <div className="col-auto">
-            <select className="form-select rounded-8 border-light justify-between text-16 px-15 h-50 w-210 text-14">
-              <option value="" defaultValue>
-                Listing Category
-              </option>
-            </select>
+            />
           </div>
           <div className="col-auto ms-auto">
             <button className="size-50 rounded-8 flex-center border-light">

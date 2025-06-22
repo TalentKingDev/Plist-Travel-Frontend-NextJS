@@ -1,6 +1,6 @@
 const CouponCard = ({ data }) => {
   return (
-    <div className="row y-gap-30">
+    <div className="row y-gap-20">
       {data.map((item, index) => (
         <div key={index} className="col-xl-3 col-md-6 col-sm-6">
           <div className="py-20 px-20 rounded-4 bg-white shadow-3 h-100">

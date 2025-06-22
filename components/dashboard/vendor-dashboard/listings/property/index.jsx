@@ -6,8 +6,8 @@ import SelectServices from "./SelectServices";
 import { Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const index = ({ isProperty = true }) => {
-  const [isListings, setIsListings] = useState(true);
+const index = ({ isProperty = true, isListing = true }) => {
+  const [isListings, setIsListings] = useState(isListing);
 
   const listings = [
     {

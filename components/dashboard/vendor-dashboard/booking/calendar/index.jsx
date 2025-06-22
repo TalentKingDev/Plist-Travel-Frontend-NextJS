@@ -109,52 +109,52 @@ const index = () => {
     () => [
       {
         id: 1,
-        name: "Resource A",
+        name: "Deluxe Room",
         color: "#e20000",
       },
       {
         id: 2,
-        name: "Resource B",
+        name: "Suite",
         color: "#76e083",
       },
       {
         id: 3,
-        name: "Resource C",
+        name: "Standard Room",
         color: "#4981d6",
       },
       {
         id: 4,
-        name: "Resource D",
+        name: "Cozy Beachfront Cottage",
         color: "#e25dd2",
       },
       {
         id: 5,
-        name: "Resource E",
+        name: "Conference Hall",
         color: "#1dab2f",
       },
       {
         id: 6,
-        name: "Resource F",
+        name: "Garden",
         color: "#d6d145",
       },
       {
         id: 7,
-        name: "Resource G",
+        name: "Rooftop",
         color: "#34c8e0",
       },
       {
         id: 8,
-        name: "Resource H",
+        name: "Historic Downtown Walking Tour",
         color: "#9dde46",
       },
       {
         id: 9,
-        name: "Resource I",
+        name: "Yoga in the Park",
         color: "#166f6f",
       },
       {
         id: 10,
-        name: "Resource J",
+        name: "Summer Music Festival",
         color: "#f7961e",
       },
     ],

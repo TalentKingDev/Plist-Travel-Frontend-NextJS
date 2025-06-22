@@ -5,6 +5,7 @@ import AddHotel from "@/components/dashboard/vendor-dashboard/listings/property/
 import AddSpace from "@/components/dashboard/vendor-dashboard/listings/property/AddSpace";
 import AddVacation from "@/components/dashboard/vendor-dashboard/listings/property/AddVacation";
 import AddEventVenue from "@/components/dashboard/vendor-dashboard/listings/property/AddEventVenue";
+import AddEvent from "@/components/dashboard/vendor-dashboard/listings/property/AddEvent";
 import { useSearchParams } from "next/navigation";
 
 // export const metadata = {
@@ -20,6 +21,7 @@ const index = () => {
     Spaces: <AddSpace service={"Spaces"} />,
     "Vacation Rentals": <AddVacation service={"Vacation Rentals"} />,
     "Event Venues": <AddEventVenue service={"Event Venues"} />,
+    "Events": <AddEvent service={"Events"} />,
   };
 
   return <>{addListing[service]}</>;

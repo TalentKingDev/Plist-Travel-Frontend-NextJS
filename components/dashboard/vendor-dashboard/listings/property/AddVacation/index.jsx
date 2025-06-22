@@ -7,6 +7,7 @@ import Amenities from "./Amenities";
 import GuestReviews from "./GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
+import FAQs from "../FAQs";
 
 const index = ({ service }) => {
   const router = useRouter();
@@ -36,6 +37,11 @@ const index = ({ service }) => {
       id: 5,
       name: "Guest Reviews & Ratings",
       content: <GuestReviews />,
+    },
+    {
+      id: 6,
+      name: "FAQs",
+      content: <FAQs />,
     },
   ];
 

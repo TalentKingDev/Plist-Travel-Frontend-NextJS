@@ -37,6 +37,11 @@ const index = ({ service }) => {
       name: "Guest Reviews & Ratings",
       content: <GuestReviews />,
     },
+    {
+      id: 6,
+      name: "FAQs",
+      content: <FAQs />,
+    },
   ];
 
   const [activeStep, setActiveStep] = useState(1);
