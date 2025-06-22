@@ -6,7 +6,7 @@ import BasicInfo from "./BasicInfo";
 import Rates from "./Rates";
 import ListingDetails from "./ListingDetails";
 import ListingPrice from "./ListingPrice";
-import Calendar from "./Calendar";
+import Calendar from "../Calendar";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../common/layout";
 

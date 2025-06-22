@@ -2,6 +2,7 @@ import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
 import { Radio } from "@mui/material";
 
 const Calendar = () => {
@@ -31,12 +32,12 @@ const Calendar = () => {
 
   return (
     <div className="row y-gap-10 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">Availability</h1>
-      <div className="col-12 mt-10">
+      <h1 className="text-20 lh-14 fw-600">Availability Calendar</h1>
+      <div className="col-12">
         {calendarTypes.map((type, index) => (
-          <div className="d-flex items-end mt-5" key={index}>
+          <div className="d-flex items-end gap-2" key={index}>
             <Radio
-              className="flex-shrink-0"
+              className="flex-shrink-0" 
               checked={activeType === type.id}
               onChange={() => {
                 setActiveType(type.id);

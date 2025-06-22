@@ -4,11 +4,10 @@ import svgIcon from "@/components/data/svgIcon";
 import VendorDashboardLayout from "../../common/layout";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from '@fullcalendar/timegrid';
+import timeGridPlugin from "@fullcalendar/timegrid";
 import { Eventcalendar, setOptions } from "@mobiscroll/react";
 import { useMemo, useState } from "react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
-import { end } from "@popperjs/core";
 
 setOptions({
   theme: "ios",
@@ -162,9 +161,11 @@ const index = () => {
     ],
     []
   );
+
   function random(min, max) {
     return Math.random() * (max - min) + min;
   }
+
   function generateRawEvents(startDateStr, days = 80) {
     const rawEvents = [];
     const startDate = new Date(startDateStr);
@@ -178,13 +179,42 @@ const index = () => {
       const price = Math.round(random(40, 60));
 
       rawEvents.push(
-        { title: `Availability: ${availability}`, start: dateStr, color: "#ffc107" },
+        {
+          title: `Availability: ${availability}`,
+          start: dateStr,
+          color: "#ffc107",
+        },
         { title: `Price: ${price}`, start: dateStr, color: "#6ea8fe" },
-        { title: `Event 1`, start: dateStr+"T09:00:00", end: dateStr+"T12:00:00", color: "#6ea8fe" },
-        { title: `Event 2`, start: dateStr+"T14:00:00", end: dateStr+"T21:00:00", color: "#6ea8fe" },
-        { title: `Event 3`, start: dateStr+"T14:00:00", end: dateStr+"T21:00:00", color: "#6ea8fe" },
-        { title: `Event 4`, start: dateStr+"T14:00:00", end: dateStr+"T21:00:00", color: "#6ea8fe" },
-        { title: `Event 5`, start: dateStr+"T14:00:00", end: dateStr+"T21:00:00", color: "#6ea8fe" },
+        {
+          title: `Event 1`,
+          start: dateStr + "T09:00:00",
+          end: dateStr + "T12:00:00",
+          color: "#6ea8fe",
+        },
+        {
+          title: `Event 2`,
+          start: dateStr + "T14:00:00",
+          end: dateStr + "T21:00:00",
+          color: "#6ea8fe",
+        },
+        {
+          title: `Event 3`,
+          start: dateStr + "T14:00:00",
+          end: dateStr + "T21:00:00",
+          color: "#6ea8fe",
+        },
+        {
+          title: `Event 4`,
+          start: dateStr + "T14:00:00",
+          end: dateStr + "T21:00:00",
+          color: "#6ea8fe",
+        },
+        {
+          title: `Event 5`,
+          start: dateStr + "T14:00:00",
+          end: dateStr + "T21:00:00",
+          color: "#6ea8fe",
+        }
       );
     }
 
