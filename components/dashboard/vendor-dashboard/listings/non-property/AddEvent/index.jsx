@@ -3,11 +3,12 @@ import { useState } from "react";
 import Description from "./Description";
 import Image from "./Image";
 import Location from "./Location";
-import Amenities from "./Amenities";
-import GuestReviews from "./GuestReviews";
+import ListingPrice from "../common/ListingPrice";
+import GuestReviews from "../../common/GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
 import FAQs from "../../common/FAQs";
+import Calendar from "../common/Calendar";
 
 const index = ({ service }) => {
   const router = useRouter();
@@ -30,8 +31,8 @@ const index = ({ service }) => {
     },
     {
       id: 4,
-      name: "Listing Amenities",
-      content: <Amenities />,
+      name: "Listing Price",
+      content: <ListingPrice />,
     },
     {
       id: 5,
@@ -42,6 +43,11 @@ const index = ({ service }) => {
       id: 6,
       name: "FAQs",
       content: <FAQs />,
+    },
+    {
+      id: 7,
+      name: "Calendar",
+      content: <Calendar />,
     },
   ];
 

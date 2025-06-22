@@ -4,7 +4,7 @@ import Description from "./Description";
 import Image from "./Image";
 import Location from "./Location";
 import Amenities from "./Amenities";
-import GuestReviews from "./GuestReviews";
+import GuestReviews from "../../common/GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
 import FAQs from "../../common/FAQs";
