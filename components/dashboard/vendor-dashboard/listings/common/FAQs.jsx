@@ -6,7 +6,7 @@ const FAQs = () => {
   return (
     <div className="row y-gap-10 x-gap-20">
       <div className="col-auto">
-        <h1 className="text-20 lh-14 fw-600"></h1>
+        <h1 className="text-20 lh-14 fw-600">Frequently Asked Questions</h1>
       </div>
       <div className="col-auto ms-auto">
         <i

@@ -7,7 +7,7 @@ import Amenities from "./Amenities";
 import GuestReviews from "./GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
-import FAQs from "../FAQs";
+import FAQs from "../../common/FAQs";
 
 const index = ({ service }) => {
   const router = useRouter();

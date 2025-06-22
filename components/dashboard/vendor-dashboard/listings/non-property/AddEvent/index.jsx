@@ -15,12 +15,12 @@ const index = ({ service }) => {
   const propertySteps = [
     {
       id: 1,
-      name: "Property Description",
+      name: "Listing Description",
       content: <Description />,
     },
     {
       id: 2,
-      name: "Property Images",
+      name: "Listing Images",
       content: <Image />,
     },
     {
@@ -30,7 +30,7 @@ const index = ({ service }) => {
     },
     {
       id: 4,
-      name: "Property Amenities",
+      name: "Listing Amenities",
       content: <Amenities />,
     },
     {
