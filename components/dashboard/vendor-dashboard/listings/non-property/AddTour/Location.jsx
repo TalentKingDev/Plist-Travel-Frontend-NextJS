@@ -30,7 +30,7 @@ const Location = () => {
       <h1 className="text-20 lh-14 fw-600">Listing Location</h1>
 
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Location</h1>
+        <h1 className="text-14 lh-12 fw-500">Location/Starting Point</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10" onChange={(e) => setLocation(locationList[e.target.value])}>
           <option value="" defaulValue>
             Select location

@@ -5,18 +5,18 @@ const Description = () => {
 
   return (
     <div className="row y-gap-10 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">Property Description</h1>
+      <h1 className="text-20 lh-14 fw-600">Tour Description</h1>
       <div className="col-12 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Venue Name</h1>
+        <h1 className="text-14 lh-12 fw-500">Tour Title</h1>
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Enter venue name"
+          placeholder="Enter tour title"
         />
       </div>
 
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Venue Category</h1>
+        <h1 className="text-14 lh-12 fw-500">Tour Category</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
           <option defaultValue>Select category</option>
           <option value="conference-hall">Conference Hall</option>
@@ -26,7 +26,7 @@ const Description = () => {
       </div>
 
       <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Venue Subcategory</h1>
+        <h1 className="text-14 lh-12 fw-500">Tour Subcategory</h1>
         <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
           <option defaultValue>Select subcategory type</option>
           {/* <optgroup label="Property List">
@@ -58,37 +58,14 @@ const Description = () => {
             ))}
         </div>
       </div>
-      
-      <div className="col-12 px-10 mt-10">
-        <div className="row border-light rounded-8 px-10 py-10 y-gap-10 x-gap-10">
-          <h1 className="text-18 lh-12 fw-500">Contact Person</h1>
-
-          <div className="col-sm-6 mt-5">
-            <h1 className="text-14 lh-12 fw-500">Manager</h1>
-            <input
-              className="border-light rounded-8 py-5 px-15 w-full mt-10"
-              type="text"
-              placeholder="Enter Manager name"
-            />
-          </div>
-          <div className="col-sm-6 mt-5">
-            <h1 className="text-14 lh-12 fw-500">Phone</h1>
-            <input
-              className="border-light rounded-8 py-5 px-15 w-full mt-10"
-              type="text"
-              placeholder="Enter phone number"
-            />
-          </div>
-        </div>
-      </div>
 
       <div className="col-sm-12 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Parking Info</h1>
-        <textarea
+        <h1 className="text-14 lh-12 fw-500">Schedule & Availability</h1>
+        <input
           rows={3}
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="text"
-          placeholder="Describe your property"
+          placeholder="i.e. Daily at 10 AM and 2 PM"
         />
       </div>
     </div>

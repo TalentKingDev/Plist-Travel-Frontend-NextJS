@@ -3,12 +3,13 @@ import { useState } from "react";
 import Description from "./Description";
 import Image from "./Image";
 import Location from "./Location";
-import ListingPrice from "../common/ListingPrice";
+import ListingPrice from "./ListingPrice";
 import GuestReviews from "../../common/GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
 import FAQs from "../../common/FAQs";
 import Calendar from "../common/Calendar";
+import ListingDetails from "./ListingDetails";
 
 const index = ({ service }) => {
   const router = useRouter();
@@ -31,21 +32,26 @@ const index = ({ service }) => {
     },
     {
       id: 4,
+      name: "Listing Details",
+      content: <ListingDetails />,
+    },
+    {
+      id: 5,
       name: "Listing Price",
       content: <ListingPrice />,
     },
     {
-      id: 5,
+      id: 6,
       name: "Guest Reviews & Ratings",
       content: <GuestReviews />,
     },
     {
-      id: 6,
+      id: 7,
       name: "FAQs",
       content: <FAQs />,
     },
     {
-      id: 7,
+      id: 8,
       name: "Calendar",
       content: <Calendar />,
     },

@@ -27,7 +27,7 @@ const Location = () => {
 
   return (
     <div className="row y-gap-10 x-gap-10">
-      <h1 className="text-20 lh-14 fw-600">Listing Location</h1>
+      <h1 className="text-20 lh-14 fw-600">Venue/Location</h1>
 
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">Location</h1>
