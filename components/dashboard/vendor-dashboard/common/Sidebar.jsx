@@ -24,7 +24,10 @@ const Sidebar = () => {
       title: "Listings Management",
       links: [
         { title: "Property Listings", href: "/vendor/listings/property" },
-        { title: "Non-Property Listings", href: "/vendor/listings/non-property" },
+        {
+          title: "Non-Property Listings",
+          href: "/vendor/listings/non-property",
+        },
         { title: "Room Type", href: "/vendor/room-type" },
       ],
     },
@@ -59,7 +62,16 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/taxi.svg",
       title: "Messaging & Communication",
-      href: "/vendor/conversation",
+      links: [
+        {
+          title: "Inbox",
+          href: "/vendor/conversation",
+        },
+        {
+          title: "Guest Reviews & Ratings",
+          href: "/vendor/review",
+        },
+      ],
     },
     {
       icon: "/img/dashboard/sidebar/canoe.svg",

@@ -4,7 +4,6 @@ import Description from "./Description";
 import Image from "./Image";
 import Location from "./Location";
 import Amenities from "../../common/Amenities";
-import GuestReviews from "../../common/GuestReviews";
 import { useRouter } from "next/navigation";
 import VendorDashboardLayout from "../../../common/layout";
 import FAQs from "../../common/FAQs";
@@ -35,11 +34,6 @@ const index = ({ service }) => {
     },
     {
       id: 5,
-      name: "Guest Reviews & Ratings",
-      content: <GuestReviews />,
-    },
-    {
-      id: 6,
       name: "FAQs",
       content: <FAQs />,
     },
