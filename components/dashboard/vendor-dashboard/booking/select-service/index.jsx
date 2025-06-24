@@ -80,7 +80,10 @@ const index = () => {
               className="button rounded-8 py-10 px-30 text-14 -dark-1 bg-dark-3 text-white col-auto"
               onClick={() => {
                 if (selectedService) {
-                  router.push(`/vendor/booking/search`);
+                  router.push(
+                    "/vendor/booking/search?service=" +
+                    selectedService.name
+                  );
                 } else {
                   setShowSnackbar(true);
                 }

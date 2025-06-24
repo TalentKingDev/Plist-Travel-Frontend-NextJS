@@ -1,10 +1,7 @@
 "use client";
 
 import svgIcon from "@/components/data/svgIcon";
-import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
-import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperties";
 import DatePicker, { DateObject } from "react-multi-date-picker";
-import Pagination from "@/components/hotel-list/common/Pagination";
 import { useState } from "react";
 
 const index = () => {
@@ -15,11 +12,11 @@ const index = () => {
   const [starRating, setStarRating] = useState(0);
 
   return (
-    <VendorDashboardLayout>
+    <>
       <div className="py-20 px-20 rounded-8 bg-white shadow-3">
-        <h1 className="text-30 lh-14 fw-600">Hotel Search</h1>
+        <h1 className="text-30 lh-14 fw-600">Vacation Rentals Search</h1>
         <div className="text-15 text-light-1">
-          Find accommodations for your client
+          Find vacation rentals for your client
         </div>
         <div className="row x-gap-10 y-gap-10 mt-10">
           <div className="col-sm-4 mt-5">
@@ -123,17 +120,12 @@ const index = () => {
         </div>
           <div className="col-12 mt-10">
             <button className="bg-blue-1 text-white rounded-8 py-10 px-20 w-100 fw-500 text-14">
-              <i className="icon icon-search"></i> Search Hotels
+              <i className="icon icon-search"></i> Search Vacation Rentals
             </button>
           </div>
         </div>
       </div>
-
-      <div className="row y-gap-30 mt-20">
-        <HotelProperties />
-      </div>
-      <Pagination />
-    </VendorDashboardLayout>
+    </>
   );
 };
 
