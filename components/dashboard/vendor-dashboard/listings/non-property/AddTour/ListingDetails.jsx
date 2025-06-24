@@ -56,6 +56,7 @@ const ListingDetails = ({ bookingType }) => {
         <input
           className="border-light rounded-8 py-5 px-15 w-full mt-10"
           type="number"
+          min={1}
           placeholder="The maximum number of participants allowed."
         />
       </div>

@@ -68,10 +68,12 @@ const index = () => {
             </div>
           </div>
           <div className="col-sm-4 mt-5">
-            <h1 className="text-14 lh-12 fw-500">Guests</h1>
+            <h1 className="text-14 lh-12 fw-500">Capacity Range</h1>
             <div className="position-relative d-flex items-center mt-10">
-              <select className="form-select rounded-8 border-light pl-30 pr-20 py-10 justify-between text-16 fw-400 w-full text-12">
-                <option defaultValue>1 Guest</option>
+              <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12">
+                <option defaultValue>10 ~ 100</option>
+                <option defaultValue>100 ~ 500</option>
+                <option defaultValue>500 ~ 1000</option>
               </select>
               <span
                 className="text-light-1 position-absolute"
