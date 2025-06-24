@@ -15,37 +15,39 @@ const index = () => {
   const data = [
     {
       name: "Spaces",
-      image: "/img/dashboard/services/flight_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
+      image: "/img/dashboard/services/property_spaces.svg",
+      icon: "/img/dashboard/icons/hotel-icon.svg"
     },
     {
       name: "Hotels",
       image: "/img/dashboard/services/property_service.jpg",
-      icon: "/img/dashboard/icons/hotel-icon.svg",
+      icon: "/img/dashboard/icons/hotel-icon.svg"
     },
     {
       name: "Event Venues",
-      image: "/img/dashboard/services/ride_service.jpg",
+      image: "/img/dashboard/services/property_event_venues.png",
       icon: "/img/dashboard/icons/hotel-icon.svg",
+      end: "vacaton-rentals",
     },
     {
       name: "Vacation Rentals",
-      image: "/img/dashboard/services/tour_service.jpg",
+      image: "/img/dashboard/services/property_vacation_rentals.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
       name: "Events",
-      image: "/img/dashboard/services/flight_service.jpg",
+      image: "/img/dashboard/services/attr_events_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
+      end: "events",
     },
     {
       name: "Tours",
-      image: "/img/dashboard/services/tour_service.jpg",
+      image: "/img/dashboard/services/noproperty_tours.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
       name: "Activities",
-      image: "/img/dashboard/services/attr_events_service.jpg",
+      image: "/img/dashboard/services/noproperty_activities.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
   ];
@@ -78,7 +80,7 @@ const index = () => {
               className="button rounded-8 py-10 px-30 text-14 -dark-1 bg-dark-3 text-white col-auto"
               onClick={() => {
                 if (selectedService) {
-                  router.push("/vendor/booking/search");
+                  router.push(`/vendor/booking/search`);
                 } else {
                   setShowSnackbar(true);
                 }

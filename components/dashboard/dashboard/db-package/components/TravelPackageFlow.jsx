@@ -11,35 +11,47 @@ const TravelPackageFlow = () => {
 
   const [data, setData] = useState([
     {
-      name: "Flights",
-      image: "/img/dashboard/services/flight_service.jpg",
+      name: "Spaces",
+      image: "/img/dashboard/services/property_spaces.svg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
+      selected: false
     },
     {
-      name: "Properties",
+      name: "Hotels",
       image: "/img/dashboard/services/property_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
+      selected: false
     },
     {
-      name: "Rides",
-      image: "/img/dashboard/services/ride_service.jpg",
+      name: "Event Venues",
+      image: "/img/dashboard/services/property_event_venues.png",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
+      selected: false
+    },
+    {
+      name: "Vacation Rentals",
+      image: "/img/dashboard/services/property_vacation_rentals.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+      selected: false
+    },
+    {
+      name: "Events",
+      image: "/img/dashboard/services/attr_events_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+      selected: false
     },
     {
       name: "Tours",
-      image: "/img/dashboard/services/tour_service.jpg",
+      image: "/img/dashboard/services/noproperty_tours.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
+      selected: false
     },
     {
-      name: "Attractions/Events",
-      image: "/img/dashboard/services/attr_events_service.jpg",
+      name: "Activities",
+      image: "/img/dashboard/services/noproperty_activities.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
-      selected: false,
-    },
+      selected: false
+    }
   ]);
 
   const handleTabClick = (index) => {
