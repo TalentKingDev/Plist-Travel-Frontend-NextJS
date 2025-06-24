@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
-import { hotelsData } from "../../../data/hotels";
+import { hotelsData } from "../../../data/hotelsVendor";
 import isTextMatched from "../../../utils/isTextMatched";
 
 const HotelProperties = () => {
