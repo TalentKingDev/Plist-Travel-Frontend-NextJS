@@ -105,8 +105,7 @@ const index = ({ service }) => {
               if (activeStep < propertySteps.length) {
                 setActiveStep(activeStep + 1);
               } else {
-                localStorage.setItem("add-rateplan-property-id", 2);
-                router.push("/vendor/room-type/add?service=" + service);
+                router.push("/vendor/listings/non-property");
               }
             }}
           >

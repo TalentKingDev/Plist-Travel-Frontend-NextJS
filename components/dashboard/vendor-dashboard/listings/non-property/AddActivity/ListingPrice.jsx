@@ -18,32 +18,24 @@ const ListingPrice = () => {
   return (
     <div className="row y-gap-10 x-gap-20">
       <h1 className="text-20 lh-14 fw-600">Price</h1>
-      <div className="col-12 mt-5">
-        <div className="border-light rounded-8 px-15 py-15">
-          <div className="d-flex justify-between items-center">
-            <div className="d-flex flex-column items-start">
-              <span className="text-16 fw-500 mb-5 lh-1">
-                General Admission
-              </span>
-            </div>
-            <span className="text-20 fw-600 lh-1">$50.00</span>
-          </div>
-          <div className="d-flex justify-between items-center mt-20">
-            <div className="d-flex flex-column items-start">
-              <span className="text-16 fw-500 mb-5 lh-1">VIP</span>
-            </div>
-            <span className="text-20 fw-600 lh-1">$100.00</span>
-          </div>
-        </div>
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Price Category</h1>
+        <select className="form-select w-full border-light rounded-8 h-50 mt-10">
+          <option value="50">General Admission</option>
+          <option value="100">VIP</option>
+        </select>
       </div>
+
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">Price</h1>
         <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          className="border-light rounded-8 py-5 px-15 w-full h-50 mt-10"
           type="number"
-          placeholder="i.e. $15 per person"
+          step={0.01}
+          placeholder="Enter price"
         />
       </div>
+
       <div className="col-12 mt-5 d-flex items-center">
         <Checkbox
           value={basePricesByDayOfWeek}
@@ -90,15 +82,39 @@ const ListingPrice = () => {
         Array(guests)
           .fill(null)
           .map((_, index) => (
-            <div className="col-md-6 mt-5" key={index}>
-              <h1 className="text-14 lh-1 fw-500">{index + 1} Guests Price</h1>
-              <input
-                className="border-light rounded-8 py-5 px-15 w-full mt-10"
-                type="number"
-                step={0.01}
-                placeholder={`$${100 + index * 20}`}
-              />
-            </div>
+            <React.Fragment key={index}>
+              <div className="col-md-4 mt-5">
+                <h1 className="text-14 lh-1 fw-500">
+                  Number of Guest Start Range
+                </h1>
+                <input
+                  className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                  type="number"
+                  step={1}
+                  placeholder={1 + index * 20}
+                />
+              </div>
+              <div className="col-md-4 mt-5">
+                <h1 className="text-14 lh-1 fw-500">
+                  Number of Guest End Range
+                </h1>
+                <input
+                  className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                  type="number"
+                  step={1}
+                  placeholder={20 + index * 20}
+                />
+              </div>
+              <div className="col-md-4 mt-5">
+                <h1 className="text-14 lh-1 fw-500">Guests Price</h1>
+                <input
+                  className="border-light rounded-8 py-5 px-15 w-full mt-10"
+                  type="number"
+                  step={0.01}
+                  placeholder={`$${100 + index * 20}`}
+                />
+              </div>
+            </React.Fragment>
           ))}
     </div>
   );
