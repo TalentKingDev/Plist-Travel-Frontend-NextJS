@@ -141,12 +141,26 @@ const SpaceDetails = () => {
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Space Details</h1>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Space Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
+      </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Space Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
       <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination/Hotel Name</h1>
+        <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
           className="border-light rounded-8 py-5 px-20 w-full mt-10"
           type="text"
-          placeholder="City, region or Hotel Name"
+          placeholder="City, region of Space"
         />
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
@@ -257,13 +271,28 @@ const HotelDetails = () => {
   const [children, setChildren] = useState(0);
   return (
     <>
-      <h1 className="text-16 lh-14 fw-500">Property Details</h1>
+      <h1 className="text-16 lh-14 fw-500">Hotel Details</h1>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Hotel Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
+      </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Hotel Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
+
       <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination/Hotel Name</h1>
+        <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
           className="border-light rounded-8 py-5 px-20 w-full mt-10"
           type="text"
-          placeholder="City, region or Hotel Name"
+          placeholder="City, region or Hotel"
         />
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
@@ -374,13 +403,27 @@ const EventVenuesDetails = () => {
   const [children, setChildren] = useState(0);
   return (
     <>
-      <h1 className="text-16 lh-14 fw-500">Property Details</h1>
+      <h1 className="text-16 lh-14 fw-500">Event Venues Details</h1>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Event Venue Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
+      </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Event Venue Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
       <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination/Hotel Name</h1>
+        <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
           className="border-light rounded-8 py-5 px-20 w-full mt-10"
           type="text"
-          placeholder="City, region or Hotel Name"
+          placeholder="City, region or Event Venue"
         />
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
@@ -491,13 +534,28 @@ const VacationRentalsDetails = () => {
   const [children, setChildren] = useState(0);
   return (
     <>
-      <h1 className="text-16 lh-14 fw-500">Property Details</h1>
+      <h1 className="text-16 lh-14 fw-500">Vacation Rentals Details</h1>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Vacation Rental Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
+      </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Vacation Rental Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
+
       <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination/Hotel Name</h1>
+        <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
           className="border-light rounded-8 py-5 px-20 w-full mt-10"
           type="text"
-          placeholder="City, region or Hotel Name"
+          placeholder="City, region or Vacation Rental"
         />
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
@@ -604,13 +662,18 @@ const ToursDetails = () => {
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Tour Details</h1>
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Tour Type</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="e.g. Guided Tour"
-        />
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Tour Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
+      </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Tour Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
       </div>
       <div className="col-12">
         <h1 className="text-15 lh-14 fw-500">Destination</h1>
@@ -620,7 +683,7 @@ const ToursDetails = () => {
           placeholder="City or region"
         />
       </div>
-      <div className="col-6 pl-40">
+      <div className="col-6">
         <h1 className="text-15 lh-14 fw-500">Date</h1>
         <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
@@ -662,24 +725,31 @@ const EventsDetails = () => {
   const [paricipants, setParicipants] = useState(1);
   return (
     <>
-      <h1 className="text-16 lh-14 fw-500">Tour Details</h1>
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Tour Type</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="e.g. Guided Tour"
-        />
+      <h1 className="text-16 lh-14 fw-500">Event Details</h1>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Event Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
       </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Event Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
+
       <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination</h1>
+        <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
           className="border-light rounded-8 py-5 px-20 w-full mt-10"
           type="text"
           placeholder="City or region"
         />
       </div>
-      <div className="col-6 pl-40">
+      <div className="col-6">
         <h1 className="text-15 lh-14 fw-500">Date</h1>
         <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
           <DatePicker
@@ -722,14 +792,21 @@ const ActivitiesDetails = () => {
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Activities & Events Details</h1>
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Activity Type</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="e.g. Adventure Activities"
-        />
+      
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Activity Category</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select category</option>
+        </select>
       </div>
+
+      <div className="col-sm-6 mt-10">
+        <h1 className="text-14 lh-12 fw-500">Activity Subcategory</h1>
+        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
+          <option defaultValue>Select subcategory</option>
+        </select>
+      </div>
+
       <div className="col-12">
         <h1 className="text-15 lh-14 fw-500">Location</h1>
         <input
