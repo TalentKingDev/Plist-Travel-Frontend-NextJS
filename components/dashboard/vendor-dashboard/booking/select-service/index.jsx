@@ -12,6 +12,44 @@ const index = () => {
   const [selectedService, setSelectedService] = useState();
   const [showSnackbar, setShowSnackbar] = useState(false);
 
+  const data = [
+    {
+      name: "Spaces",
+      image: "/img/dashboard/services/flight_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Hotels",
+      image: "/img/dashboard/services/property_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Event Venues",
+      image: "/img/dashboard/services/ride_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Vacation Rentals",
+      image: "/img/dashboard/services/tour_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Events",
+      image: "/img/dashboard/services/flight_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Tours",
+      image: "/img/dashboard/services/tour_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+    {
+      name: "Activities",
+      image: "/img/dashboard/services/attr_events_service.jpg",
+      icon: "/img/dashboard/icons/hotel-icon.svg",
+    },
+  ];
+
   return (
     <VendorDashboardLayout>
       <div className="row y-gap-20 py-10 px-10 rounded-8 bg-white shadow-3">
@@ -23,6 +61,7 @@ const index = () => {
         </div>
         <div className="col-12">
           <ServiceCard
+            data={data}
             selectedService={selectedService}
             setSelectedService={setSelectedService}
           />
@@ -39,7 +78,7 @@ const index = () => {
               className="button rounded-8 py-10 px-30 text-14 -dark-1 bg-dark-3 text-white col-auto"
               onClick={() => {
                 if (selectedService) {
-                  router.push("/vendor/booking/search")
+                  router.push("/vendor/booking/search");
                 } else {
                   setShowSnackbar(true);
                 }

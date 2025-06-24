@@ -144,7 +144,8 @@ const Description = ({ bookingType, setBookingType }) => {
           </h1>
           <input
             className="border-light rounded-8 py-5 px-15 w-full mt-10"
-            type="text"
+            type="number"
+            min={1}
             placeholder="Enter number of rooms available"
             onChange={(e) => setRooms(Number(e.target.value))}
           />
