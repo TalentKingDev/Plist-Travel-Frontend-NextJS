@@ -8,7 +8,7 @@ const SelectServices = ({ setIsListings }) => {
   const data = [
     {
       name: "Spaces",
-      image: "/img/dashboard/services/flight_service.jpg",
+      image: "/img/dashboard/services/property_spaces.svg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
@@ -18,12 +18,12 @@ const SelectServices = ({ setIsListings }) => {
     },
     {
       name: "Event Venues",
-      image: "/img/dashboard/services/ride_service.jpg",
+      image: "/img/dashboard/services/property_event_venues.png",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
       name: "Vacation Rentals",
-      image: "/img/dashboard/services/tour_service.jpg",
+      image: "/img/dashboard/services/property_vacation_rentals.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
   ];
