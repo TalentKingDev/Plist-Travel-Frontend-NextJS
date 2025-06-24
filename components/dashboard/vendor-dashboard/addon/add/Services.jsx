@@ -3,6 +3,7 @@
 import { Checkbox } from "@mui/material";
 import { useState } from "react";
 import Calendar from "../../roomtype/Calendar";
+import { useRouter } from "next/navigation";
 // import { LocalizationProvider } from "@mui/x-date-pickers-pro/LocalizationProvider";
 // import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 // import { TimeRangePicker } from "@mui/x-date-pickers-pro/TimeRangePicker";
@@ -15,6 +16,7 @@ const Services = () => {
   const handleClose = () => {
     setShowModal(false);
   };
+const router = useRouter();
 
   return (
     <div className="row y-gap-15 bg-white px-10 py-20 rounded-8">
@@ -148,7 +150,7 @@ const Services = () => {
         <button className="button border-light rounded-8 text-12 py-10 px-15 mr-10">
           Cancel
         </button>
-        <button className="button bg-blue-1 text-white rounded-8 text-12 py-10 px-15">
+        <button className="button bg-blue-1 text-white rounded-8 text-12 py-10 px-15" onClick={() => router.push("/vendor/addon")}>
           Save
         </button>
       </div>

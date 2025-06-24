@@ -7,7 +7,7 @@ import PaymentHistory from "./PaymentHistory";
 import BillingInfo from "./BillingInfo";
 
 const index = () => {
-  const [activeTab, setActiveTab] = useState("billing-info");
+  const [activeTab, setActiveTab] = useState("subscription");
   const tabs = [
     {
       label: "Subscription",
