@@ -20,7 +20,7 @@ const index = () => {
         </div>
         <div className="row x-gap-10 y-gap-10 mt-10">
           <div className="col-sm-4 mt-5">
-            <h1 className="text-14 lh-12 fw-500">Location</h1>
+            <h1 className="text-14 lh-12 fw-500">Event Venue/Location</h1>
             <div className="position-relative d-flex items-center mt-10">
               <input
                 type="text"
@@ -40,7 +40,7 @@ const index = () => {
             </div>
           </div>
           <div className="col-sm-4 mt-5">
-            <h1 className="text-14 lh-12 fw-500">Check-in / Check-out</h1>
+            <h1 className="text-14 lh-12 fw-500">Event Date Range</h1>
             <div className="position-relative d-flex items-center mt-10">
               <div className="border-light rounded-8 py-10 pl-30 pr-20 w-100 text-12 cursor-text text-light-1 bg-white">
                 <DatePicker

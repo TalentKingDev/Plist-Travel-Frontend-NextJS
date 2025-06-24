@@ -2,6 +2,7 @@ import Hotels from "@/components/hotels/Hotels";
 import { useEffect, useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import TravelerInformationCard from "./TravelInformationCard";
+import ListingSearchResult from "@/components/dashboard/vendor-dashboard/common/ListingSearchResult";
 
 export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -122,7 +123,7 @@ export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
           </select>
         </div>
         <div className="relative overflow-hidden pt-40 sm:pt-20 js-section-slider item_gap-x30">
-          <Hotels />
+          <ListingSearchResult />
         </div>
       </div>
     </>

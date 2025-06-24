@@ -1,7 +1,7 @@
 "use client";
 
 import svgIcon from "@/components/data/svgIcon";
-import ListingSearchResult from "../../../common/ListingSearchResult";
+import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperties";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import { useState } from "react";
 
@@ -128,7 +128,7 @@ const index = () => {
       </div>
 
       <div className="row y-gap-30 mt-20">
-        <ListingSearchResult />
+        <HotelProperties />
       </div>
     </>
   );

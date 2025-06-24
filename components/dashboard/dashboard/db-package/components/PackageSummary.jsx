@@ -6,7 +6,6 @@ import transportation from "/public/img/dashboard/services/transportation.svg";
 import tours from "/public/img/dashboard/services/tours.svg";
 import activities from "/public/img/dashboard/services/activities.svg";
 import Image from "next/image";
-import { useEffect } from "react";
 import svgIcon from "@/components/data/svgIcon";
 
 export const PackageSummary = ({ selectedItems }) => {
