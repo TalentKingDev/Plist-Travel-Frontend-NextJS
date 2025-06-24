@@ -1,10 +1,8 @@
 "use client";
 
 import svgIcon from "@/components/data/svgIcon";
-import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
 import ListingSearchResult from "../../../common/ListingSearchResult";
 import DatePicker, { DateObject } from "react-multi-date-picker";
-import Pagination from "@/components/hotel-list/common/Pagination";
 import { useState } from "react";
 
 const index = () => {
@@ -15,7 +13,7 @@ const index = () => {
   const [starRating, setStarRating] = useState(0);
 
   return (
-    <VendorDashboardLayout>
+    <>
       <div className="py-20 px-20 rounded-8 bg-white shadow-3">
         <h1 className="text-30 lh-14 fw-600">Hotel Search</h1>
         <div className="text-15 text-light-1">
@@ -109,18 +107,18 @@ const index = () => {
           <div className="col-12 mt-5">
             <h1 className="text-14 lh-12 fw-500">Star Rating</h1>
             <div className="d-flex items-center gap-1 mt-10">
-            {Array(5)
+              {Array(5)
                 .fill(null)
                 .map((_, index) => (
-                <span
+                  <span
                     className="text-20 text-yellow-1 lh-14 cursor-pointer"
                     onClick={() => setStarRating(index + 1)}
-                >
+                  >
                     {index < starRating ? "★" : "☆"}
-                </span>
+                  </span>
                 ))}
             </div>
-        </div>
+          </div>
           <div className="col-12 mt-10">
             <button className="bg-blue-1 text-white rounded-8 py-10 px-20 w-100 fw-500 text-14">
               <i className="icon icon-search"></i> Search Hotels
@@ -132,8 +130,7 @@ const index = () => {
       <div className="row y-gap-30 mt-20">
         <ListingSearchResult />
       </div>
-      <Pagination />
-    </VendorDashboardLayout>
+    </>
   );
 };
 

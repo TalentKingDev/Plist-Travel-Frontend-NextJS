@@ -51,102 +51,107 @@ const ListingSearchResult = () => {
           data-aos-delay={item.delayAnimation}
           onClick={() => {
             if (selectedListings.includes(item?.id)) {
-              setSelectedListings((prev) =>
-                prev.filter((i) => i !== item?.id)
-              );
+              setSelectedListings((prev) => prev.filter((i) => i !== item?.id));
             } else {
               setSelectedListings((prev) => [...prev, item?.id]);
             }
           }}
         >
-          <div className="hotelsCard -type-1 hover-inside-slider">
-            <div className="hotelsCard__image">
-              <div className="cardImage inside-slider">
-                <Slider
-                  {...itemSettings}
-                  arrows={true}
-                  nextArrow={<ArrowSlick type="next" />}
-                  prevArrow={<ArrowSlick type="prev" />}
-                >
-                  {item?.slideImg?.map((slide, i) => (
-                    <div className="cardImage ratio ratio-1:1" key={i}>
-                      <div className="cardImage__content ">
-                        <Image
-                          width={300}
-                          height={300}
-                          className="rounded-22 col-12 js-lazy"
-                          src={slide}
-                          alt="image"
-                          unoptimized
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </Slider>
-
-                <div className="cardImage__wishlist">
-                  <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
-                    <i
-                      className={
-                        (selectedListings.includes(item?.id)
-                          ? "icon-check"
-                          : "icon-heart") + " text-12"
-                      }
-                    />
-                  </button>
-                </div>
-
-                <div className="cardImage__leftBadge">
-                  <div
-                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase ${
-                      isTextMatched(item?.tag, "property")
-                        ? "bg-dark-1 text-white"
-                        : ""
-                    } ${
-                      isTextMatched(item?.tag, "tour")
-                        ? "bg-blue-1 text-white"
-                        : ""
-                    } ${
-                      isTextMatched(item?.tag, "flight")
-                        ? "bg-brown-1 text-white"
-                        : ""
-                    } ${
-                      isTextMatched(item?.tag, "ride")
-                        ? "bg-yellow-1 text-dark-1"
-                        : ""
-                    } ${
-                      isTextMatched(item?.tag, "attr")
-                        ? "bg-white-10 text-dark-1"
-                        : ""
-                    }`}
+          <div
+            className={
+              (selectedListings.includes(item?.id) ? "border-blue-1" : "") +
+              " rounded-8 px-5 py-5 h-100"
+            }
+          >
+            <div className="hotelsCard -type-1 hover-inside-slider">
+              <div className="hotelsCard__image">
+                <div className="cardImage inside-slider">
+                  <Slider
+                    {...itemSettings}
+                    arrows={true}
+                    nextArrow={<ArrowSlick type="next" />}
+                    prevArrow={<ArrowSlick type="prev" />}
                   >
-                    {item?.tag}
+                    {item?.slideImg?.map((slide, i) => (
+                      <div className="cardImage ratio ratio-1:1" key={i}>
+                        <div className="cardImage__content ">
+                          <Image
+                            width={300}
+                            height={300}
+                            className="rounded-22 col-12 js-lazy"
+                            src={slide}
+                            alt="image"
+                            unoptimized
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+
+                  <div className="cardImage__wishlist">
+                    {selectedListings.includes(item?.id) ? (
+                      <button className="button text-white -blue-1 bg-blue-1 size-30 rounded-full shadow-2">
+                        <i className="icon-check text-12" />
+                      </button>
+                    ) : (
+                      <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                        <i className="icon-heart text-12" />
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="cardImage__leftBadge">
+                    <div
+                      className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase ${
+                        isTextMatched(item?.tag, "property")
+                          ? "bg-dark-1 text-white"
+                          : ""
+                      } ${
+                        isTextMatched(item?.tag, "tour")
+                          ? "bg-blue-1 text-white"
+                          : ""
+                      } ${
+                        isTextMatched(item?.tag, "flight")
+                          ? "bg-brown-1 text-white"
+                          : ""
+                      } ${
+                        isTextMatched(item?.tag, "ride")
+                          ? "bg-yellow-1 text-dark-1"
+                          : ""
+                      } ${
+                        isTextMatched(item?.tag, "attr")
+                          ? "bg-white-10 text-dark-1"
+                          : ""
+                      }`}
+                    >
+                      {item?.tag}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="hotelsCard__content mt-10">
-              <h4 className="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
-                <span>{item?.title}</span>
-              </h4>
-              <p className="text-light-1 lh-14 text-14 mt-5">
-                {item?.location}
-              </p>
-              <div className="d-flex items-center mt-20">
-                <div className="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">
-                  {item?.ratings}
+              <div className="hotelsCard__content mt-10">
+                <h4 className="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
+                  <span>{item?.title}</span>
+                </h4>
+                <p className="text-light-1 lh-14 text-14 mt-5">
+                  {item?.location}
+                </p>
+                <div className="d-flex items-center mt-20">
+                  <div className="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">
+                    {item?.ratings}
+                  </div>
+                  <div className="text-14 text-dark-1 fw-500 ml-10">
+                    Exceptional
+                  </div>
+                  <div className="text-14 text-light-1 ml-10">
+                    {item?.numberOfReviews} reviews
+                  </div>
                 </div>
-                <div className="text-14 text-dark-1 fw-500 ml-10">
-                  Exceptional
-                </div>
-                <div className="text-14 text-light-1 ml-10">
-                  {item?.numberOfReviews} reviews
-                </div>
-              </div>
-              <div className="mt-5">
-                <div className="fw-500">
-                  Starting from{" "}
-                  <span className="text-blue-1">US${item?.price}</span>
+                <div className="mt-5">
+                  <div className="fw-500">
+                    Starting from{" "}
+                    <span className="text-blue-1">US${item?.price}</span>
+                  </div>
                 </div>
               </div>
             </div>
