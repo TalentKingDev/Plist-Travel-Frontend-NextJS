@@ -10,8 +10,33 @@ import svgIcon from "@/components/data/svgIcon";
 
 export const PackageSummary = ({ selectedItems }) => {
   const COMPONENT_MAP = {
-    Rides: {
-      name: "Ride",
+// Properties
+    Hotels: {
+      name: "Hotels",
+      icon: hotel,
+      content: (
+        <>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.flat}
+            <div className="text-12 lh-14 fw-600 ml-5">Hotel accommodation</div>
+          </div>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.calendar}
+            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
+              No date selected
+            </div>
+          </div>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.users}
+            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
+              1 room(s), 2 adult(s), 0 child(ren)
+            </div>
+          </div>
+        </>
+      ),
+    },
+    Spaces: {
+      name: "Spaces",
       icon: transportation,
       content: (
         <>
@@ -34,8 +59,8 @@ export const PackageSummary = ({ selectedItems }) => {
         </>
       ),
     },
-    Flights: {
-      name: "Flight",
+    "Event Venues": {
+      name: "Event Venues",
       icon: flight,
       content: (
         <>
@@ -58,6 +83,33 @@ export const PackageSummary = ({ selectedItems }) => {
         </>
       ),
     },
+
+    "Vacation Rentals": {
+      name: "Vacation Rentals",
+      icon: flight,
+      content: (
+        <>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.flight}
+            <div className="text-12 lh-14 fw-600 ml-5">To</div>
+          </div>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.calendar}
+            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
+              No date selected
+            </div>
+          </div>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.users}
+            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
+              1 passenger(s), Economy class
+            </div>
+          </div>
+        </>
+      ),
+    },
+
+//Non-properties
     Tours: {
       name: "Tours",
       icon: tours,
@@ -82,8 +134,9 @@ export const PackageSummary = ({ selectedItems }) => {
         </>
       ),
     },
-    "Attractions/Events": {
-      name: "Attractions/Events",
+
+    Events: {
+      name: "Events",
       icon: activities,
       content: (
         <>
@@ -106,25 +159,25 @@ export const PackageSummary = ({ selectedItems }) => {
         </>
       ),
     },
-    Properties: {
-      name: "Property",
-      icon: hotel,
+    Activities: {
+      name: "Events",
+      icon: activities,
       content: (
         <>
           <div className="mt-10 d-flex items-center">
-            {svgIcon.flat}
-            <div className="text-12 lh-14 fw-600 ml-5">Hotel accommodation</div>
+            {svgIcon.adventure}
+            <div className="text-12 lh-14 fw-600 ml-5">Adventure Activity</div>
+          </div>
+          <div className="mt-10 d-flex items-center">
+            {svgIcon.location_picker}
+            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
+              Activity location
+            </div>
           </div>
           <div className="mt-10 d-flex items-center">
             {svgIcon.calendar}
             <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
               No date selected
-            </div>
-          </div>
-          <div className="mt-10 d-flex items-center">
-            {svgIcon.users}
-            <div className="text-12 text-light-1 lh-14 fw-400 ml-5">
-              1 room(s), 2 adult(s), 0 child(ren)
             </div>
           </div>
         </>
