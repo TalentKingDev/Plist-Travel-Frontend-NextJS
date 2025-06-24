@@ -2,7 +2,7 @@
 
 import svgIcon from "@/components/data/svgIcon";
 import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
-import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperties";
+import ListingSearchResult from "../../../common/ListingSearchResult";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import Pagination from "@/components/hotel-list/common/Pagination";
 import { useState } from "react";
@@ -130,7 +130,7 @@ const index = () => {
       </div>
 
       <div className="row y-gap-30 mt-20">
-        <HotelProperties />
+        <ListingSearchResult />
       </div>
       <Pagination />
     </VendorDashboardLayout>
