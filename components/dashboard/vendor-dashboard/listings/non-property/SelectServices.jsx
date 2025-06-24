@@ -8,17 +8,17 @@ const SelectServices = ({ setIsListings }) => {
   const data = [
     {
       name: "Events",
-      image: "/img/dashboard/services/flight_service.jpg",
+      image: "/img/dashboard/services/attr_events_service.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
       name: "Tours",
-      image: "/img/dashboard/services/tour_service.jpg",
+      image: "/img/dashboard/services/noproperty_tours.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
     {
       name: "Activities",
-      image: "/img/dashboard/services/attr_events_service.jpg",
+      image: "/img/dashboard/services/noproperty_activities.jpg",
       icon: "/img/dashboard/icons/hotel-icon.svg",
     },
   ];
