@@ -4,7 +4,7 @@ import svgIcon from "@/components/data/svgIcon";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import { useState } from "react";
 
-const index = () => {
+const index = ({ isTravelPackage = false }) => {
   const [dates, setDates] = useState([
     new DateObject(),
     new DateObject().add(1, "month"),
@@ -13,11 +13,19 @@ const index = () => {
 
   return (
     <>
-      <div className="py-20 px-20 rounded-8 bg-white shadow-3">
-        <h1 className="text-30 lh-14 fw-600">Events Search</h1>
-        <div className="text-15 text-light-1">
-            Find the perfect event for your client
-        </div>
+      <div
+        className={
+          isTravelPackage ? "" : "py-20 px-20 rounded-8 bg-white shadow-3"
+        }
+      >
+        {!isTravelPackage && (
+          <>
+            <h1 className="text-30 lh-14 fw-600">Events Search</h1>
+            <div className="text-15 text-light-1">
+              Find the perfect event for your client
+            </div>
+          </>
+        )}
         <div className="row x-gap-10 y-gap-10 mt-10">
           <div className="col-sm-4 mt-5">
             <h1 className="text-14 lh-12 fw-500">Event Venue/Location</h1>
@@ -75,16 +83,6 @@ const index = () => {
                 <option defaultValue>100 ~ 500</option>
                 <option defaultValue>500 ~ 1000</option>
               </select>
-              <span
-                className="text-light-1 position-absolute"
-                style={{
-                  left: "10px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                }}
-              >
-                {svgIcon.users}
-              </span>
             </div>
           </div>
           <div className="col-sm-4 mt-5">
@@ -108,23 +106,25 @@ const index = () => {
           <div className="col-12 mt-5">
             <h1 className="text-14 lh-12 fw-500">Star Rating</h1>
             <div className="d-flex items-center gap-1 mt-10">
-            {Array(5)
+              {Array(5)
                 .fill(null)
                 .map((_, index) => (
-                <span
+                  <span
                     className="text-20 text-yellow-1 lh-14 cursor-pointer"
                     onClick={() => setStarRating(index + 1)}
-                >
+                  >
                     {index < starRating ? "★" : "☆"}
-                </span>
+                  </span>
                 ))}
             </div>
-        </div>
-          <div className="col-12 mt-10">
-            <button className="bg-blue-1 text-white rounded-8 py-10 px-20 w-100 fw-500 text-14">
-              <i className="icon icon-search"></i> Search Event
-            </button>
           </div>
+          {!isTravelPackage && (
+            <div className="col-12 mt-10">
+              <button className="bg-blue-1 text-white rounded-8 py-10 px-20 w-100 fw-500 text-14">
+                <i className="icon icon-search"></i> Search Event
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>
