@@ -2,9 +2,6 @@
 
 import svgIcon from "@/components/data/svgIcon";
 import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
-import ListingSearchResult from "../../common/ListingSearchResult";
-import DatePicker, { DateObject } from "react-multi-date-picker";
-import Pagination from "@/components/hotel-list/common/Pagination";
 import HotelsSearch from "./property/HotelsSearch";
 import SpacesSearch from "./property/SpacesSearch";
 import EventVenuesSearch from "./property/EventVenuesSearch";
@@ -14,6 +11,7 @@ import EventsSearch from "./non-property/EventsSearch"
 import ToursSearch from "./non-property/ToursSearch"
 
 import { useSearchParams } from "next/navigation";
+import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperties";
 
 const index = () => {
 
@@ -52,9 +50,8 @@ const index = () => {
     <VendorDashboardLayout>
       <SearchComponent />
       <div className="row y-gap-30 mt-20">
-        <ListingSearchResult />
+        <HotelProperties />
       </div>
-      <Pagination />
     </VendorDashboardLayout>
   );
 };
