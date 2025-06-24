@@ -25,7 +25,7 @@ const index = () => {
     case "Hotel":
       SearchComponent = HotelsSearch;
       break;
-    case "Space":
+    case "Spaces":
       SearchComponent = SpacesSearch;
       break;
     case "Event Venues":
