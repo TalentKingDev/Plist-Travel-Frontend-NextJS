@@ -3,6 +3,8 @@
 import svgIcon from "@/components/data/svgIcon";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import { useState } from "react";
+import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const index = () => {
   const [dates, setDates] = useState([
@@ -24,7 +26,7 @@ const index = () => {
             <input
               type="text"
               placeholder="City, region, or property"
-              className="border-light bg-white rounded-8 px-10 py-5 pl-30"
+              className="border-light bg-white rounded-8 h-50 px-10 py-5 pl-30"
             />
             <span
               className="text-light-1 position-absolute"
@@ -39,32 +41,57 @@ const index = () => {
           </div>
         </div>
         <div className="col-sm-4 mt-5">
-          <h1 className="text-14 lh-12 fw-500">Check-in / Check-out</h1>
-          <div className="position-relative d-flex items-center mt-10">
-            <div className="border-light rounded-8 py-10 pl-30 pr-20 w-100 text-12 cursor-text text-light-1 bg-white">
-              <DatePicker
-                inputClass="custom_input-picker"
-                containerClassName="custom_container-picker"
-                value={dates}
-                onChange={setDates}
-                numberOfMonths={1}
-                range
-                offsetY={10}
-                format="MMMM DD"
-                minDate={new DateObject()}
+          <h1 className="text-14 lh-12 fw-500">Check-in</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                slotProps={{
+                  textField: {
+                    sx: {
+                      width: "100%",
+                      "& .MuiPickersInputBase-root": { height: 50 },
+                    },
+                  },
+                }}
               />
-            </div>
-            <span
-              className="text-light-1 position-absolute"
-              style={{
-                left: "10px",
-                top: "50%",
-                transform: "translateY(-50%)",
-              }}
-            >
-              {svgIcon.calendar}
-            </span>
+            </LocalizationProvider>
           </div>
+        </div>
+        <div className="col-sm-4 mt-5">
+          <h1 className="text-14 lh-12 fw-500">Check-out</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                slotProps={{
+                  textField: {
+                    sx: {
+                      width: "100%",
+                      "& .MuiPickersInputBase-root": { height: 50 },
+                    },
+                  },
+                }}
+              />
+            </LocalizationProvider>
+          </div>
+        </div>
+        <div className="col-sm-4 mt-5">
+          <h1 className="text-14 lh-12 fw-500">Category</h1>
+          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+            <option defaultValue>Any type</option>
+          </select>
+        </div>
+        <div className="col-sm-4 mt-5">
+          <h1 className="text-14 lh-12 fw-500">Subcategory</h1>
+          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+            <option defaultValue>Any type</option>
+          </select>
+        </div>
+        <div className="col-sm-4 mt-5">
+          <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
+          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+            <option value="day-night">Per Day/Night</option>
+            <option value="hour">Per Hour</option>
+          </select>
         </div>
         <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Guests</h1>
@@ -85,24 +112,12 @@ const index = () => {
           </div>
         </div>
         <div className="col-sm-4 mt-5">
-          <h1 className="text-14 lh-12 fw-500">Category</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
-            <option defaultValue>Any type</option>
-          </select>
-        </div>
-        <div className="col-sm-4 mt-5">
-          <h1 className="text-14 lh-12 fw-500">Subcategory</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
-            <option defaultValue>Any type</option>
-          </select>
-        </div>
-        <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Price Range</h1>
           <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
             <option defaultValue>Any price</option>
           </select>
         </div>
-        <div className="col-12 mt-5">
+        <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Star Rating</h1>
           <div className="d-flex items-center gap-1 mt-10">
             {Array(5)

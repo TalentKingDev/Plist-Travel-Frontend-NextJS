@@ -1,11 +1,14 @@
+import { Add, Remove } from "@mui/icons-material";
 import { Checkbox } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const ListingPrice = () => {
   const [basePricesByDayOfWeek, setBasePricesByDayOfWeek] = useState(false);
   const [additionalPricesByGuests, setAdditionalPricesByGuests] =
     useState(false);
   const [guests, setGuests] = useState(1);
+  const [prices, setPrices] = useState(1);
+
   const weekDays = [
     "Monday",
     "Tuesday",
@@ -17,24 +20,37 @@ const ListingPrice = () => {
   ];
   return (
     <div className="row y-gap-10 x-gap-20">
-      <h1 className="text-20 lh-14 fw-600">Price</h1>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Price Category</h1>
-        <select className="form-select w-full border-light rounded-8 h-50 mt-10">
-          <option value="50">General Admission</option>
-          <option value="100">VIP</option>
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Price</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full h-50 mt-10"
-          type="number"
-          step={0.01}
-          placeholder="Enter price"
+      <h1 className="text-20 lh-14 fw-600">
+        Price
+        <Remove
+          className="px-0 py-0"
+          onClick={() => setPrices(Math.max(1, prices - 1))}
         />
-      </div>
+        <Add className="px-0 py-0" onClick={() => setPrices(prices + 1)} />
+      </h1>
+      {Array(prices)
+        .fill(null)
+        .map((_, index) => (
+          <React.Fragment key={index}>
+            <div className="col-sm-6 mt-5">
+              <h1 className="text-14 lh-12 fw-500">Price Category</h1>
+              <select className="form-select w-full border-light rounded-8 h-50 mt-10">
+                <option value="50">General Admission</option>
+                <option value="100">VIP</option>
+              </select>
+            </div>
+
+            <div className="col-sm-6 mt-5">
+              <h1 className="text-14 lh-12 fw-500">Price</h1>
+              <input
+                className="border-light rounded-8 py-5 px-15 w-full h-50 mt-10"
+                type="number"
+                step={0.01}
+                placeholder="Enter price"
+              />
+            </div>
+          </React.Fragment>
+        ))}
 
       <div className="col-12 mt-5 d-flex items-center">
         <Checkbox

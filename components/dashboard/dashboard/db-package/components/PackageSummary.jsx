@@ -10,7 +10,7 @@ import svgIcon from "@/components/data/svgIcon";
 
 export const PackageSummary = ({ selectedItems }) => {
   const COMPONENT_MAP = {
-// Properties
+    // Properties
     Hotels: {
       name: "Hotels",
       icon: hotel,
@@ -109,7 +109,7 @@ export const PackageSummary = ({ selectedItems }) => {
       ),
     },
 
-//Non-properties
+    //Non-properties
     Tours: {
       name: "Tours",
       icon: tours,
@@ -304,6 +304,11 @@ export const PackageSummary = ({ selectedItems }) => {
             <div className="text-12 lh-14 fw-600">$ 200,000.00</div>
           </div>
         </div>
+      </div>
+      <div className="d-flex justify-end">
+        <button className="button rounded-8 py-10 px-30 text-12 -dark-1 bg-dark-3 text-white">
+          Submit
+        </button>
       </div>
     </div>
   );

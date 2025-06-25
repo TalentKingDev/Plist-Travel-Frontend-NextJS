@@ -1,7 +1,7 @@
 "use client";
 
 import VendorDashboardLayout from "../common/layout";
-import CouponList from "./CouponList";
+import ReviewList from "./ReviewList";
 import Filter from "../common/Filter";
 
 const index = () => {
@@ -19,7 +19,7 @@ const index = () => {
       <Filter />
 
       <div className="py-10 px-20 rounded-8 bg-white shadow-3 h-100 mt-20">
-        <CouponList />
+        <ReviewList />
       </div>
     </VendorDashboardLayout>
   );

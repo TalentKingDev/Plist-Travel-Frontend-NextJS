@@ -6,6 +6,8 @@ import ListingSearchResult from "@/components/dashboard/vendor-dashboard/common/
 import ToursSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ToursSearch";
 import EventsSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/EventsSearch";
 import ActivitiesSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ActivitiesSearch";
+import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -166,32 +168,38 @@ const SpaceDetails = () => {
           placeholder="City, region of Space"
         />
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-in Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkInDate}
-            onChange={setCheckInDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-out Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkOutDate}
-            onChange={setCheckOutDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className="col-lg-4 col-md-4 col-sm-12">
@@ -298,32 +306,38 @@ const HotelDetails = () => {
           placeholder="City, region or Hotel"
         />
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-in Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkInDate}
-            onChange={setCheckInDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-out Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkOutDate}
-            onChange={setCheckOutDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className="col-lg-4 col-md-4 col-sm-12">
@@ -429,32 +443,38 @@ const EventVenuesDetails = () => {
           placeholder="City, region or Event Venue"
         />
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-in Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkInDate}
-            onChange={setCheckInDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-out Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkOutDate}
-            onChange={setCheckOutDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className="col-lg-4 col-md-4 col-sm-12">
@@ -561,32 +581,38 @@ const VacationRentalsDetails = () => {
           placeholder="City, region or Vacation Rental"
         />
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-in Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkInDate}
-            onChange={setCheckInDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <h1 className="text-15 lh-14 fw-500">Check-out Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={checkOutDate}
-            onChange={setCheckOutDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
+      <div className="col-sm-6 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
+        <div className="mt-10">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 50 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
       </div>
       <div className="col-lg-4 col-md-4 col-sm-12">

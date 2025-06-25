@@ -1,56 +1,19 @@
-import { Checkbox, Dialog, Radio } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import { useRouter } from "next/navigation";
 import CancellationPolicy from "../../../common/CancellationPolicy";
 import React, { useState } from "react";
 import { Add, Remove } from "@mui/icons-material";
 
 const ListingDetails = ({ bookingType }) => {
+  const [days, setDays] = useState(1);
+  const [isMultiDay, setIsMultiDay] = useState(false);
+
   const router = useRouter();
   const [itineraries, setItineraries] = useState(1);
 
   return (
     <div className="row y-gap-10 x-gap-10">
       <h1 className="text-20 lh-14 fw-600">Listing Details</h1>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Duration</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select duration</option>
-          <option value="1">1 hour</option>
-          <option value="2">2 hours</option>
-          <option value="3">3 hours</option>
-          <option value="4">4 hours</option>
-          <option value="5">5 hours</option>
-          <option value="6">6 hours</option>
-          <option value="7">7 hours</option>
-          <option value="8">8 hours</option>
-          <option value="9">9 hours</option>
-          <option value="10">10 hours</option>
-          <option value="11">11 hours</option>
-          <option value="12">12 hours</option>
-          <option value="13">13 hours</option>
-          <option value="14">14 hours</option>
-          <option value="15">15 hours</option>
-          <option value="16">16 hours</option>
-          <option value="17">17 hours</option>
-          <option value="18">18 hours</option>
-        </select>
-      </div>
-
-      <div className="col-sm-3 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Event Start Time</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="time"
-        />
-      </div>
-      <div className="col-sm-3 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Event End Time</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type="time"
-        />
-      </div>
-
       <div className="col-sm-6 mt-5">
         <h1 className="text-14 lh-12 fw-500">Group Size Limit</h1>
         <input
@@ -77,6 +40,73 @@ const ListingDetails = ({ bookingType }) => {
           <option value="meals">Meals</option>
           <option value="transportation">Transportation</option>
         </select>
+      </div>
+
+      <div className="col-12 mt-10 px-10">
+        <div className="row x-gap-10 y-gap-10 border-light items-end rounded-8 py-10 px-10 w-full">
+          <div className="d-flex items-center gap-2">
+            <Checkbox
+              className="px-0 py-0"
+              value={isMultiDay}
+              onChange={(e) => setIsMultiDay(e.target.checked)}
+            />
+            <div className="text-14 lh-12 fw-500">Multi-Day Tour</div>
+            {isMultiDay && (
+              <div className="d-flex items-center">
+                <Remove
+                  className="px-0 py-0"
+                  onClick={() => setDays(Math.max(1, days - 1))}
+                />
+                <Add className="px-0 py-0" onClick={() => setDays(days + 1)} />
+              </div>
+            )}
+          </div>
+          {Array(days)
+            .fill(null)
+            .map((_, idx) => (
+              <React.Fragment key={idx}>
+                <div className="col-md-3 col-sm-6">
+                  <div className="col-12 text-14 lh-12 fw-500">
+                    Day {idx + 1}:
+                  </div>
+                  <h1 className="text-14 lh-12 fw-500">Tour Date</h1>
+                  <input
+                    className="border-light rounded-8 py-5 px-15 w-full"
+                    type="date"
+                  />
+                </div>
+
+                <div className="col-md-3 col-sm-6">
+                  <h1 className="text-14 lh-12 fw-500">Duration</h1>
+                  <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full">
+                    <option defaultValue>Select duration</option>
+                    <option value="1">1 hour</option>
+                    {Array(23)
+                      .fill(null)
+                      .map((_, index) => (
+                        <option value={index + 2}>{index + 2} hours</option>
+                      ))}
+                  </select>
+                </div>
+
+                <div className="col-md-3 col-sm-6">
+                  <h1 className="text-14 lh-12 fw-500">Tour Start Time</h1>
+                  <input
+                    className="border-light rounded-8 py-5 px-15 w-full"
+                    type="time"
+                  />
+                </div>
+
+                <div className="col-md-3 col-sm-6">
+                  <h1 className="text-14 lh-12 fw-500">Tour End Time</h1>
+                  <input
+                    className="border-light rounded-8 py-5 px-15 w-full"
+                    type="time"
+                  />
+                </div>
+              </React.Fragment>
+            ))}
+        </div>
       </div>
 
       <div className="col-sm-6 mt-5">
