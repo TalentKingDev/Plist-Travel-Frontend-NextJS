@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import TravelerInformationCard from "./TravelInformationCard";
 import ListingSearchResult from "@/components/dashboard/vendor-dashboard/common/ListingSearchResult";
+import ToursSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ToursSearch";
+import EventsSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/EventsSearch";
+import ActivitiesSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ActivitiesSearch";
 
 export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -31,17 +34,17 @@ export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
     Events: {
       label: "Events",
       name: "Events Details",
-      content: <EventsDetails />,
+      content: <EventsSearch isTravelPackage={true} />,
     },
     Tours: {
       label: "Tours",
       name: "Tours Details",
-      content: <ToursDetails />,
+      content: <ToursSearch isTravelPackage={true} />,
     },
     Activities: {
       label: "Activities",
       name: "Activities Details",
-      content: <ActivitiesDetails />,
+      content: <ActivitiesSearch isTravelPackage={true} />,
     },
   };
 
@@ -652,202 +655,6 @@ const VacationRentalsDetails = () => {
           setAdults={setAdults}
         />
       ))}
-    </>
-  );
-};
-
-const ToursDetails = () => {
-  const [date, setDate] = useState(new DateObject());
-  const [paricipants, setParicipants] = useState(1);
-  return (
-    <>
-      <h1 className="text-16 lh-14 fw-500">Tour Details</h1>
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Tour Category</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select category</option>
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Tour Subcategory</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select subcategory</option>
-        </select>
-      </div>
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Destination</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="City or region"
-        />
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={date}
-            onChange={setDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
-        </div>
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Paricipants</h1>
-        <div className="d-flex mt-10 items-center fw-600">
-          <button
-            disabled={paricipants == 0}
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light mr-20 col-auto"
-            onClick={() => setParicipants(paricipants - 1)}
-          >
-            <i className="icon icon-minus" />
-          </button>
-          {paricipants}
-          <button
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light ml-20 col-auto"
-            onClick={() => setParicipants(paricipants + 1)}
-          >
-            <i className="icon icon-plus" />
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const EventsDetails = () => {
-  const [date, setDate] = useState(new DateObject());
-  const [paricipants, setParicipants] = useState(1);
-  return (
-    <>
-      <h1 className="text-16 lh-14 fw-500">Event Details</h1>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Event Category</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select category</option>
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Event Subcategory</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select subcategory</option>
-        </select>
-      </div>
-
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Location</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="City or region"
-        />
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={date}
-            onChange={setDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
-        </div>
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Paricipants</h1>
-        <div className="d-flex mt-10 items-center fw-600">
-          <button
-            disabled={paricipants == 0}
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light mr-20 col-auto"
-            onClick={() => setParicipants(paricipants - 1)}
-          >
-            <i className="icon icon-minus" />
-          </button>
-          {paricipants}
-          <button
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light ml-20 col-auto"
-            onClick={() => setParicipants(paricipants + 1)}
-          >
-            <i className="icon icon-plus" />
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const ActivitiesDetails = () => {
-  const [date, setDate] = useState(new DateObject());
-  const [paricipants, setParicipants] = useState(1);
-  return (
-    <>
-      <h1 className="text-16 lh-14 fw-500">Activities & Events Details</h1>
-      
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Activity Category</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select category</option>
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-14 lh-12 fw-500">Activity Subcategory</h1>
-        <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-14 w-full mt-10">
-          <option defaultValue>Select subcategory</option>
-        </select>
-      </div>
-
-      <div className="col-12">
-        <h1 className="text-15 lh-14 fw-500">Location</h1>
-        <input
-          className="border-light rounded-8 py-5 px-20 w-full mt-10"
-          type="text"
-          placeholder="City or venue"
-        />
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Date</h1>
-        <div className="border-light rounded-8 py-10 px-20 w-full mt-10 cursor-text text-light-1 bg-white">
-          <DatePicker
-            inputClass="custom_input-picker"
-            containerClassName="custom_container-picker"
-            value={date}
-            onChange={setDate}
-            numberOfMonths={1}
-            offsetY={10}
-            format="MMMM DD"
-          />
-        </div>
-      </div>
-      <div className="col-6">
-        <h1 className="text-15 lh-14 fw-500">Paricipants</h1>
-        <div className="d-flex mt-10 items-center fw-600">
-          <button
-            disabled={paricipants == 0}
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light mr-20 col-auto"
-            onClick={() => setParicipants(paricipants - 1)}
-          >
-            <i className="icon icon-minus" />
-          </button>
-          {paricipants}
-          <button
-            className="button rounded-8 py-15 px-15 text-12 -dark-1 border-light ml-20 col-auto"
-            onClick={() => setParicipants(paricipants + 1)}
-          >
-            <i className="icon icon-plus" />
-          </button>
-        </div>
-      </div>
     </>
   );
 };
