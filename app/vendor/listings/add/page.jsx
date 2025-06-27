@@ -1,13 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import AddHotel from "@/components/dashboard/vendor-dashboard/listings/property/AddHotel";
-import AddSpace from "@/components/dashboard/vendor-dashboard/listings/property/AddSpace";
-import AddVacation from "@/components/dashboard/vendor-dashboard/listings/property/AddVacation";
-import AddEventVenue from "@/components/dashboard/vendor-dashboard/listings/property/AddEventVenue";
-import AddEvent from "@/components/dashboard/vendor-dashboard/listings/non-property/AddEvent";
-import AddActivity from "@/components/dashboard/vendor-dashboard/listings/non-property/AddActivity";
-import AddTour from "@/components/dashboard/vendor-dashboard/listings/non-property/AddTour";
+import AddHotel from "@/components/vendor/listings/property/AddHotel";
+import AddSpace from "@/components/vendor/listings/property/AddSpace";
+import AddVacation from "@/components/vendor/listings/property/AddVacation";
+import AddEventVenue from "@/components/vendor/listings/property/AddEventVenue";
+import AddEvent from "@/components/vendor/listings/non-property/AddEvent";
+import AddActivity from "@/components/vendor/listings/non-property/AddActivity";
+import AddTour from "@/components/vendor/listings/non-property/AddTour";
 import { useSearchParams } from "next/navigation";
 
 // export const metadata = {

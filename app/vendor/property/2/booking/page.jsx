@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import BookingForm from "@/components/dashboard/dashboard/db-booking/components/BookingForm";
-import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
+import VendorDashboardLayout from "@/components/vendor/common/layout";
 
 export const metadata = {
   title: "Plist || Travel Platform",

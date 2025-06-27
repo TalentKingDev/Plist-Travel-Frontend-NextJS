@@ -2,10 +2,10 @@ import Hotels from "@/components/hotels/Hotels";
 import { useEffect, useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import TravelerInformationCard from "./TravelInformationCard";
-import ListingSearchResult from "@/components/dashboard/vendor-dashboard/common/ListingSearchResult";
-import ToursSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ToursSearch";
-import EventsSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/EventsSearch";
-import ActivitiesSearch from "@/components/dashboard/vendor-dashboard/booking/search/non-property/ActivitiesSearch";
+import ListingSearchResult from "@/components/vendor/common/ListingSearchResult";
+import ToursSearch from "@/components/vendor/booking/search/non-property/ToursSearch";
+import EventsSearch from "@/components/vendor/booking/search/non-property/EventsSearch";
+import ActivitiesSearch from "@/components/vendor/booking/search/non-property/ActivitiesSearch";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 

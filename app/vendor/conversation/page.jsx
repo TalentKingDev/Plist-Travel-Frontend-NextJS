@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/conversation";
+import DashboardPage from "@/components/vendor/conversation";
 
 export const metadata = {
   title: "Message & Conversation || Plist Travel",

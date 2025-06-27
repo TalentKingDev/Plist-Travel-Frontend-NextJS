@@ -1,10 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import AddHotel from "@/components/dashboard/vendor-dashboard/roomtype/AddHotel";
-import AddSpace from "@/components/dashboard/vendor-dashboard/roomtype/AddSpace";
-import AddVacation from "@/components/dashboard/vendor-dashboard/roomtype/AddVacation";
-import AddEventVenue from "@/components/dashboard/vendor-dashboard/roomtype/AddEventVenue";
+import AddHotel from "@/components/vendor/roomtype/AddHotel";
+import AddSpace from "@/components/vendor/roomtype/AddSpace";
+import AddVacation from "@/components/vendor/roomtype/AddVacation";
+import AddEventVenue from "@/components/vendor/roomtype/AddEventVenue";
 import { useSearchParams } from "next/navigation";
 
 // export const metadata = {

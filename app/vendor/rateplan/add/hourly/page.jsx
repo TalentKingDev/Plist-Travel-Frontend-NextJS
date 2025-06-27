@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/rateplan/add/AddPlan";
+import DashboardPage from "@/components/vendor/rateplan/add/AddPlan";
 
 export const metadata = {
   title: "Vendor Dashboard || Plist Travel",

@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/dashboard/vendor-dashboard/property/manage";
+import DashboardPage from "@/components/vendor/property/manage";
 
 const index = () => {
   return <DashboardPage />;

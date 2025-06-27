@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import VendorDashboardLayout from "@/components/dashboard/vendor-dashboard/common/layout";
+import VendorDashboardLayout from "@/components/vendor/common/layout";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
