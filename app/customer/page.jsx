@@ -7,7 +7,6 @@ import Destinations from "@/components/home/home-1/Destinations";
 import Hotels from "@/components/hotels/Hotels";
 import SelectFilter from "@/components/hotels/filter-tabs/SelectFilter";
 
-
 export const metadata = {
   title: "Customer Booking || Plist Travel",
   description: "Entry of Customer Booking",
@@ -16,56 +15,9 @@ export const metadata = {
 const CustomerBookingEntry = () => {
   return (
     <>
-      {/* End Page Title */}
-
       <Header />
-      {/* End Header 1 */}
 
       <Hero />
-      {/* End Hero 1 */}
-
-      {/* <section className="layout-pt-lg layout-pb-md" data-aos="fade-up">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Browse by Category</h2> */}
-                {/* <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
-                </p> */}
-              {/* </div>
-            </div> */}
-            {/* End col-auto */}
-
-            {/* <div className="col-auto md:d-none">
-              <a
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                View All Destinations
-                <div className="icon-arrow-top-right ml-15" />
-              </a>
-            </div> */}
-            {/* End col-auto */}
-          {/* </div> */}
-          {/* End .row */}
-
-          {/* <div className="relative pt-40 sm:pt-20">
-            <PopularDestinations />
-          </div>
-        </div> */}
-        {/* End .container */}
-      {/* </section> */}
-      {/* End Popular Destinations */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20">
-            <AddBanner />
-          </div>
-        </div>
-      </section> */}
-      {/* End AddBanner */}
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
@@ -101,7 +53,6 @@ const CustomerBookingEntry = () => {
       </section>
       {/* Block Guide Section */}
 
-
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
           <div className="row">
@@ -130,4 +81,6 @@ const CustomerBookingEntry = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(CustomerBookingEntry), { ssr: false });
+export default dynamic(() => Promise.resolve(CustomerBookingEntry), {
+  ssr: false,
+});

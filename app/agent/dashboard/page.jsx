@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/vendor/dashboard";
+import DashboardPage from "@/components/agent/dashboard";
 
 export const metadata = {
   title: "Vendor Dashboard || Plist Travel",
@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const index = () => {
-  return (
-    <>
-      <DashboardPage />
-    </>
-  );
+  return <DashboardPage />;
 };
 
 export default dynamic(() => Promise.resolve(index), {

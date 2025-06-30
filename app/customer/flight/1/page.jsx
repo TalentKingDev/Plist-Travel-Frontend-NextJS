@@ -9,10 +9,7 @@ import ReviewProgress from "@/components/cruise-single/guest-reviews/ReviewProgr
 import DetailsReview from "@/components/cruise-single/guest-reviews/DetailsReview";
 import ReplyForm from "@/components/cruise-single/ReplyForm";
 import ReplyFormReview from "@/components/cruise-single/ReplyFormReview";
-import Facilities from "@/components/cruise-single/Facilities";
-import CallToActions from "@/components/common/CallToActions";
 import Footer from "@/components/footer/footer-5";
-import MapPropertyFinder from "@/components/cruise-single/MapPropertyFinder";
 import GalleryCruiseSlider from "@/components/cruise-single/GalleryCruiseSlider";
 import CitiesLandmarks from "@/components/property-single/CitiesLandmarks";
 

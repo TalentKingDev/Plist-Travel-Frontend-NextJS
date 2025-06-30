@@ -8,11 +8,7 @@ export const metadata = {
 
 const SalesLinkGenerator = () => {
 
-  return (
-    <>
-      <DashboardPage />
-    </>
-  );
+  return <DashboardPage />;
 };
 
 export default dynamic(() => Promise.resolve(SalesLinkGenerator), {

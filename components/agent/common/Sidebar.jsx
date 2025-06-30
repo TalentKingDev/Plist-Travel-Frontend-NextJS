@@ -6,92 +6,86 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/compass.svg",
       title: "Dashboard",
-      href: "/vendor/dashboard",
+      href: "/agent/dashboard",
     },
     {
       icon: "/img/dashboard/sidebar/booking.svg",
-      title: "Profile Management",
-      href: "/vendor/profile",
-    },
-    // {
-    //   icon: "/img/dashboard/sidebar/map.svg",
-    //   title: "Operations Management",
-    //   href: "/vendor/operations",
-    // },
-    {
-      icon: "/img/dashboard/sidebar/sneakers.svg",
-      title: "Listings Management",
-      links: [
-        { title: "Property Listings", href: "/vendor/listings/property" },
-        {
-          title: "Non-Property Listings",
-          href: "/vendor/listings/non-property",
-        },
-        { title: "Room Type", href: "/vendor/room-type" },
-      ],
+      title: "Profile & Branding",
+      href: "/agent/profile",
     },
     {
       icon: "/img/dashboard/sidebar/house.svg",
-      title: "Add-on Services",
-      href: "/vendor/addon",
-    },
-    {
-      icon: "/img/dashboard/sidebar/booking.svg",
       title: "Booking Management",
       links: [
         {
           title: "Booking List",
-          href: "/vendor/booking",
+          href: "/agent/booking",
         },
         {
           title: "Booking Calendar",
-          href: "/vendor/booking/calendar",
+          href: "/agent/booking/calendar",
         },
         {
           title: "Rate Plan",
-          href: "/vendor/rateplan",
+          href: "/agent/rateplan",
         },
       ],
+    },
+    // {
+    //   icon: "/img/dashboard/sidebar/map.svg",
+    //   title: "Operations Management",
+    //   href: "/agent/operations",
+    // },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Wallet",
+      href: "/agent/wallet",
+    },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Commission",
+      href: "/agent/commission",
     },
     {
       icon: "/img/dashboard/sidebar/sneakers.svg",
-      title: "User Management",
-      href: "/vendor/user",
+      title: "Sales Links",
+      href: "/agent/sales-links",
     },
     {
       icon: "/img/dashboard/sidebar/taxi.svg",
-      title: "Messaging & Communication",
-      links: [
-        {
-          title: "Inbox",
-          href: "/vendor/conversation",
-        },
-        {
-          title: "Guest Reviews & Ratings",
-          href: "/vendor/review",
-        },
-      ],
+      title: "Package Builder",
+      href: "/agent/package-builder",
     },
     {
       icon: "/img/dashboard/sidebar/canoe.svg",
-      title: "Coupons & Promotions",
-      href: "/vendor/coupon",
+      title: "CMS",
+      href: "/agent/cms",
     },
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
-      title: "Subscription & Payments",
-      href: "/vendor/payment",
+      title: "Email Template",
+      href: "/agent/email-template",
+    },
+    {
+      icon: "/img/dashboard/sidebar/house.svg",
+      title: "Clients",
+      href: "/agent/clients",
+    },
+    {
+      icon: "/img/dashboard/sidebar/sneakers.svg",
+      title: "Support",
+      href: "/agent/support",
     },
     {
       icon: "/img/dashboard/sidebar/log-out.svg",
       title: "Logout",
-      href: "/vendor",
+      href: "/agent",
     },
   ];
 
   return (
     <>
-      <div className="sidebar -dashboard" id="vendorSidebarMenu">
+      <div className="sidebar -dashboard" id="agentSidebarMenu">
         {sidebarData.map((item, index) => (
           <div className="sidebar__item" key={index}>
             {item.links ? (
@@ -119,7 +113,7 @@ const Sidebar = () => {
                   <div
                     id={`sidebarItem${index}`}
                     className="collapse"
-                    data-bs-parent="#vendorSidebarMenu"
+                    data-bs-parent="#agentSidebarMenu"
                   >
                     <ul className="list-disc pb-5 pl-40">
                       {item.links.map((link, linkIndex) => (

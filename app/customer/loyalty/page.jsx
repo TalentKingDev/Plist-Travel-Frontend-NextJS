@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const LoyaltyProgram = () => {
-  return (
-    <>
-      <DashboardPage />
-    </>
-  );
+  return <DashboardPage />;
 };
 
 export default dynamic(() => Promise.resolve(LoyaltyProgram), {

@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const TravelBookingHistoryPage = () => {
-  return (
-    <>
-      <DashboardPage />
-    </>
-  );
+  return <DashboardPage />;
 };
 
 export default dynamic(() => Promise.resolve(TravelBookingHistoryPage), {

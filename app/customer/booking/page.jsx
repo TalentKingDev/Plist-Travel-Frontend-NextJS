@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const BookingPage = () => {
-  return (
-    <>
-      <DashboardPage />
-    </>
-  );
+  return <DashboardPage />;
 };
 
 export default dynamic(() => Promise.resolve(BookingPage), {
