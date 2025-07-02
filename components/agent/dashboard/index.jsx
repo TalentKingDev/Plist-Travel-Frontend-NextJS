@@ -8,13 +8,23 @@ import { useState } from "react";
 import PerformenceMetrics from "./components/PerformenceMetrics";
 import AgentDashboardLayout from "../common/layout";
 import data from "./data";
+import DatePicker, { DateObject } from "react-multi-date-picker";
 
 const index = () => {
-  const [activeTab, setActiveTab] = useState("daily");
+  const [activeMetricTab, setActiveMetricTab] = useState("daily");
+  const [option, setOption] = useState("hotel");
+  const [activeTab, setActiveTab] = useState("overview");
+  const [startDate, setStartDate] = useState(new DateObject());
+  const [endDate, setEndDate] = useState(new DateObject());
+  const tabs = [
+    { label: "Overview", value: "overview" },
+    { label: "Analytics", value: "analytics" },
+    { label: "Reports", value: "reports" },
+  ];
+
   return (
     <AgentDashboardLayout>
-
-      <div className="row y-gap-20 items-center mb-5">
+      <div className="row y-gap-15 x-gap-10 items-center mb-5">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Agent Dashboard</h1>
         </div>
@@ -30,7 +40,7 @@ const index = () => {
         </div>
         <div className="col-auto">
           <select
-            className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-50 w-200 sm:w-full text-14"
+            className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-45 text-14"
             onChange={(e) => setOption(e.target.value)}
           >
             <optgroup label="Property List">
@@ -130,36 +140,36 @@ const index = () => {
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeTab === "daily" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "daily" ? " bg-white" : " text-light-1")
                   }
-                  onClick={() => setActiveTab("daily")}
+                  onClick={() => setActiveMetricTab("daily")}
                 >
                   Daily
                 </div>
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeTab === "weekly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "weekly" ? " bg-white" : " text-light-1")
                   }
-                  onClick={() => setActiveTab("weekly")}
+                  onClick={() => setActiveMetricTab("weekly")}
                 >
                   Weekly
                 </div>
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeTab === "monthly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "monthly" ? " bg-white" : " text-light-1")
                   }
-                  onClick={() => setActiveTab("monthly")}
+                  onClick={() => setActiveMetricTab("monthly")}
                 >
                   Monthly
                 </div>
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeTab === "yearly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "yearly" ? " bg-white" : " text-light-1")
                   }
-                  onClick={() => setActiveTab("yearly")}
+                  onClick={() => setActiveMetricTab("yearly")}
                 >
                   Yearly
                 </div>
