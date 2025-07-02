@@ -1,7 +1,6 @@
 "use client";
 
 import AgentDashboardLayout from "../../common/layout";
-import { useState } from "react";
 import { Copy, Eye } from "lucide-react";
 import { Telegram } from "@mui/icons-material";
 import { useRouter } from "next/navigation";

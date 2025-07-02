@@ -37,7 +37,7 @@ const FormInput = ({
     case "select":
       form = (
         <select
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          className="form-select border-light rounded-8 h-45 px-15 w-full mt-10"
           name={name}
           disabled={disable}
           onChange={onChange}

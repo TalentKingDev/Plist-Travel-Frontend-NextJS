@@ -5,16 +5,6 @@ import { Copy } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const index = () => {
-  const dynamicFields = [
-    { value: "{{ client_name }}", label: "Client's full name" },
-    { value: "{{ booking_id }}", label: "Booking reference number" },
-    { value: "{{ booking_date }}", label: "Date of booking" },
-    { value: "{{ travel_date }}", label: "Date of travel" },
-    { value: "{{ service_type }}", label: "Type of service booked" },
-    { value: "{{ service_details }}", label: "Details of the service" },
-    { value: "{{ total_amount }}", label: "Total amount" },
-  ];
-
   const router = useRouter();
 
   return (

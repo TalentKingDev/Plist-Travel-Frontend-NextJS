@@ -1,10 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import AgentDashboardLayout from "../common/layout";
 
 const index = () => {
-  const [tierLevel, setTierLevel] = useState(2);
+  const tierLevel = 2;
 
   const tierLevelData = [
     {
@@ -176,9 +173,9 @@ const index = () => {
                       {row.tier}
                     </span>
                   </td>
-                  <td>{row.booking_volume_required}</td>
-                  <td>{row.benefits}</td>
-                  <td>{statusWidget(row.id)}</td>
+                  <td className="align-middle">{row.booking_volume_required}</td>
+                  <td className="align-middle">{row.benefits}</td>
+                  <td className="align-middle">{statusWidget(row.id)}</td>
                 </tr>
               ))}
             </tbody>
@@ -204,14 +201,18 @@ const index = () => {
             <tbody>
               {commissions.map((row, index) => (
                 <tr key={index}>
-                  <td>{row.service_category}</td>
-                  <td>{row.local_vendor_rate}</td>
-                  <td>{row.api_vendor_rate}</td>
-                  <td>{row.tier_rate}</td>
+                  <td className="align-middle">{row.service_category}</td>
+                  <td className="align-middle">{row.local_vendor_rate}</td>
+                  <td className="align-middle">{row.api_vendor_rate}</td>
+                  <td className="align-middle">{row.tier_rate}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="text-14 lh-14 text-light-1">
+          * Commission rates are based on your current Tier 2 classification.
+          Upgrade to Tier 3 for enhanced rates.
         </div>
       </div>
     </AgentDashboardLayout>
