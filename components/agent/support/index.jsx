@@ -154,7 +154,7 @@ const index = () => {
           </button>
           <Drawer anchor="right" open={openFilter} onClose={handleClose}>
             <div className="w-300 rounded-left rounded-8 bg-white px-20 py-20 h-100 d-flex flex-column justify-between">
-              <Filter />
+              <Filter agent={true} />
               <div className="col-12 d-flex justify-end gap-2">
                 <button
                   className="border-light rounded-8 py-5 px-15 text-14"

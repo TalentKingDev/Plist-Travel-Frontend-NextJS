@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 
-const Filter = () => {
+const Filter = ({ agent = false }) => {
   const [startDate, setStartDate] = useState(new DateObject());
   const [endDate, setEndDate] = useState(new DateObject());
 
@@ -86,6 +86,12 @@ const Filter = () => {
             <option value="tour">Tour</option>
             <option value="activity">Activity</option>
             <option value="event">Event</option>
+            {agent && (
+              <>
+                <option value="flight">Flight</option>
+                <option value="rides">Rides</option>
+              </>
+            )}
           </optgroup>
         </select>
       </div>

@@ -32,41 +32,59 @@ const index = () => {
 
   const commissions = [
     {
-      service_category: "Hotels & Accommodations",
+      service_category: "Hotels",
       local_vendor_rate: "10%",
       api_vendor_rate: "7%",
       tier_rate: "10%",
     },
     {
-      service_category: "Flights",
+      service_category: "Vacation Rental",
       local_vendor_rate: "5%",
       api_vendor_rate: "3%",
       tier_rate: "5%",
     },
     {
-      service_category: "Tours & Activities",
+      service_category: "Spaces",
       local_vendor_rate: "15%",
       api_vendor_rate: "10%",
       tier_rate: "12%",
     },
     {
-      service_category: "Car Rentals",
+      service_category: "Event Venues",
       local_vendor_rate: "8%",
       api_vendor_rate: "5%",
       tier_rate: "8%",
     },
     {
-      service_category: "Vacation Packages",
+      service_category: "Activities",
       local_vendor_rate: "12%",
       api_vendor_rate: "8%",
       tier_rate: "10%",
     },
     {
+      service_category: "Tours",
+      local_vendor_rate: "15%",
+      api_vendor_rate: "10%",
+      tier_rate: "12%",
+    },
+    {
       service_category: "Events",
       local_vendor_rate: "10%",
       api_vendor_rate: "7%",
-      tier_rate: "10%",
+      tier_rate: "9%",
     },
+    {
+      service_category: "Rides",
+      local_vendor_rate: "12%",
+      api_vendor_rate: "8%",
+      tier_rate: "7%",
+    },
+    {
+      service_category: "Flights",
+      local_vendor_rate: "10%",
+      api_vendor_rate: "7%",
+      tier_rate: "8%",
+    }
   ];
 
   const statusWidget = (id) => {
