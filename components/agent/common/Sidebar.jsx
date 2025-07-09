@@ -51,11 +51,11 @@ const Sidebar = () => {
       title: "Sales Links",
       href: "/agent/sales-links",
     },
-    {
-      icon: "/img/dashboard/sidebar/taxi.svg",
-      title: "Package Builder",
-      href: "/agent/package-builder",
-    },
+    // {
+    //   icon: "/img/dashboard/sidebar/taxi.svg",
+    //   title: "Package Builder",
+    //   href: "/agent/package-builder",
+    // },
     {
       icon: "/img/dashboard/sidebar/canoe.svg",
       title: "CMS",
