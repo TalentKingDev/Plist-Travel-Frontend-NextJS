@@ -53,7 +53,7 @@ const index = () => {
               <option value="tour">Tour</option>
               <option value="activity">Activity</option>
               <option value="event">Event</option>
-              <option value="flight">Flight</option>
+              <option value="flights">Flights</option>
               <option value="rides">Rides</option>
             </optgroup>
           </select>
