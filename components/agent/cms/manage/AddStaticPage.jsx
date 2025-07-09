@@ -1,10 +1,14 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import AgentDashboardLayout from "../../common/layout";
 import FormInput from "@/components/common/form/FormInput";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./custom.css";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const index = () => {
   const router = useRouter();
@@ -59,10 +63,7 @@ const index = () => {
 
           <div className="col-12 mt-10">
             <h1 className="text-14 lh-12 fw-500 mb-10">Content</h1>
-            <ReactQuill
-              theme="snow"
-              modules={modules}
-            />
+            <ReactQuill theme="snow" modules={modules} />
           </div>
 
           <FormInput
