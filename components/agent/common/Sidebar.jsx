@@ -25,10 +25,10 @@ const Sidebar = () => {
           title: "Booking Calendar",
           href: "/agent/booking/calendar",
         },
-        {
-          title: "Rate Plan",
-          href: "/agent/rateplan",
-        },
+        // {
+        //   title: "Rate Plan",
+        //   href: "/agent/rateplan",
+        // },
       ],
     },
     // {

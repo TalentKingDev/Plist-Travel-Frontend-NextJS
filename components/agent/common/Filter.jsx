@@ -86,6 +86,8 @@ const Filter = () => {
             <option value="tour">Tour</option>
             <option value="activity">Activity</option>
             <option value="event">Event</option>
+            <option value="ride">Ride</option>
+            <option value="flight">Flight</option>
           </optgroup>
         </select>
       </div>
