@@ -76,6 +76,7 @@ const Filter = () => {
 
       <div className="col-sm-auto">
         <select className="form-select rounded-8 border-light justify-between py-10 px-15 w-140 sm:w-full text-14">
+          <option value="all">All</option>
           <optgroup label="Property List">
             <option value="hotel">Hotel</option>
             <option value="vacation">Vacation Rental</option>
@@ -89,6 +90,7 @@ const Filter = () => {
             <option value="ride">Ride</option>
             <option value="flight">Flight</option>
           </optgroup>
+          <option value="travel-packages">Travel Packages</option>
         </select>
       </div>
     </div>

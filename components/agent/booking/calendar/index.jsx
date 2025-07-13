@@ -1,6 +1,6 @@
 "use client";
 
-import VendorDashboardLayout from "../../common/layout";
+import AgentDashboardLayout from "../../common/layout";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -104,7 +104,7 @@ const index = () => {
     },
   ];
   return (
-    <VendorDashboardLayout>
+    <AgentDashboardLayout>
       <div className="row y-gap-10 justify-between items-end mb-10">
         <div className="col-12">
           <h1 className="text-30 lh-14 fw-600">Booking Calendar</h1>
@@ -161,7 +161,7 @@ const index = () => {
           {tabs.map((item) => item.value == activeTab && item.content)}
         </div>
       </div>
-    </VendorDashboardLayout>
+    </AgentDashboardLayout>
   );
 };
 

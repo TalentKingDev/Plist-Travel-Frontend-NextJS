@@ -5,7 +5,7 @@ import ServiceCard from "@/components/vendor/common/ServiceCard";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useRouter } from "next/navigation";
-import VendorDashboardLayout from "../../common/layout";
+import AgentDashboardLayout from "../../common/layout";
 
 const index = () => {
   const router = useRouter();
@@ -63,7 +63,7 @@ const index = () => {
   ];
 
   return (
-    <VendorDashboardLayout>
+    <AgentDashboardLayout>
       <div className="row y-gap-20 py-10 px-10 rounded-8 bg-white shadow-3">
         <h1 className="text-20 lh-14 fw-600">Select Services</h1>
         <h1 className="text-18 lh-14 fw-500">Select Type of Services</h1>
@@ -116,7 +116,7 @@ const index = () => {
           Please select a service to continue.
         </Alert>
       </Snackbar>
-    </VendorDashboardLayout>
+    </AgentDashboardLayout>
   );
 };
 

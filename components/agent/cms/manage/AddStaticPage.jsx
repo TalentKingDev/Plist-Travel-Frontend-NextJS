@@ -83,6 +83,26 @@ const index = () => {
             gridClass="col-12 mt-10"
           />
 
+          <FormInput
+            label="Meta Title"
+            placeholder="Enter Meta Title for SEO"
+            gridClass="col-sm-6 mt-10"
+          />
+
+          <FormInput
+            label="Meta Keywords"
+            placeholder="Enter Meta Keywords (comma separated)"
+            gridClass="col-sm-6 mt-10"
+          />
+
+          <FormInput
+            label="Meta Description"
+            placeholder="Enter Meta Description for SEO"
+            gridClass="col-12 mt-10"
+            type="textarea"
+            rows={3}
+          />
+
           <div className="col-12 d-flex justify-end gap-2">
             <button className="border-light rounded-8 py-5 px-15 text-14">
               Cancel

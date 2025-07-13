@@ -1,17 +1,13 @@
 "use client";
 
 import svgIcon from "@/components/data/svgIcon";
-import DatePicker, { DateObject } from "react-multi-date-picker";
 import { useState } from "react";
-import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { DateTimePicker, LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const index = () => {
-  const [dates, setDates] = useState([
-    new DateObject(),
-    new DateObject().add(1, "month"),
-  ]);
   const [starRating, setStarRating] = useState(0);
+  const [bookingType, setBookingType] = useState("day-night");
 
   return (
     <div className="py-20 px-20 rounded-8 bg-white shadow-3">
@@ -24,7 +20,7 @@ const index = () => {
             <input
               type="text"
               placeholder="City, region, or property"
-              className="border-light bg-white rounded-8 px-10 h-50 py-5 pl-30"
+              className="border-light bg-white rounded-8 px-10 h-45 pl-30"
             />
             <span
               className="text-light-1 position-absolute"
@@ -39,63 +35,64 @@ const index = () => {
           </div>
         </div>
         <div className="col-sm-4 mt-5">
-          <h1 className="text-14 lh-12 fw-500">Check-in</h1>
-          <div className="mt-10">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateTimePicker
-                slotProps={{
-                  textField: {
-                    sx: {
-                      width: "100%",
-                      "& .MuiPickersInputBase-root": { height: 50 },
-                    },
-                  },
-                }}
-              />
-            </LocalizationProvider>
-          </div>
-        </div>
-        <div className="col-sm-4 mt-5">
-          <h1 className="text-14 lh-12 fw-500">Check-out</h1>
-          <div className="mt-10">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateTimePicker
-                slotProps={{
-                  textField: {
-                    sx: {
-                      width: "100%",
-                      "& .MuiPickersInputBase-root": { height: 50 },
-                    },
-                  },
-                }}
-              />
-            </LocalizationProvider>
-          </div>
-        </div>
-        <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Category</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+          <select className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10">
             <option defaultValue>Any type</option>
           </select>
         </div>
         <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Subcategory</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+          <select className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10">
             <option defaultValue>Any type</option>
           </select>
         </div>
 
         <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+          <select
+            className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10"
+            onChange={(e) => setBookingType(e.target.value)}
+          >
             <option value="day-night">Per Day/Night</option>
             <option value="hour">Per Hour</option>
           </select>
         </div>
+        {["Check-in", "Check-out"].map((label) => (
+          <div className="col-sm-4 mt-5" key={label}>
+            <h1 className="text-14 lh-12 fw-500">{label}</h1>
+            <div className="mt-10">
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                {bookingType === "hour" ? (
+                  <DateTimePicker
+                    slotProps={{
+                      textField: {
+                        sx: {
+                          width: "100%",
+                          "& .MuiPickersInputBase-root": { height: 45 },
+                        },
+                      },
+                    }}
+                  />
+                ) : (
+                  <DatePicker
+                    slotProps={{
+                      textField: {
+                        sx: {
+                          width: "100%",
+                          "& .MuiPickersInputBase-root": { height: 45 },
+                        },
+                      },
+                    }}
+                  />
+                )}
+              </LocalizationProvider>
+            </div>
+          </div>
+        ))}
 
         <div className="col-sm-4 mt-5">
           <h1 className="text-14 lh-12 fw-500">Price Range</h1>
-          <select className="form-select rounded-8 border-light px-20 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
+          <select className="form-select rounded-8 border-light px-15 py-10 justify-between text-16 fw-400 w-full text-12 mt-10">
             <option defaultValue>Any price</option>
           </select>
         </div>

@@ -50,7 +50,7 @@ const index = () => {
     <VendorDashboardLayout>
       <SearchComponent />
       <div className="row y-gap-30 mt-20">
-        <HotelProperties />
+        <HotelProperties type="vendor" />
       </div>
     </VendorDashboardLayout>
   );

@@ -1,13 +1,23 @@
-
-'use client'
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
-import { hotelsData } from "../../../data/hotelsVendor";
+import { hotelsData } from "../../../data/hotels";
+import { hotelsVendor } from "../../../data/hotelsVendor";
+import { hotelsAgent } from "../../../data/hotelsAgent";
 import isTextMatched from "../../../utils/isTextMatched";
 
-const HotelProperties = () => {
+const HotelProperties = ({ type = "customer" }) => {
+  let data = [];
+  if (type === "customer") {
+    data = hotelsData;
+  } else if (type === "vendor") {
+    data = hotelsVendor;
+  } else if (type === "agent") {
+    data = hotelsAgent;
+  }
+
   var itemSettings = {
     dots: true,
     infinite: true,
@@ -42,7 +52,7 @@ const HotelProperties = () => {
 
   return (
     <>
-      {hotelsData.slice(0, 12).map((item) => (
+      {data.slice(0, 12).map((item) => (
         <div
           className="col-lg-3 col-sm-6"
           key={item?.id}
@@ -99,9 +109,9 @@ const HotelProperties = () => {
                         ? "bg-brown-1 text-white"
                         : ""
                     } ${
-                       isTextMatched(item?.tag, "ride")
-                         ? "bg-yellow-1 text-dark-1"
-                         : ""
+                      isTextMatched(item?.tag, "ride")
+                        ? "bg-yellow-1 text-dark-1"
+                        : ""
                     } ${
                       isTextMatched(item?.tag, "attr")
                         ? "bg-white-10 text-dark-1"

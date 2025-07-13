@@ -38,26 +38,6 @@ const index = () => {
             Create Package
           </button>
         </div>
-        <div className="col-auto">
-          <select
-            className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-45 text-14"
-            onChange={(e) => setOption(e.target.value)}
-          >
-            <optgroup label="Property List">
-              <option value="hotel">Hotel</option>
-              <option value="vacation">Vacation Rental</option>
-              <option value="venue">Event Venue</option>
-              <option value="spaces">Spaces</option>
-            </optgroup>
-            <optgroup label="Non-Property List">
-              <option value="tour">Tour</option>
-              <option value="activity">Activity</option>
-              <option value="event">Event</option>
-              <option value="flights">Flights</option>
-              <option value="rides">Rides</option>
-            </optgroup>
-          </select>
-        </div>
         <div className="col-12 text-16 fw-500">Today's Sales</div>
         <div className="col-12 text-14 text-light-1">Sales Summary</div>
       </div>
@@ -77,24 +57,44 @@ const index = () => {
       </div>
 
       <div className="row y-gap-10 x-gap-10 mb-10">
+        <div className="col-auto">
+          <select
+            className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-50 text-14"
+            onChange={(e) => setOption(e.target.value)}
+          >
+            <optgroup label="Property List">
+              <option value="hotel">Hotel</option>
+              <option value="vacation">Vacation Rental</option>
+              <option value="venue">Event Venue</option>
+              <option value="spaces">Spaces</option>
+            </optgroup>
+            <optgroup label="Non-Property List">
+              <option value="tour">Tour</option>
+              <option value="activity">Activity</option>
+              <option value="event">Event</option>
+              <option value="flights">Flights</option>
+              <option value="rides">Rides</option>
+            </optgroup>
+          </select>
+        </div>
         {activeTab === "reports" && (
-          <div className="col-md-2 col-sm-6">
+          <div className="col-md-auto col-sm-6">
             <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
               <option value="category">Select Reports</option>
             </select>
           </div>
         )}
-        <div className="col-md-2 col-sm-6">
+        <div className="col-md-auto col-sm-6">
           <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
             <option value="category">Select Category</option>
           </select>
         </div>
-        <div className="col-md-2 col-sm-6">
+        <div className="col-md-auto col-sm-6">
           <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
             <option value="category">Select Subcategory</option>
           </select>
         </div>
-        <div className="col-md-2 col-sm-6">
+        <div className="col-md-auto col-sm-6">
           <div className="border-light rounded-8 py-10 px-20 w-full cursor-text text-light-1 h-50 bg-white">
             <DatePicker
               inputClass="custom_input-picker"
@@ -109,7 +109,7 @@ const index = () => {
             />
           </div>
         </div>
-        <div className="col-md-2 col-sm-6">
+        <div className="col-md-auto col-sm-6">
           <div className="border-light rounded-8 py-10 px-20 w-full cursor-text text-light-1 h-50 bg-white">
             <DatePicker
               inputClass="custom_input-picker"

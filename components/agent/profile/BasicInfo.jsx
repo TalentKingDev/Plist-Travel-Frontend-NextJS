@@ -1,3 +1,4 @@
+import { Switch } from "@mui/material";
 import { User } from "lucide-react";
 
 const BasicInfo = () => {
@@ -67,23 +68,34 @@ const BasicInfo = () => {
             Manage your account preferences
           </div>
         </div>
-        <div className="col-12 mt-10">
-          <div className="text-14 fw-600 lh-14">Email Notifications</div>
-          <div className="text-14 text-light-1 lh-1">
-            Receive email notifications for bookings and updates
+        <div className="col-12 mt-10 d-flex items-center justify-between">
+          <div>
+            <div className="text-12 fw-600 lh-14">Email Notifications</div>
+            <div className="text-12 text-light-1 lh-1">
+              Receive email notifications for bookings and updates
+            </div>
           </div>
+          <Switch size="small" />
         </div>
-        <div className="col-12 mt-10">
-          <div className="text-14 fw-600 lh-14">SMS Notifications</div>
-          <div className="text-14 text-light-1 lh-1">
-            Receive SMS alerts for important updates
+        <div className="col-12 mt-10 d-flex items-center justify-between">
+          <div>
+            <div className="text-12 fw-600 lh-14">SMS Notifications</div>
+            <div className="text-12 text-light-1 lh-1">
+              Receive SMS alerts for important updates
+            </div>
           </div>
+          <Switch size="small" />
         </div>
-        <div className="col-12 mt-10">
-          <div className="text-14 fw-600 lh-14">Two-Factor Authentication</div>
-          <div className="text-14 text-light-1 lh-1">
-            Add an extra layer of security to your account
+        <div className="col-12 mt-10 d-flex items-center justify-between">
+          <div>
+            <div className="text-12 fw-600 lh-14">
+              Two-Factor Authentication
+            </div>
+            <div className="text-12 text-light-1 lh-1">
+              Add an extra layer of security to your account
+            </div>
           </div>
+          <Switch size="small" />
         </div>
       </div>
     </>

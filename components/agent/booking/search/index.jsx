@@ -1,7 +1,5 @@
 "use client";
 
-import svgIcon from "@/components/data/svgIcon";
-import VendorDashboardLayout from "@/components/vendor/common/layout";
 import HotelsSearch from "./property/HotelsSearch";
 import SpacesSearch from "./property/SpacesSearch";
 import EventVenuesSearch from "./property/EventVenuesSearch";
@@ -14,6 +12,7 @@ import FlightsSearch from "./non-property/FlightsSearch"
 
 import { useSearchParams } from "next/navigation";
 import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperties";
+import AgentDashboardLayout from "../../common/layout";
 
 const index = () => {
 
@@ -55,12 +54,12 @@ const index = () => {
   }
 
   return (
-    <VendorDashboardLayout>
+    <AgentDashboardLayout>
       <SearchComponent />
       <div className="row y-gap-30 mt-20">
-        <HotelProperties />
+        <HotelProperties type="agent" />
       </div>
-    </VendorDashboardLayout>
+    </AgentDashboardLayout>
   );
 };
 

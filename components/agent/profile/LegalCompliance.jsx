@@ -3,8 +3,7 @@ import FileUploadForm from "./components/FileUploadForm";
 import { Checkbox } from "@mui/material";
 
 const LegalCompliance = () => {
-  const [licenses, setLicenses] = useState(1);
-  const [certificates, setCertificates] = useState(1);
+  const [certified, setCertified] = useState(false);
   return (
     <div className="row y-gap-10 x-gap-10 bg-white px-15 py-20 rounded-8">
       <div className="text-20 fw-600 lh-1">Legal & Compliance</div>
@@ -30,21 +29,26 @@ const LegalCompliance = () => {
         />
       </div>
 
-      <div className="col-12 d-flex gap-2 items-center">
-        <Checkbox className="px-0 py-0" />
+      <div
+        className="col-12 d-flex gap-2 items-center cursor-pointer"
+        onClick={() => setCertified(!certified)}
+      >
+        <Checkbox className="px-0 py-0" checked={certified} />
         <h1 className="text-14 lh-14 fw-500">IATA Certified</h1>
       </div>
-      <div className="col-12">
-        <h1 className="text-14 lh-14 fw-500">IATA Number</h1>
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-5"
-          type="text"
-          placeholder="Enter IATA Number"
-        />
-        <div className="text-12 text-light-1 lh-14 mt-5">
-          Seven-digit code assigned to IATA-certified travel agencies
+      {certified && (
+        <div className="col-12">
+          <h1 className="text-14 lh-14 fw-500">IATA Number</h1>
+          <input
+            className="border-light rounded-8 py-5 px-15 w-full mt-5"
+            type="text"
+            placeholder="Enter IATA Number"
+          />
+          <div className="text-12 text-light-1 lh-14 mt-5">
+            Seven-digit code assigned to IATA-certified travel agencies
+          </div>
         </div>
-      </div>
+      )}
 
       <h1 className="text-14 lh-14 fw-500">Licenses & Certifications</h1>
 

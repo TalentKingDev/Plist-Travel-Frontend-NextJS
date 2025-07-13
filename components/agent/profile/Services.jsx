@@ -5,35 +5,66 @@ const Services = () => {
   const [selectedServices, setSelectedServices] = useState([]);
 
   const services = [
+    // Property List
     {
       id: 1,
-      category: "Hotels & Accommodations",
-      description: "Hotel bookings, resorts, vacation rentals",
+      category: "Hotel",
+      description: "Hotel bookings and reservations",
+      value: "hotel",
     },
     {
       id: 2,
-      category: "Flights",
-      description: "Domestic and international flight bookings",
+      category: "Vacation Rental",
+      description: "Private homes, apartments, and short-term rentals",
+      value: "vacation",
     },
     {
       id: 3,
-      category: "Tours & Activities",
-      description: "Guided tours, excursions, activities",
+      category: "Event Venue",
+      description: "Spaces for events, conferences, weddings",
+      value: "venue",
     },
     {
       id: 4,
-      category: "Events",
-      description: "Concerts, sports events festivals",
+      category: "Spaces",
+      description: "Co-working spaces, meeting rooms, flexible spaces",
+      value: "spaces",
     },
+
+    // Non-Property List
     {
       id: 5,
-      category: "Ground Transportation",
-      description: "Car rentals, transfers, chauffeur services",
+      category: "Tour",
+      description: "Guided tours, sightseeing experiences",
+      value: "tour",
     },
     {
       id: 6,
-      category: "Vacation Packages",
-      description: "Allinclusive packages, custom itineraries",
+      category: "Activity",
+      description: "Outdoor, indoor, and adventure activities",
+      value: "activity",
+    },
+    {
+      id: 7,
+      category: "Event",
+      description: "Concerts, festivals, sports and local events",
+      value: "event",
+    },
+
+    // Conditionally shown if agent is true
+    {
+      id: 8,
+      category: "Flight",
+      description: "Domestic and international air travel",
+      value: "flight",
+      agentOnly: true,
+    },
+    {
+      id: 9,
+      category: "Rides",
+      description: "Car rentals, ride-sharing, and chauffeur services",
+      value: "rides",
+      agentOnly: true,
     },
   ];
 
@@ -85,7 +116,9 @@ const Services = () => {
                 <option value="percentage">Percentage Markup</option>
               </select>
             </div>
-            <div className="col-sm-4"></div>
+            <div className="col-sm-4">
+              <input type="number" className="form-control rounded-8 border-light justify-between w-50 fw-500 px-20 h-45 text-14" placeholder="0.00" step={0.01} />
+            </div>
           </React.Fragment>
         ))}
 
@@ -95,56 +128,6 @@ const Services = () => {
         </button>
       </div>
     </div>
-  );
-};
-
-const SupportHours = () => {
-  const weekdays = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-  return (
-    <>
-      <div className="text-15 lh-15 fw-500 mt-10">Days Available</div>
-      {weekdays.map((day, index) => (
-        <div className="col-xl-3 col-lg-6 col-sm-6" key={index}>
-          <div className="form-checkbox d-flex items-center">
-            <input type="checkbox" />
-            <div className="form-checkbox__mark">
-              <div className="form-checkbox__icon icon-check" />
-            </div>
-            <div className="text-15 ml-10">{day.substring(0, 3)}</div>
-          </div>
-        </div>
-      ))}
-      <div className="col-xl-3 col-lg-6 col-sm-6"></div>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-15 lh-14 fw-500">Start Time</h1>
-        <select className="form-select rounded-8 border-light justify-between py-10 mt-5 px-20 w-full text-14">
-          <option value="">Select time</option>
-        </select>
-      </div>
-
-      <div className="col-sm-6 mt-10">
-        <h1 className="text-15 lh-14 fw-500">End Time</h1>
-        <select className="form-select rounded-8 border-light justify-between py-10 mt-5 px-20 w-full text-14">
-          <option value="">Select time</option>
-        </select>
-      </div>
-
-      <div className="col-12 mt-10">
-        <h1 className="text-15 lh-14 fw-500">Time Zone</h1>
-        <select className="form-select rounded-8 border-light justify-between py-10 mt-5 px-20 w-full text-14">
-          <option value="">Select time zone</option>
-        </select>
-      </div>
-    </>
   );
 };
 

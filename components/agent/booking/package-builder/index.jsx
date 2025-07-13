@@ -1,11 +1,11 @@
 "use client";
 
-import VendorDashboardLayout from "../../common/layout";
+import AgentDashboardLayout from "../../common/layout";
 import TravelPackageFlow from "@/components/dashboard/dashboard/db-package/components/TravelPackageFlow";
 
 const index = () => {
   return (
-    <VendorDashboardLayout>
+    <AgentDashboardLayout>
       <div className="row y-gap-20 justify-between items-end mb-20">
         <div className="col-12">
           <h1 className="text-30 lh-14 fw-600">Travel Package Builder</h1>
@@ -18,7 +18,7 @@ const index = () => {
       <div className="py-20 px-20 rounded-8 bg-white shadow-3">
         <TravelPackageFlow />
       </div>
-    </VendorDashboardLayout>
+    </AgentDashboardLayout>
   );
 };
 

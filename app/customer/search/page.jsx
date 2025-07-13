@@ -84,7 +84,7 @@ const index = () => {
             {/* End border-top */}
 
             <div className="row y-gap-30">
-              <HotelProperties />
+              <HotelProperties type="customer" />
             </div>
             {/* End .row */}
             <Pagination />
