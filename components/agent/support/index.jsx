@@ -3,7 +3,7 @@
 import AgentDashboardLayout from "../common/layout";
 import { useRef, useState } from "react";
 import { Alert, Drawer, Snackbar } from "@mui/material";
-import Filter from "@/components/vendor/common/Filter";
+import Filter from "@/components/agent/common/Filter";
 import { ArrowForwardIos } from "@mui/icons-material";
 import svgIcon from "@/components/data/svgIcon";
 
@@ -154,7 +154,7 @@ const index = () => {
           </button>
           <Drawer anchor="right" open={openFilter} onClose={handleClose}>
             <div className="w-300 rounded-left rounded-8 bg-white px-20 py-20 h-100 d-flex flex-column justify-between">
-              <Filter agent={true} />
+              <Filter />
               <div className="col-12 d-flex justify-end gap-2">
                 <button
                   className="border-light rounded-8 py-5 px-15 text-14"

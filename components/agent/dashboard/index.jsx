@@ -62,6 +62,7 @@ const index = () => {
             className="form-select rounded-4 border-light justify-between text-16 fw-500 px-20 h-50 text-14"
             onChange={(e) => setOption(e.target.value)}
           >
+            <option value="all">All</option>
             <optgroup label="Property List">
               <option value="hotel">Hotel</option>
               <option value="vacation">Vacation Rental</option>
@@ -75,6 +76,7 @@ const index = () => {
               <option value="flights">Flights</option>
               <option value="rides">Rides</option>
             </optgroup>
+            <option value="travel-packages">Travel Packages</option>
           </select>
         </div>
         {activeTab === "reports" && (
@@ -142,7 +144,9 @@ const index = () => {
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeMetricTab === "daily" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "daily"
+                      ? " bg-white"
+                      : " text-light-1")
                   }
                   onClick={() => setActiveMetricTab("daily")}
                 >
@@ -151,7 +155,9 @@ const index = () => {
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeMetricTab === "weekly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "weekly"
+                      ? " bg-white"
+                      : " text-light-1")
                   }
                   onClick={() => setActiveMetricTab("weekly")}
                 >
@@ -160,7 +166,9 @@ const index = () => {
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeMetricTab === "monthly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "monthly"
+                      ? " bg-white"
+                      : " text-light-1")
                   }
                   onClick={() => setActiveMetricTab("monthly")}
                 >
@@ -169,7 +177,9 @@ const index = () => {
                 <div
                   className={
                     "text-14 fw-500 rounded-8 py-5 px-15 cursor-pointer" +
-                    (activeMetricTab === "yearly" ? " bg-white" : " text-light-1")
+                    (activeMetricTab === "yearly"
+                      ? " bg-white"
+                      : " text-light-1")
                   }
                   onClick={() => setActiveMetricTab("yearly")}
                 >
