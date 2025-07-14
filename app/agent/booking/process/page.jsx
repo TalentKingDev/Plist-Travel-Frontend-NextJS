@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/vendor/booking/package-builder";
+import DashboardPage from "@/components/agent/booking/package-builder";
 
 export const metadata = {
-  title: "Vendor Dashboard || Plist Travel",
-  description: "Vendor Dashboard for Plist Travel",
+  title: "Agent Dashboard || Plist Travel",
+  description: "Agent Dashboard for Plist Travel",
 };
 
 const index = () => {
