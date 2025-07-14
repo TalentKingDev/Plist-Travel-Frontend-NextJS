@@ -1,12 +1,10 @@
-import Hotels from "@/components/hotels/Hotels";
 import { useEffect, useState } from "react";
-import DatePicker, { DateObject } from "react-multi-date-picker";
 import TravelerInformationCard from "./TravelInformationCard";
 import ListingSearchResult from "@/components/vendor/common/ListingSearchResult";
 import ToursSearch from "@/components/vendor/booking/search/non-property/ToursSearch";
 import EventsSearch from "@/components/vendor/booking/search/non-property/EventsSearch";
 import ActivitiesSearch from "@/components/vendor/booking/search/non-property/ActivitiesSearch";
-import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { DateTimePicker, LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
@@ -136,13 +134,10 @@ export const ServiceDetail = ({ selectedItems, activeTab, setActiveTab }) => {
 };
 
 const SpaceDetails = () => {
-  const [checkInDate, setCheckInDate] = useState(new DateObject());
-  const [checkOutDate, setCheckOutDate] = useState(
-    new DateObject().add(10, "days")
-  );
   const [rooms, setRooms] = useState(1);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  const [bookingType, setBookingType] = useState("day-night");
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Space Details</h1>
@@ -168,40 +163,49 @@ const SpaceDetails = () => {
           placeholder="City, region of Space"
         />
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
-        </div>
+
+      <div className="col-sm-4 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
+        <select
+          className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10"
+          onChange={(e) => setBookingType(e.target.value)}
+        >
+          <option value="day-night">Per Day/Night</option>
+          <option value="hour">Per Hour</option>
+        </select>
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
+      {["Check-in", "Check-out"].map((label) => (
+        <div className="col-sm-4 mt-5" key={label}>
+          <h1 className="text-14 lh-12 fw-500">{label}</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {bookingType === "hour" ? (
+                <DateTimePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <DatePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              )}
+            </LocalizationProvider>
+          </div>
         </div>
-      </div>
+      ))}
       <div className="col-lg-4 col-md-4 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Rooms</h1>
         <div className="d-flex mt-10 items-center fw-600">
@@ -273,13 +277,10 @@ const SpaceDetails = () => {
 };
 
 const HotelDetails = () => {
-  const [checkInDate, setCheckInDate] = useState(new DateObject());
-  const [checkOutDate, setCheckOutDate] = useState(
-    new DateObject().add(10, "days")
-  );
   const [rooms, setRooms] = useState(1);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  const [bookingType, setBookingType] = useState("day-night");
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Hotel Details</h1>
@@ -306,40 +307,48 @@ const HotelDetails = () => {
           placeholder="City, region or Hotel"
         />
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
-        </div>
+      <div className="col-sm-4 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
+        <select
+          className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10"
+          onChange={(e) => setBookingType(e.target.value)}
+        >
+          <option value="day-night">Per Day/Night</option>
+          <option value="hour">Per Hour</option>
+        </select>
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
+      {["Check-in", "Check-out"].map((label) => (
+        <div className="col-sm-4 mt-5" key={label}>
+          <h1 className="text-14 lh-12 fw-500">{label}</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {bookingType === "hour" ? (
+                <DateTimePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <DatePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              )}
+            </LocalizationProvider>
+          </div>
         </div>
-      </div>
+      ))}
       <div className="col-lg-4 col-md-4 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Rooms</h1>
         <div className="d-flex mt-10 items-center fw-600">
@@ -411,13 +420,10 @@ const HotelDetails = () => {
 };
 
 const EventVenuesDetails = () => {
-  const [checkInDate, setCheckInDate] = useState(new DateObject());
-  const [checkOutDate, setCheckOutDate] = useState(
-    new DateObject().add(10, "days")
-  );
   const [rooms, setRooms] = useState(1);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  const [bookingType, setBookingType] = useState("day-night");
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Event Venues Details</h1>
@@ -443,40 +449,48 @@ const EventVenuesDetails = () => {
           placeholder="City, region or Event Venue"
         />
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
-        </div>
+      <div className="col-sm-4 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
+        <select
+          className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10"
+          onChange={(e) => setBookingType(e.target.value)}
+        >
+          <option value="day-night">Per Day/Night</option>
+          <option value="hour">Per Hour</option>
+        </select>
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
+      {["Check-in", "Check-out"].map((label) => (
+        <div className="col-sm-4 mt-5" key={label}>
+          <h1 className="text-14 lh-12 fw-500">{label}</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {bookingType === "hour" ? (
+                <DateTimePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <DatePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              )}
+            </LocalizationProvider>
+          </div>
         </div>
-      </div>
+      ))}
       <div className="col-lg-4 col-md-4 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Rooms</h1>
         <div className="d-flex mt-10 items-center fw-600">
@@ -548,13 +562,10 @@ const EventVenuesDetails = () => {
 };
 
 const VacationRentalsDetails = () => {
-  const [checkInDate, setCheckInDate] = useState(new DateObject());
-  const [checkOutDate, setCheckOutDate] = useState(
-    new DateObject().add(10, "days")
-  );
   const [rooms, setRooms] = useState(1);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  const [bookingType, setBookingType] = useState("day-night");
   return (
     <>
       <h1 className="text-16 lh-14 fw-500">Vacation Rentals Details</h1>
@@ -581,40 +592,48 @@ const VacationRentalsDetails = () => {
           placeholder="City, region or Vacation Rental"
         />
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-in</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
-        </div>
+      <div className="col-sm-4 mt-5">
+        <h1 className="text-14 lh-12 fw-500">Booking Type:</h1>
+        <select
+          className="form-select rounded-8 border-light px-15 h-45 justify-between text-16 fw-400 w-full text-12 mt-10"
+          onChange={(e) => setBookingType(e.target.value)}
+        >
+          <option value="day-night">Per Day/Night</option>
+          <option value="hour">Per Hour</option>
+        </select>
       </div>
-      <div className="col-sm-6 mt-5">
-        <h1 className="text-14 lh-12 fw-500">Check-out</h1>
-        <div className="mt-10">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateTimePicker
-              slotProps={{
-                textField: {
-                  sx: {
-                    width: "100%",
-                    "& .MuiPickersInputBase-root": { height: 50 },
-                  },
-                },
-              }}
-            />
-          </LocalizationProvider>
+      {["Check-in", "Check-out"].map((label) => (
+        <div className="col-sm-4 mt-5" key={label}>
+          <h1 className="text-14 lh-12 fw-500">{label}</h1>
+          <div className="mt-10">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {bookingType === "hour" ? (
+                <DateTimePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <DatePicker
+                  slotProps={{
+                    textField: {
+                      sx: {
+                        width: "100%",
+                        "& .MuiPickersInputBase-root": { height: 45 },
+                      },
+                    },
+                  }}
+                />
+              )}
+            </LocalizationProvider>
+          </div>
         </div>
-      </div>
+      ))}
       <div className="col-lg-4 col-md-4 col-sm-12">
         <h1 className="text-15 lh-14 fw-500">Rooms</h1>
         <div className="d-flex mt-10 items-center fw-600">

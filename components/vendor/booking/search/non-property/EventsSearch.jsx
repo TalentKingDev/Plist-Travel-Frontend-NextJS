@@ -1,16 +1,12 @@
 "use client";
 
 import svgIcon from "@/components/data/svgIcon";
-import DatePicker, { DateObject } from "react-multi-date-picker";
 import { useState } from "react";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const index = ({ isTravelPackage = false }) => {
-  const [dates, setDates] = useState([
-    new DateObject(),
-    new DateObject().add(1, "month"),
-  ]);
+
   const [starRating, setStarRating] = useState(0);
 
   return (
