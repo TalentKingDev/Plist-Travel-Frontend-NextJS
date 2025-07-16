@@ -1,6 +1,6 @@
 import Header from "@/components/header/dashboard-header";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import Footer from "@/components/footer/Footer";
 
 const VendorDashboardLayout = ({ children }) => {
   return (

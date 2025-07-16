@@ -2,7 +2,7 @@ import Header from "@/components/header/dashboard-header";
 import Sidebar from "./Sidebar";
 import Footer from "@/components/footer/Footer";
 
-const AgentDashboardLayout = ({ children }) => {
+const AdminDashboardLayout = ({ children }) => {
   return (
     <>
       <div className="header-margin"></div>
@@ -28,4 +28,4 @@ const AgentDashboardLayout = ({ children }) => {
     </>
   );
 };
-export default AgentDashboardLayout;
+export default AdminDashboardLayout;
