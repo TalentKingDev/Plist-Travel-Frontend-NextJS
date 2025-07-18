@@ -69,6 +69,7 @@ const BookingList = ({ detail = false }) => {
             <th>Total Price</th>
             <th>Paid</th>
             <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
