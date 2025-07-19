@@ -1,17 +1,13 @@
 "use client";
 
 import AgentDashboardLayout from "../common/layout";
-import { useRouter } from "next/navigation";
-import { BookOpen, Ellipsis, Mail, MapPin, Phone, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 import { Dialog } from "@mui/material";
-import { Checkbox, Radio } from "@mui/material";
-import DatePicker, { DateObject } from "react-multi-date-picker";
+import { Checkbox } from "@mui/material";
 import FormInput from "@/components/common/form/FormInput";
 
 const index = () => {
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState("all");
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
@@ -170,21 +166,6 @@ const index = () => {
 };
 
 const ModalContent = () => {
-  const [startDate, setStartDate] = useState(new DateObject());
-  const [endDate, setEndDate] = useState(new DateObject());
-
-  const listingGroup = [
-    { label: "Listing1", value: "listing1" },
-    { label: "Listing2", value: "listing2" },
-    { label: "Listing3", value: "listing3" },
-    { label: "Listing4", value: "listing4" },
-    { label: "Listing5", value: "listing5" },
-    { label: "Listing6", value: "listing6" },
-    { label: "Listing7", value: "listing7" },
-    { label: "Listing8", value: "listing8" },
-  ];
-
-  const [selectedListings, setSelectedListings] = useState([]);
 
   return (
     <div className="row x-gap-10 y-gap-10 items-center">
