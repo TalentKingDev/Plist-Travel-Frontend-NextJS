@@ -2,7 +2,7 @@
 
 import { Download } from "lucide-react";
 import AdminDashboardLayout from "../common/layout";
-import DashboardCard from "./DashboardCard";
+import DashboardCard from "../common/DashboardCard";
 import data from "./data";
 import Filter from "../common/Filter";
 import BookingList from "./BookingList";

@@ -1,4 +1,4 @@
-const RercentBooking = () => {
+const RecentBooking = () => {
   const data = [
     {
       name: "John Smith",
@@ -66,4 +66,4 @@ const RercentBooking = () => {
   );
 };
 
-export default RercentBooking;
+export default RecentBooking;
