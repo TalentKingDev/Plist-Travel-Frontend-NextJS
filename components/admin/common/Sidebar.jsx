@@ -61,11 +61,11 @@ const Sidebar = () => {
     //   title: "CMS",
     //   href: "/admin/cms",
     // },
-    // {
-    //   icon: "/img/dashboard/sidebar/airplane.svg",
-    //   title: "Email Template",
-    //   href: "/admin/email-template",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/airplane.svg",
+      title: "Customer Support",
+      href: "/admin/contact",
+    },
     {
       icon: "/img/dashboard/sidebar/house.svg",
       title: "Booking Oversight",

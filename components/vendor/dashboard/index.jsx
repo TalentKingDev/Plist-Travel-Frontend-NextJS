@@ -3,7 +3,7 @@
 import DashboardCard from "./components/DashboardCard";
 import ChartMain from "./components/ChartMain";
 import Link from "next/link";
-import RercentBooking from "./components/RercentBooking";
+import RecentBooking from "./components/RecentBooking";
 import { useState } from "react";
 import PopularList from "./components/PopularList";
 import VendorDashboardLayout from "../common/layout";
@@ -147,7 +147,7 @@ const index = () => {
               </div>
             </div>
 
-            <RercentBooking />
+            <RecentBooking />
           </div>
         </div>
 
