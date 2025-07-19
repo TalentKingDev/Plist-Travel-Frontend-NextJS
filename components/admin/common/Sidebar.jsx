@@ -8,11 +8,11 @@ const Sidebar = () => {
       title: "Dashboard",
       href: "/admin/dashboard",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/booking.svg",
-    //   title: "Profile & Branding",
-    //   href: "/admin/profile",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Permissions & Roles",
+      href: "/admin/roles",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/house.svg",
     //   title: "Booking Management",

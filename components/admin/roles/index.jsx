@@ -1,6 +1,6 @@
 "use client";
 
-import AgentDashboardLayout from "../common/layout";
+import AdminDashboardLayout from "../common/layout";
 import { Ellipsis, Plus } from "lucide-react";
 import { useState } from "react";
 import { Dialog } from "@mui/material";
@@ -58,7 +58,7 @@ const index = () => {
   ];
 
   return (
-    <AgentDashboardLayout>
+    <AdminDashboardLayout>
       <div className="row y-gap-10 x-gap-10 items-center mb-15">
         <div className="col-auto">
           <h1 className="text-30 lh-14 fw-600">Permissions & Roles</h1>
@@ -162,7 +162,7 @@ const index = () => {
           </div>
         </div>
       </Dialog>
-    </AgentDashboardLayout>
+    </AdminDashboardLayout>
   );
 };
 
