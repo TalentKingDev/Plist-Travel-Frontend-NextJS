@@ -61,11 +61,11 @@ const Sidebar = () => {
       title: "Coupon & Promotion Management",
       href: "/admin/coupon",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/canoe.svg",
-    //   title: "CMS",
-    //   href: "/admin/cms",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Content Management",
+      href: "/admin/cms",
+    },
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Customer Support",
