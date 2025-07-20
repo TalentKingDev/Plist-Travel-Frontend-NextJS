@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import SettingPage from "@/components/admin/contact";
+import CustomerSupport from "@/components/admin/customer-support";
 
 export const metadata = {
   title: "Admin Dashboard || Plist Travel",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const index = () => {
-  return <SettingPage />;
+  return <CustomerSupport />;
 };
 
 export default dynamic(() => Promise.resolve(index), {

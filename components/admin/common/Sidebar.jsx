@@ -64,7 +64,7 @@ const Sidebar = () => {
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Customer Support",
-      href: "/admin/contact",
+      href: "/admin/customer-support",
     },
     {
       icon: "/img/dashboard/sidebar/house.svg",

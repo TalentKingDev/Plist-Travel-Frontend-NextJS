@@ -3,7 +3,7 @@ const DashboardCard = ({ data }) => {
     <div className="overflow-scroll scroll-bar-1 pb-5">
       <div className="d-flex gap-3">
         {data.map((item, index) => (
-          <div key={index} className="w-25" style={{ minWidth: "280px" }}>
+          <div key={index} className="w-25" style={{ minWidth: "300px" }}>
             <div className="py-20 px-20 rounded-4 bg-white shadow-3 h-100">
               <div className="row justify-between items-start">
                 <div className="col-auto">

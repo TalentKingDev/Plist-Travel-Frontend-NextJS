@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import SettingPage from "@/components/admin/oversight";
+import Oversight from "@/components/admin/oversight";
 
 export const metadata = {
   title: "Admin Dashboard || Plist Travel",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const index = () => {
-  return <SettingPage />;
+  return <Oversight />;
 };
 
 export default dynamic(() => Promise.resolve(index), {
