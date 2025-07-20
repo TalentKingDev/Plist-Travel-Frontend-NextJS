@@ -36,11 +36,11 @@ const Sidebar = () => {
       title: "User Management",
       href: "/admin/user",
     },
-    {
-      icon: "/img/dashboard/sidebar/canoe.svg",
-      title: "Manual Entry Management",
-      href: "/admin/entry",
-    },
+    // {
+    //   icon: "/img/dashboard/sidebar/canoe.svg",
+    //   title: "Manual Entry Management",
+    //   href: "/admin/entry",
+    // },
     {
       icon: "/img/dashboard/sidebar/booking.svg",
       title: "Commission Management",
@@ -51,11 +51,16 @@ const Sidebar = () => {
       title: "Financial Management",
       href: "/admin/finance",
     },
-    // // {
-    // //   icon: "/img/dashboard/sidebar/taxi.svg",
-    // //   title: "Package Builder",
-    // //   href: "/admin/package-builder",
-    // // },
+    {
+      icon: "/img/dashboard/sidebar/taxi.svg",
+      title: "Vendor Listing Management",
+      href: "/admin/vendor-listing",
+    },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Coupon & Promotion Management",
+      href: "/admin/coupon",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/canoe.svg",
     //   title: "CMS",
