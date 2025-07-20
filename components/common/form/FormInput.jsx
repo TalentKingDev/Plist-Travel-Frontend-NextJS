@@ -14,6 +14,7 @@ const FormInput = ({
   onChange,
   disable,
   readOnly,
+  description,
   required = false,
 }) => {
   let form;
@@ -96,18 +97,23 @@ const FormInput = ({
 
     default:
       form = (
-        <input
-          className="border-light rounded-8 py-5 px-15 w-full mt-10"
-          type={type}
-          name={name}
-          value={value}
-          placeholder={placeholder}
-          onChange={onChange}
-          readOnly={readOnly}
-          disabled={disable}
-          min={min}
-          max={max}
-        />
+        <>
+          <input
+            className="border-light rounded-8 py-5 px-15 w-full mt-10"
+            type={type}
+            name={name}
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            readOnly={readOnly}
+            disabled={disable}
+            min={min}
+            max={max}
+          />
+          {description && (
+            <div className="text-12 text-light-1 lh-12 mt-5">{description}</div>
+          )}
+        </>
       );
       break;
   }

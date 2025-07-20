@@ -56,11 +56,11 @@ const Sidebar = () => {
     // //   title: "Package Builder",
     // //   href: "/admin/package-builder",
     // // },
-    // {
-    //   icon: "/img/dashboard/sidebar/canoe.svg",
-    //   title: "CMS",
-    //   href: "/admin/cms",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "SEO Optimization",
+      href: "/admin/seo",
+    },
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Customer Support",
