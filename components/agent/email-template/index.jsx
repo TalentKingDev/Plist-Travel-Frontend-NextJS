@@ -175,7 +175,7 @@ const index = () => {
                     <td className="align-middle">{row.category}</td>
                     <td className="align-middle">{row.subject}</td>
                     <td className="align-middle">
-                      <Eye
+                      <Eye size={18}
                         className="cursor-pointer"
                         onClick={() => {
                           setPreview(row);

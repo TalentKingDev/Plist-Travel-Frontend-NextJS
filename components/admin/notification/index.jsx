@@ -5,9 +5,9 @@ import AdminDashboardLayout from "../common/layout";
 import FilterDrawer from "../common/Filter";
 import { Drawer } from "@mui/material";
 import { Filter } from "lucide-react";
-import { FindInPage, Language } from "@mui/icons-material";
+import { Add, FindInPage, Language } from "@mui/icons-material";
 import List from "./List";
-import Add from "./Add";
+import NotificationComposer from "./Add";
 
 const index = () => {
   const [openFilter, setOpenFilter] = useState(false);
@@ -19,16 +19,18 @@ const index = () => {
 
   const tabs = [
     { label: "List", value: "list", content: <List /> },
-    { label: "Add", value: "add", content: <Add /> },
+    { label: "Add", value: "add", content: <NotificationComposer /> },
   ];
 
   return (
     <AdminDashboardLayout>
       <div className="row y-gap-15 x-gap-10 items-center mb-20">
         <div className="col-auto">
-          <h1 className="text-30 lh-14 fw-600">SEO Optimization</h1>
+          <h1 className="text-30 lh-14 fw-600">
+            Push Notifications & Announcements
+          </h1>
           <div className="text-14 text-light-1 lh-14">
-            Manage meta tags and SEO settings for pages across the platform.
+            Create and send notifications to users across the platform.
           </div>
         </div>
         <div className="col-auto ms-auto">
@@ -59,16 +61,11 @@ const index = () => {
           </Drawer>
         </div>
         <div className="col-auto">
-          <button className="button border-light bg-white px-15 py-10 rounded-8">
-            <Language className="text-18 mr-10" /> View Site SEO Report
-          </button>
-        </div>
-        <div className="col-auto">
           <button
             className="button bg-dark-blue text-white px-20 py-10 rounded-8"
             onClick={() => setActiveTab("add")}
           >
-            <FindInPage className="text-18 mr-10" /> Create SEO
+            <Add className="text-18 mr-10" /> Create New Notification
           </button>
         </div>
       </div>

@@ -78,6 +78,16 @@ const Sidebar = () => {
     },
     {
       icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Email Template",
+      href: "/admin/email-template",
+    },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Notification",
+      href: "/admin/notification",
+    },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
       title: "SEO Optimization",
       href: "/admin/seo",
     },
