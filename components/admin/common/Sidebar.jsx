@@ -46,11 +46,11 @@ const Sidebar = () => {
       title: "Commission Management",
       href: "/admin/commission",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/sneakers.svg",
-    //   title: "Sales Links",
-    //   href: "/admin/sales-links",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/sneakers.svg",
+      title: "Financial Management",
+      href: "/admin/finance",
+    },
     // // {
     // //   icon: "/img/dashboard/sidebar/taxi.svg",
     // //   title: "Package Builder",
