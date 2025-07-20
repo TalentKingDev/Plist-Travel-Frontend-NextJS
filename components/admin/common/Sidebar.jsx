@@ -36,16 +36,16 @@ const Sidebar = () => {
       title: "User Management",
       href: "/admin/user",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/canoe.svg",
-    //   title: "Wallet",
-    //   href: "/admin/wallet",
-    // },
-    // {
-    //   icon: "/img/dashboard/sidebar/booking.svg",
-    //   title: "Commission",
-    //   href: "/admin/commission",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Manual Entry Management",
+      href: "/admin/entry",
+    },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Commission Management",
+      href: "/admin/commission",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/sneakers.svg",
     //   title: "Sales Links",
