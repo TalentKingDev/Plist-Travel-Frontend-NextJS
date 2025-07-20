@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import DashboardPage from "@/components/agent/clients/manage/add";
+import DashboardPage from "@/components/admin/finance";
 
 export const metadata = {
-  title: "Agent Dashboard || Plist Travel",
-  description: "Agent Dashboard for Plist Travel",
+  title: "Financial Management - Admin || Plist Travel",
+  description: "Financial Management",
 };
 
 const index = () => {

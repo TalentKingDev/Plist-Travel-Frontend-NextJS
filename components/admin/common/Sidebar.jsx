@@ -8,11 +8,11 @@ const Sidebar = () => {
       title: "Dashboard",
       href: "/admin/dashboard",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/booking.svg",
-    //   title: "Profile & Branding",
-    //   href: "/admin/profile",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Permissions & Roles",
+      href: "/admin/roles",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/house.svg",
     //   title: "Booking Management",
@@ -31,26 +31,26 @@ const Sidebar = () => {
     //     // },
     //   ],
     // },
-    // // {
-    // //   icon: "/img/dashboard/sidebar/map.svg",
-    // //   title: "Operations Management",
-    // //   href: "/admin/operations",
-    // // },
-    // {
-    //   icon: "/img/dashboard/sidebar/canoe.svg",
-    //   title: "Wallet",
-    //   href: "/admin/wallet",
-    // },
-    // {
-    //   icon: "/img/dashboard/sidebar/booking.svg",
-    //   title: "Commission",
-    //   href: "/admin/commission",
-    // },
-    // {
-    //   icon: "/img/dashboard/sidebar/sneakers.svg",
-    //   title: "Sales Links",
-    //   href: "/admin/sales-links",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/map.svg",
+      title: "User Management",
+      href: "/admin/user",
+    },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Manual Entry Management",
+      href: "/admin/entry",
+    },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Commission Management",
+      href: "/admin/commission",
+    },
+    {
+      icon: "/img/dashboard/sidebar/sneakers.svg",
+      title: "Financial Management",
+      href: "/admin/finance",
+    },
     // // {
     // //   icon: "/img/dashboard/sidebar/taxi.svg",
     // //   title: "Package Builder",
