@@ -62,20 +62,25 @@ const Sidebar = () => {
       href: "/admin/vendor-listing",
     },
     {
-      icon: "/img/dashboard/sidebar/canoe.svg",
+      icon: "/img/dashboard/sidebar/booking.svg",
       title: "Coupon & Promotion Management",
       href: "/admin/coupon",
-    },
-    {
-      icon: "/img/dashboard/sidebar/canoe.svg",
-      title: "SEO Optimization",
-      href: "/admin/seo",
     },
     // {
     //   icon: "/img/dashboard/sidebar/canoe.svg",
     //   title: "CMS",
     //   href: "/admin/cms",
     // },
+    {
+      icon: "/img/dashboard/sidebar/house.svg",
+      title: "Content Management",
+      href: "/admin/cms",
+    },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "SEO Optimization",
+      href: "/admin/seo",
+    },
     {
       icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Customer Support",
