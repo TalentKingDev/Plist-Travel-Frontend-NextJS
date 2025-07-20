@@ -43,8 +43,9 @@ const FormInput = ({
           disabled={disable}
           onChange={onChange}
           value={value}
+          defaultValue={defaultValue}
         >
-          <option value="">{placeholder}</option>
+          {placeholder && <option value="">{placeholder}</option>}
           {options.map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
