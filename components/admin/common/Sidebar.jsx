@@ -31,11 +31,11 @@ const Sidebar = () => {
     //     // },
     //   ],
     // },
-    // // {
-    // //   icon: "/img/dashboard/sidebar/map.svg",
-    // //   title: "Operations Management",
-    // //   href: "/admin/operations",
-    // // },
+    {
+      icon: "/img/dashboard/sidebar/map.svg",
+      title: "User Management",
+      href: "/admin/user",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/canoe.svg",
     //   title: "Wallet",
