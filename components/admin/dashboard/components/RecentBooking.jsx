@@ -1,34 +1,61 @@
+import { BookOpen, Ellipsis, Mail, MapPin, Phone, Plus } from "lucide-react";
+
 const RecentBooking = ({ detail = false }) => {
   const data = [
     {
-      service: "Hotel Name",
+      id: "BK001",
+      service: "Hotel Sunshine",
+      status: "Paid",
       total: "$600",
       paid: "$600",
-      status: "Paid",
-      created_at: "16/04/25",
+      customer_type: "Individual Customer",
+      vendor: "Vendor A",
+      agent: "Agent X",
+      booking_channel: "SaaS Platform",
+      location: "New York, USA",
+      created_at: "2025-04-16",
     },
     {
-      service: "Hotel Name",
-      total: "$600",
-      paid: "$600",
+      id: "BK002",
+      service: "Hotel Sunshine",
       status: "Unpaid",
-      created_at: "16/04/25",
+      total: "$600",
+      paid: "$0",
+      customer_type: "Business Prospect",
+      vendor: "Vendor B",
+      agent: "Agent Y",
+      booking_channel: "Affiliate Agent",
+      location: "Berlin, Germany",
+      created_at: "2025-04-16",
     },
     {
-      service: "Hotel Name",
-      total: "$600",
-      paid: "$600",
+      id: "BK003",
+      service: "Hotel Sunshine",
       status: "Paid",
-      created_at: "16/04/25",
-    },
-    {
-      service: "Hotel Name",
       total: "$600",
       paid: "$600",
+      customer_type: "Business Customer",
+      vendor: "Vendor C",
+      agent: "Agent Z",
+      booking_channel: "OTA Channel",
+      location: "Tokyo, Japan",
+      created_at: "2025-04-16",
+    },
+    {
+      id: "BK004",
+      service: "Hotel Sunshine",
       status: "Process",
-      created_at: "16/04/25",
+      total: "$600",
+      paid: "$300",
+      customer_type: "Individual Prospect",
+      vendor: "Vendor D",
+      agent: "Agent W",
+      booking_channel: "Reseller Agent",
+      location: "Paris, France",
+      created_at: "2025-04-16",
     },
   ];
+  
 
   const statusColor = (status) => {
     switch (status) {
@@ -46,23 +73,26 @@ const RecentBooking = ({ detail = false }) => {
   return (
     <div className="overflow-scroll scroll-bar-1 pt-0">
       <table className="table-2 col-12">
-        <thead>
-          <tr className="text-light-1 fw-600">
-            <th>#</th>
-            <th>Service</th>
-            <th>Total</th>
-            <th>Paid</th>
-            <th>Status</th>
-            <th>Created At</th>
-          </tr>
-        </thead>
+      <thead>
+        <tr className="text-light-1 fw-600">
+          <th>ID</th>
+          <th>Service</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Paid</th>
+          <th>Customer Type</th>
+          <th>Vendor</th>
+          <th>Agent</th>
+          <th>Booking Channel</th>
+          <th>Location</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
         <tbody>
           {data.map((row, index) => (
             <tr key={index}>
               <td className="align-middle">{index + 1}</td>
               <td className="align-middle fw-600">{row.service}</td>
-              <td className="align-middle fw-500">{row.total}</td>
-              <td className="align-middle fw-500">{row.paid}</td>
               <td className="align-middle fw-500">
                 <span
                   className={`rounded-100 px-10 text-center text-12 ${statusColor(
@@ -72,9 +102,14 @@ const RecentBooking = ({ detail = false }) => {
                   {row.status}
                 </span>
               </td>
-              <td className="align-middle">
-                {row.created_at}
-              </td>
+              <td className="align-middle fw-500">{row.total}</td>
+              <td className="align-middle fw-500">{row.paid}</td>
+              <td className="align-middle fw-500">{row.customer_type}</td>
+              <td className="align-middle fw-500">{row.vendor}</td>
+              <td className="align-middle fw-500">{row.agent}</td>
+              <td className="align-middle fw-500">{row.booking_channel}</td>
+              <td className="align-middle fw-500"><MapPin size={14} />{row.location}</td>
+              <td className="align-middle fw-500">{new Date(row.created_at).toLocaleDateString()}</td>
             </tr>
           ))}
         </tbody>

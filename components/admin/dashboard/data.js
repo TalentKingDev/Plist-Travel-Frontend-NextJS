@@ -9,11 +9,45 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
+      },
+      {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),        
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+        
       },
       {
         title: "Booking volume by category",
@@ -118,15 +152,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Spaces",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -226,15 +293,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Activity",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -332,15 +432,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Event",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -440,15 +573,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Venue",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -548,15 +714,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Hotel",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -655,15 +854,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Tour",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -761,15 +993,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Rides",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",
@@ -869,15 +1134,48 @@ const dashboardData = {
         description: "Total value of transactions",
       },
       {
-        title: "Active users",
+        title: "Active Users",
         amount: "1000 active users",
         improve: "+0.5 days from last month",
         icon: "/img/dashboard/icons/3.svg",
         description: "Number of active users",
       },
       {
+        title: "Active Vendors",
+        amount: "300 Active Vendors",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: "Number of active vendors",
+      },
+      {
+        title: "Active Agents",
+        amount: "400 Active Agents",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active agents<br />
+            &nbsp;&nbsp;300 Reseller Agents<br />
+            &nbsp;&nbsp;100 Affiliate Agents
+          </>
+        ),
+      },
+      {
+        title: "Active Paid Customers",
+        amount: "700 Active Paid Customers",
+        improve: "+0.5 days from last month",
+        icon: "/img/dashboard/icons/3.svg",
+        description: (
+          <>
+            Number of active paid customers<br />
+            &nbsp;&nbsp;300 Business Customers<br />
+            &nbsp;&nbsp;400 Individual Customers
+          </>
+        ),
+      },
+      {
         title: "Booking volume by category",
-        amount: "500 bookings in Flights",
+        amount: "500 bookings in Vacation",
         improve: "+12.6% from last month",
         icon: "/img/dashboard/icons/2.svg",
         description: "Booking volume",

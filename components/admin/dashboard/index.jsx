@@ -93,7 +93,38 @@ const index = () => {
         </div>
         <div className="col-md-auto col-sm-6">
           <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
-            <option value="category">Select Subcategory</option>
+            <option value="subcategory">Select Subcategory</option>
+          </select>
+        </div>
+        <div className="col-md-auto col-sm-6">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+            <option value="all">All Vendors</option>
+          </select>
+        </div>
+        <div className="col-md-auto col-sm-6">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+            <option value="all">All Agents</option>
+            <option value="reseller">Reseller Agents</option>
+            <option value="affiliate">Affiliate Agents</option>
+          </select>
+        </div>
+        <div className="col-md-auto col-sm-6">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+            <option value="all">All Customer Types</option>
+            <option value="individul_pros">Individual Prospects</option>
+            <option value="business_pros">Business Prospects</option>
+            <option value="individual_customer">Individual Customers</option>
+            <option value="business_customer">Business Customers</option>
+          </select>
+        </div>
+        <div className="col-md-auto col-sm-6">
+          <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+            <option value="all">All Booking Channels</option>
+            <option value="reseller_agents">Reseller Agents</option>
+            <option value="affiliate_agents">Affiliate Agents</option>
+            <option value="saas_agents">SaaS Platform</option>
+            <option value="ota_channel">OTA Channel</option>
+            <option value="others">Others</option>
           </select>
         </div>
         <div className="col-md-auto col-sm-6">
@@ -210,7 +241,7 @@ const index = () => {
               </div> */}
             </div>
             <div className="row y-gap-10 x-gap-10 items-center mb-5">
-              <div className="col-sm-auto d-flex">
+              <div className="d-flex flex-wrap gap-10 items-center mb-20">
                 <div className="position-relative d-flex items-center w-180 sm:w-full">
                   <input
                     type="text"
@@ -249,6 +280,37 @@ const index = () => {
               <div className="col-sm-auto">
                 <select className="form-select rounded-8 border-light justify-between py-10 px-15 text-14 w-140 sm:w-full">
                   <option value="all">Sub Category</option>
+                </select>
+              </div>
+              <div className="col-md-auto col-sm-6">
+                <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+                  <option value="all">All Vendors</option>
+                </select>
+              </div>
+              <div className="col-md-auto col-sm-6">
+                <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+                  <option value="all">All Agents</option>
+                  <option value="reseller">Reseller Agents</option>
+                  <option value="affiliate">Affiliate Agents</option>
+                </select>
+              </div>
+              <div className="col-md-auto col-sm-6">
+                <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+                  <option value="all">All Customer Types</option>
+                  <option value="individul_pros">Individual Prospects</option>
+                  <option value="business_pros">Business Prospects</option>
+                  <option value="individual_customer">Individual Customers</option>
+                  <option value="business_customer">Business Customers</option>
+                </select>
+              </div>
+              <div className="col-md-auto col-sm-6">
+                <select className="form-select rounded-4 border-light justify-between text-14 h-50 w-full text-14">
+                  <option value="all">All Booking Channels</option>
+                  <option value="reseller_agents">Reseller Agents</option>
+                  <option value="affiliate_agents">Affiliate Agents</option>
+                  <option value="saas_agents">SaaS Platform</option>
+                  <option value="ota_channel">OTA Channel</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
               <div className="col-sm-auto ms-auto d-flex">
