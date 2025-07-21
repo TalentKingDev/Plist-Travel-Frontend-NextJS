@@ -7,6 +7,7 @@ const TicketList = () => {
       customer_name: "John Smith",
       customer_email: "john@example.com",
       issue: "Booking cancellation issue",
+      ticket_type: "Booking Issues",
       status: "Open",
       priority: "High",
       last_updated: "2023-10-16",
@@ -16,6 +17,7 @@ const TicketList = () => {
       customer_name: "Sarah Johnson",
       customer_email: "sarah@example.com",
       issue: "Payment not processed",
+      ticket_type: "Payment Issues",
       status: "In Progress",
       priority: "High",
       last_updated: "2023-10-16",
@@ -25,6 +27,7 @@ const TicketList = () => {
       customer_name: "Michael Brown",
       customer_email: "michael@example.com",
       issue: "Unable to update profile",
+      ticket_type: "Website Issues",
       status: "Open",
       priority: "Medium",
       last_updated: "2023-10-13",
@@ -34,6 +37,7 @@ const TicketList = () => {
       customer_name: "Emily Davis",
       customer_email: "emily@example.com",
       issue: "Hotel amenities not as described",
+      ticket_type: "Vendor Issues",
       status: "In Progress",
       priority: "Medium",
       last_updated: "2023-10-15",
@@ -43,6 +47,7 @@ const TicketList = () => {
       customer_name: "David Wilson",
       customer_email: "david@example.com",
       issue: "Refund request for cancellation",
+      ticket_type: "Booking Issues",
       status: "Resolved",
       priority: "High",
       last_updated: "2023-10-14",
@@ -51,12 +56,24 @@ const TicketList = () => {
 
   return (
     <div className="overflow-scroll scroll-bar-1 pt-0">
+      <select className="form-select border-light h-45 px-15 w-140">
+        <option value="all">All Ticket Type</option>
+        <option value="booking">Booking Issues</option>
+        <option value="payment">Payment Issues</option>
+        <option value="website">Website Issues</option>
+        <option value="vendor">Vendor Issues</option>
+        <option value="agent">Agent Issues</option>
+        <option value="subscription">Subscription Issues</option>
+        <option value="billing">Billing Issues</option>
+        <option value="other">Other Issues</option>
+      </select>
       <table className="table-2 col-12">
         <thead>
           <tr className="text-light-1 fw-600">
             <th>Id</th>
             <th>Customer</th>
             <th>Subject</th>
+            <th>Ticket Type</th>
             <th>Status</th>
             <th>Priority</th>
             <th>Last Updated</th>

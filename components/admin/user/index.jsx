@@ -26,7 +26,7 @@ const index = () => {
       bookings: 8,
       total_spent: "$12,450",
       status: "Active",
-      created_at: "2025-05-22T08:20:00Z"
+      created_at: "2025-05-22T08:20:00Z",
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ const index = () => {
       bookings: 5,
       total_spent: "$8,320",
       status: "Active",
-      created_at: "2025-05-22T08:20:00Z"
+      created_at: "2025-05-22T08:20:00Z",
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ const index = () => {
       bookings: 3,
       total_spent: "$5,670",
       status: "Active",
-      created_at: "2025-05-22T08:20:00Z"
+      created_at: "2025-05-22T08:20:00Z",
     },
     {
       id: 4,
@@ -62,7 +62,7 @@ const index = () => {
       bookings: 2,
       total_spent: "$3,450",
       status: "Inactive",
-      created_at: "2025-05-22T08:20:00Z"
+      created_at: "2025-05-22T08:20:00Z",
     },
     {
       id: 5,
@@ -73,7 +73,7 @@ const index = () => {
       location: "Dallas, USA",
       bookings: 6,
       status: "Active",
-      created_at: "2025-05-22T08:20:00Z"
+      created_at: "2025-05-22T08:20:00Z",
     },
   ];
   const tabs = [
@@ -149,11 +149,11 @@ const index = () => {
             <table className="table-3 -border-bottom col-12">
               <thead className="bg-light-2">
                 <tr>
-                  <th>ID</th>
                   <th>User</th>
+                  <th>Location</th>
                   <th>Role</th>
                   <th>Status</th>
-                  <th>Createt At</th>
+                  <th className="text-nowrap">Createt At</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -166,9 +166,6 @@ const index = () => {
                   })
                   .map((client, index) => (
                     <tr key={index}>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.id}
-                      </td>
                       <td className="align-middle">
                         <div className="d-flex items-center gap-2">
                           <div className="size-30 rounded-full text-light-1 bg-light-2 flex-center fw-500">
@@ -183,6 +180,9 @@ const index = () => {
                             </div>
                           </div>
                         </div>
+                      </td>
+                      <td className="align-middle text-12 lh-16 fw-500">
+                        {client.location}
                       </td>
                       <td className="align-middle text-12 lh-16 fw-500">
                         <span
@@ -215,7 +215,18 @@ const index = () => {
                         </div>
                       </td>
                       <td className="align-middle">
-                        <Ellipsis size={16} />
+                        <span className="text-12 border-blue-1 text-blue-1 fw-500 rounded-4 px-10 cursor-pointer">
+                          Manage
+                        </span>
+                        <span className="text-12 border-green-3 text-green-3 fw-500 rounded-4 px-10 cursor-pointer text-nowrap mx-1">
+                          Add Subscription
+                        </span>
+                        <span className="text-12 border-yellow-3 text-yellow-3 fw-500 rounded-4 px-10 cursor-pointer">
+                          Deactive
+                        </span>
+                        <span className="text-12 border-red-2 text-red-2 fw-500 rounded-4 px-10 cursor-pointer mx-1">
+                          Delete
+                        </span>
                       </td>
                     </tr>
                   ))}
@@ -325,6 +336,5 @@ const ModalContent = () => {
     </div>
   );
 };
-
 
 export default index;

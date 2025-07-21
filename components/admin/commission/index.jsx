@@ -17,7 +17,7 @@ const index = () => {
       commission_rate: 0.15,
       total_commission: "$2,400",
       total_revenue: "$16,000",
-      role: "Vendor"
+      role: "Vendor",
     },
     {
       id: 2,
@@ -25,10 +25,10 @@ const index = () => {
       listing_type: "Tour",
       status: "Active",
       plan: "Standard",
-      commission_rate: 0.10,
+      commission_rate: 0.1,
       total_commission: "$1,050",
       total_revenue: "$10,500",
-      role: "Agent"
+      role: "Agent",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const index = () => {
       commission_rate: 0.08,
       total_commission: "$860",
       total_revenue: "$10,750",
-      role: "Vendor"
+      role: "Vendor",
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ const index = () => {
       commission_rate: 0.12,
       total_commission: "$1,200",
       total_revenue: "$10,000",
-      role: "Agent"
+      role: "Agent",
     },
     {
       id: 5,
@@ -61,12 +61,10 @@ const index = () => {
       commission_rate: 0.15,
       total_commission: "$2,750",
       total_revenue: "$18,333",
-      role: "Vendor"
-    }
+      role: "Vendor",
+    },
   ];
-  
-  
-  
+
   const tabs = [
     {
       label: "All",
@@ -81,13 +79,14 @@ const index = () => {
       value: "agent",
     },
   ];
-  
 
   return (
     <AdminDashboardLayout>
       <div className="row y-gap-10 x-gap-10 items-center mb-10">
         <div className="col-auto">
-          <h1 className="text-30 lh-14 fw-600">Agent & Vendor Commission Management</h1>
+          <h1 className="text-30 lh-14 fw-600">
+            Agent & Vendor Commission Management
+          </h1>
           {/* <div className="text-14 lh-14 text-light-1">
             Manage all users across the platform
           </div> */}
@@ -115,9 +114,28 @@ const index = () => {
       </div>
 
       <div className="bg-white rounded-8 border-light px-20 py-15">
-        <h1 className="text-24 lh-14 fw-500"> Commission Overview</h1>
-        <div className="text-14 lh-14 text-light-1">
-          Manage commission rates for vendors and agents
+        <div className="d-flex items-center justify-between mb-10">
+          <div className="d-flex flex-column">
+            <h1 className="text-24 lh-14 fw-500"> Commission Overview</h1>
+            <div className="text-14 lh-14 text-light-1">
+              Manage commission rates for vendors and agents
+            </div>
+          </div>
+          <div className="d-flex items-center gap-2">
+            {activeTab === "vendor" && (
+              <select className="form-select border-light h-45 px-15 w-140">
+                <option value="all">All Vendors</option>
+              </select>
+            )}
+            {activeTab === "agent" && (
+              <select className="form-select border-light h-45 px-15 w-140">
+                <option value="all">All Agents</option>
+              </select>
+            )}
+            <select className="form-select border-light h-45 px-15 w-140">
+              <option value="all">All Locations</option>
+            </select>
+          </div>
         </div>
         <div className="bg-white rounded-8 border-light py-5 mt-10">
           <div className="overflow-scroll scroll-bar-1">
@@ -165,19 +183,19 @@ const index = () => {
                         </span>
                       </td>
 
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.listing_type}
                       </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.plan}
                       </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.commission_rate}%
                       </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.total_revenue}
                       </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.total_commission}
                       </td>
                       <td className="align-middle">

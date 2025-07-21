@@ -8,7 +8,6 @@ import { Checkbox } from "@mui/material";
 import FormInput from "@/components/common/form/FormInput";
 
 const index = () => {
-
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
@@ -21,7 +20,7 @@ const index = () => {
       role_desc: "Full access to all resources",
       permissions: "24",
       users: "2",
-      created_at: "2023-01-10T09:15:00Z"
+      created_at: "2023-01-10T09:15:00Z",
     },
     {
       id: 2,
@@ -29,7 +28,7 @@ const index = () => {
       role_desc: "Manage vendor resources",
       permissions: "16",
       users: "4",
-      created_at: "2023-02-20T12:30:00Z"
+      created_at: "2023-02-20T12:30:00Z",
     },
     {
       id: 3,
@@ -37,7 +36,7 @@ const index = () => {
       role_desc: "Manage agent resources",
       permissions: "12",
       users: "3",
-      created_at: "2023-03-05T15:45:00Z"
+      created_at: "2023-03-05T15:45:00Z",
     },
     {
       id: 4,
@@ -45,7 +44,7 @@ const index = () => {
       role_desc: "Handle customer inquiries",
       permissions: "8",
       users: "6",
-      created_at: "2023-04-18T11:00:00Z"
+      created_at: "2023-04-18T11:00:00Z",
     },
     {
       id: 5,
@@ -53,7 +52,7 @@ const index = () => {
       role_desc: "Manage content and listings",
       permissions: "10",
       users: "2",
-      created_at: "2023-05-22T08:20:00Z"
+      created_at: "2023-05-22T08:20:00Z",
     },
   ];
 
@@ -77,9 +76,21 @@ const index = () => {
       </div>
 
       <div className="bg-white rounded-8 border-light px-20 py-15">
-        <h1 className="text-24 lh-14 fw-500">Roles</h1>
-        <div className="text-14 lh-14 text-light-1">
-          Manage roles and permissions
+        <div className="d-flex items-center justify-between mb-10">
+          <div className="d-flex flex-column">
+            <h1 className="text-24 lh-14 fw-500">Roles</h1>
+            <div className="text-14 lh-14 text-light-1">
+              Manage roles and permissions
+            </div>
+          </div>
+          <select className="form-select border-light h-45 px-15 w-140">
+            <option value="all">All</option>
+            <option value="customer">Customer</option>
+            <option value="vendor">Vendor</option>
+            <option value="reseller-agent">Reseller Agent</option>
+            <option value="affiliate-agent">Affiliate Agent</option>
+            <option value="internal-staff">Internal staff</option>
+          </select>
         </div>
         <div className="bg-white rounded-8 border-light py-5 mt-10">
           <div className="overflow-scroll scroll-bar-1">
@@ -95,42 +106,39 @@ const index = () => {
                 </tr>
               </thead>
               <tbody>
-                {clients
-                  .map((client, index) => (
-                    <tr key={index}>
-                      <td className="align-middle">
-                        {client.id}
-                      </td>
-                      <td className="align-middle">
-                        <div className="d-flex items-center gap-1 text-14">
-                          {client.role}
-                        </div>
-                        <div className="d-flex items-center gap-1 text-light-1 text-12 mt-5">
-                          {client.role_desc}
-                        </div>
-                      </td>
+                {clients.map((client, index) => (
+                  <tr key={index}>
+                    <td className="align-middle">{client.id}</td>
+                    <td className="align-middle">
+                      <div className="d-flex items-center gap-1 text-14">
+                        {client.role}
+                      </div>
+                      <div className="d-flex items-center gap-1 text-light-1 text-12 mt-5">
+                        {client.role_desc}
+                      </div>
+                    </td>
 
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.permissions}
-                      </td>
+                    <td className="align-middle text-12 lh-16 fw-500">
+                      {client.permissions}
+                    </td>
 
-                      <td className="align-middle">
-                        <div className="d-flex items-center gap-1 text-12">
-                          {client.users}
-                        </div>
-                      </td>
+                    <td className="align-middle">
+                      <div className="d-flex items-center gap-1 text-12">
+                        {client.users}
+                      </div>
+                    </td>
 
-                      <td className="align-middle">
-                        <div className="d-flex items-center gap-1 text-12 lh-16 fw-500">
-                          {new Date(client.created_at).toLocaleString()}
-                        </div>
-                      </td>
-                      
-                      <td className="align-middle">
-                        <Ellipsis size={16} />
-                      </td>
-                    </tr>
-                  ))}
+                    <td className="align-middle">
+                      <div className="d-flex items-center gap-1 text-12 lh-16 fw-500">
+                        {new Date(client.created_at).toLocaleString()}
+                      </div>
+                    </td>
+
+                    <td className="align-middle">
+                      <Ellipsis size={16} />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -167,7 +175,6 @@ const index = () => {
 };
 
 const ModalContent = () => {
-
   return (
     <div className="row x-gap-10 y-gap-10 items-center">
       <h1 className="text-20 lh-14 fw-500">Create New Role</h1>

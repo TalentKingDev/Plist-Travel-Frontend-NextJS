@@ -203,6 +203,36 @@ $_displays: none, inline-block, block, flex;
   &-white {
     border: 1px solid white;
   }
+  &-red-1 {
+    border: 1px solid var(--color-red-1);
+  }
+  &-red-2 {
+    border: 1px solid var(--color-red-2);
+  }
+  &-red-3 {
+    border: 1px solid var(--color-red-3);
+  }
+  &-red-4 {
+    border: 1px solid var(--color-red-4);
+  }
+  &-yellow-1 {
+    border: 1px solid var(--color-yellow-1);
+  }
+  &-yellow-2 {
+    border: 1px solid var(--color-yellow-2);
+  }
+  &-yellow-3 {
+    border: 1px solid var(--color-yellow-3);
+  }
+  &-yellow-4 {
+    border: 1px solid var(--color-yellow-4);
+  }
+  &-yellow-5 {
+    border: 1px solid var(--color-yellow-5);
+  }
+  &-dark-yellow {
+    border: 1px solid var(--color-dark-yellow);
+  }
   &-dark-1 {
     border: 1px solid var(--color-dark-1);
   }

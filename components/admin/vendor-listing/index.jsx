@@ -8,7 +8,6 @@ import { Dialog } from "@mui/material";
 import { Checkbox } from "@mui/material";
 import FormInput from "@/components/common/form/FormInput";
 const index = () => {
-
   const [activeTab, setActiveTab] = useState("all");
 
   const entries = [
@@ -19,7 +18,7 @@ const index = () => {
       vendor: "Apple",
       location: "New York, USA",
       status: "Approved",
-      action: ""
+      action: "",
     },
     {
       image: "/img/testimonials/1/4.png",
@@ -28,7 +27,7 @@ const index = () => {
       vendor: "Xiaomi",
       location: "Miami, USA",
       status: "Approved",
-      action: ""
+      action: "",
     },
     {
       image: "/img/testimonials/1/4.png",
@@ -37,7 +36,7 @@ const index = () => {
       vendor: "NASDAQ",
       location: "Los Angeles, USA",
       status: "Approved",
-      action: ""
+      action: "",
     },
     {
       image: "/img/testimonials/1/4.png",
@@ -46,7 +45,7 @@ const index = () => {
       vendor: "NASDAQ",
       location: "Chicago, USA",
       status: "Pending",
-      action: ""
+      action: "",
     },
     {
       image: "/img/testimonials/1/4.png",
@@ -55,11 +54,10 @@ const index = () => {
       vendor: "NASDAQ",
       location: "Dallas, USA",
       status: "Approved",
-      action: ""
-    }
+      action: "",
+    },
   ];
-  
-  
+
   const tabs = [
     {
       label: "All",
@@ -94,7 +92,6 @@ const index = () => {
       value: "activity",
     },
   ];
-  
 
   return (
     <AdminDashboardLayout>
@@ -128,6 +125,17 @@ const index = () => {
       </div>
 
       <div className="bg-white rounded-8 border-light px-20 py-15">
+        <div className="d-flex items-center gap-3">
+          <select className="form-select border-light h-45 px-15 w-140">
+            <option value="all">All Location</option>
+          </select>
+          <select className="form-select border-light h-45 px-15 w-140">
+            <option value="all">All Vendor</option>
+          </select>
+          <select className="form-select border-light h-45 px-15 w-140">
+            <option value="all">All Status</option>
+          </select>
+        </div>
         <div className="bg-white rounded-8 border-light py-5 mt-10">
           <div className="overflow-scroll scroll-bar-1">
             <table className="table-3 -border-bottom col-12">
@@ -164,10 +172,8 @@ const index = () => {
                           }}
                         />
                       </td>
-                      <td className="align-middle">
-                        {entry.name}
-                      </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle">{entry.name}</td>
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.listing_type}
                       </td>
                       <td className="align-middle">
@@ -175,7 +181,7 @@ const index = () => {
                           <MapPin size={14} /> {entry.location}
                         </div>
                       </td>
-                      <td className="align-middle text-12 lh-16 fw-500">  
+                      <td className="align-middle text-12 lh-16 fw-500">
                         {entry.vendor}
                       </td>
                       <td className="align-middle">
