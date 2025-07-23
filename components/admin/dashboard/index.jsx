@@ -314,7 +314,7 @@ const index = () => {
                 </select>
               </div>
               <div className="col-sm-auto ms-auto d-flex">
-                <button className="button -md px-15 py-10 fw-400 text-14 bg-white border-light rounded-8 sm:w-full">
+                <button className="button -md px-15 py-10 fw-400 text-14 bg-white border-light rounded-8 sm:w-full me-2">
                   Export Listings
                 </button>
                 <button className="button -md px-15 py-10 fw-400 text-14 text-white bg-blue-1 rounded-8 sm:w-full">
