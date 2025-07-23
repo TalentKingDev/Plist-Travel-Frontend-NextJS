@@ -36,6 +36,11 @@ const Sidebar = () => {
       title: "User Management",
       href: "/admin/user",
     },
+    {
+      icon: "/img/dashboard/sidebar/booking.svg",
+      title: "Category Management",
+      href: "/admin/category",
+    },
     // {
     //   icon: "/img/dashboard/sidebar/canoe.svg",
     //   title: "Manual Entry Management",
