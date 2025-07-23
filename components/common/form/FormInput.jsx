@@ -15,6 +15,7 @@ const FormInput = ({
   disable,
   readOnly,
   description,
+  tooltip,
   required = false,
 }) => {
   let form;
@@ -121,9 +122,19 @@ const FormInput = ({
 
   return (
     <div className={`mt-5 ${gridClass} ${otherClass}`}>
-      <h1 className="text-14 lh-12 fw-500">
+      <h1 className="text-14 lh-12 fw-500 d-flex">
         {label}
         {required ? <span className="text-red-1">*</span> : null}
+        {tooltip ? (
+          <span
+            className="text-white bg-info-2 rounded-100 size-15 flex-center ml-5"
+            data-toggle="tooltip"
+            data-placement="top"
+            title={tooltip}
+          >
+            i
+          </span>
+        ) : null}
       </h1>
       {form}
     </div>

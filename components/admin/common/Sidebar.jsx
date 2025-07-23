@@ -57,7 +57,7 @@ const Sidebar = () => {
     // //   href: "/admin/package-builder",
     // // },
     {
-      icon: "/img/dashboard/sidebar/taxi.svg",
+      icon: "/img/dashboard/sidebar/canoe.svg",
       title: "Vendor Listing Management",
       href: "/admin/vendor-listing",
     },
@@ -66,23 +66,29 @@ const Sidebar = () => {
       title: "Coupon & Promotion Management",
       href: "/admin/coupon",
     },
-    // {
-    //   icon: "/img/dashboard/sidebar/canoe.svg",
-    //   title: "CMS",
-    //   href: "/admin/cms",
-    // },
+    {
+      icon: "/img/dashboard/sidebar/canoe.svg",
+      title: "Package Management",
+      links: [
+        { title: "Package Plans", href: "/admin/package/plan" },
+        {
+          title: "Package Subscriptions",
+          href: "/admin/package/subscription",
+        },
+      ],
+    },
     {
       icon: "/img/dashboard/sidebar/house.svg",
-      title: "Content Management",
+      title: "CMS Management",
       href: "/admin/cms",
     },
     {
-      icon: "/img/dashboard/sidebar/canoe.svg",
+      icon: "/img/dashboard/sidebar/taxi.svg",
       title: "Email Template",
       href: "/admin/email-template",
     },
     {
-      icon: "/img/dashboard/sidebar/canoe.svg",
+      icon: "/img/dashboard/sidebar/sneakers.svg",
       title: "Notification",
       href: "/admin/notification",
     },
@@ -102,7 +108,7 @@ const Sidebar = () => {
       href: "/admin/oversight",
     },
     {
-      icon: "/img/dashboard/sidebar/sneakers.svg",
+      icon: "/img/dashboard/sidebar/canoe.svg",
       title: "System Settings",
       href: "/admin/setting",
     },
