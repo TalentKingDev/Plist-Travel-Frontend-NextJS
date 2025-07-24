@@ -6,6 +6,7 @@ import { Dialog } from "@mui/material";
 import { useState } from "react";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateRangePicker } from "@mui/x-date-pickers-pro";
 
 const index = () => {
   return (
@@ -119,92 +120,137 @@ const SubscriptionList = () => {
   ];
 
   return (
-    <div className="overflow-scroll scroll-bar-1">
-      <div className="d-flex items-center justify-between mb-10 mt-5">
-        <div className="position-relative d-flex items-center w-180 sm:w-full">
-          <input
-            type="text"
-            placeholder="Search pages..."
-            className="border-light bg-white rounded-8 px-10 py-5 pl-30"
-          />
-          <i
-            className="icon-search text-light-1 position-absolute"
-            style={{
-              left: "10px",
-              top: "50%",
-              transform: "translateY(-50%)",
-            }}
-          ></i>
+    <>
+      <div className="row x-gap-15 border-bottom-light pb-20 mb-20">
+        <div className="col-sm-3">
+          <h1 className="text-14 fw-500 lh-14">Packages</h1>
+          <select className="form-select bg-white border-light rounded-8 px-10 h-45 w-100 mt-5">
+            <option value="all">All</option>
+          </select>
         </div>
-        <button className="button border-light px-20 py-10 rounded-8">
-          Export Data
-        </button>
+        <div className="col-sm-3">
+          <h1 className="text-14 fw-500 lh-14">Status</h1>
+          <select className="form-select bg-white border-light rounded-8 px-10 h-45 w-100 mt-5">
+            <option value="all">All</option>
+          </select>
+        </div>
+        <div className="col-sm-3">
+          <h1 className="text-14 fw-500 lh-14 mb-5">Created At</h1>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateRangePicker
+              slotProps={{
+                textField: {
+                  sx: {
+                    width: "100%",
+                    "& .MuiPickersInputBase-root": { height: 45 },
+                  },
+                },
+              }}
+            />
+          </LocalizationProvider>
+        </div>
       </div>
-      <table className="table-2 text-12 text-nowrap">
-        <thead>
-          <tr className="text-light-1 fw-600">
-            <th>Business Name</th>
-            <th>Package Name</th>
-            <th>Status</th>
-            <th>Created At</th>
-            <th>Start Date</th>
-            <th>Trial End Date</th>
-            <th>End Date</th>
-            <th>Coupon Code</th>
-            <th>Original Price</th>
-            <th>Paid Amount</th>
-            <th>Paid Via</th>
-            <th>Payment Transaction ID</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {subscriptions.map((row, index) => (
-            <tr key={index} className="text-12">
-              <td className="align-middle text-12">{row.business_name}</td>
-              <td className="align-middle text-12">{row.package_name}</td>
-              <td className="align-middle">
-                <span
-                  className={`rounded-100 px-10 text-center text-12 fw-500 ${
-                    {
-                      Declined: "bg-red-1 text-white",
-                      Approved: "bg-green-3 text-white",
-                    }[row.status] || "bg-light-2 text-light-1"
-                  }`}
-                >
-                  {row.status}
-                </span>
-              </td>
-              <td className="align-middle text-12">{row.created_at}</td>
-              <td className="align-middle text-12">{row.start_date}</td>
-              <td className="align-middle text-12">{row.trial_end_date}</td>
-              <td className="align-middle text-12">{row.end_date}</td>
-              <td className="align-middle text-12">{row.coupon_code}</td>
-              <td className="align-middle text-12">{row.original_price}</td>
-              <td className="align-middle text-12">{row.paid_amount}</td>
-              <td className="align-middle text-12">{row.paid_via}</td>
-              <td className="align-middle text-12">{row.transaction_id}</td>
-              <td className="align-middle d-flex items-center gap-1">
-                <span
-                  className="border-blue-1 text-blue-1 rounded-8 px-10 text-center text-12 fw-500 cursor-pointer"
-                  onClick={() => setShowStatusModal(true)}
-                >
-                  Status
-                </span>
-                <span
-                  className="border-green-2 text-green-2 rounded-8 px-10 text-center text-12 fw-500 cursor-pointer"
-                  onClick={() => setShowEditModal(true)}
-                >
-                  Edit
-                </span>
-              </td>
+      <div className="overflow-scroll scroll-bar-1">
+        <div className="d-flex items-center justify-between mb-10 mt-5">
+          <div className="position-relative d-flex items-center w-180 sm:w-full">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="border-light bg-white rounded-8 px-10 py-5 pl-30"
+            />
+            <i
+              className="icon-search text-light-1 position-absolute"
+              style={{
+                left: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            ></i>
+          </div>
+          <div className="d-flex items-center gap-2">
+            <button className="button border-light px-15 py-5 text-12 fw-500 rounded-8">
+              Export CSV
+            </button>
+            <button className="button border-light px-15 py-5 text-12 fw-500 rounded-8">
+              Export Excel
+            </button>
+            <button className="button border-light px-15 py-5 text-12 fw-500 rounded-8">
+              Print
+            </button>
+            <button className="button border-light px-15 py-5 text-12 fw-500 rounded-8">
+              Column Visibility
+            </button>
+            <button className="button border-light px-15 py-5 text-12 fw-500 rounded-8">
+              Export PDF
+            </button>
+          </div>
+        </div>
+        <table className="table-2 col-12 text-12 text-nowrap">
+          <thead>
+            <tr className="text-light-1 fw-600">
+              <th>Business Name</th>
+              <th>Package Name</th>
+              <th>Status</th>
+              <th>Created At</th>
+              <th>Start Date</th>
+              <th>Trial End Date</th>
+              <th>End Date</th>
+              <th>Coupon Code</th>
+              <th>Original Price</th>
+              <th>Paid Amount</th>
+              <th>Paid Via</th>
+              <th>Payment Transaction ID</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <StatusModal isOpen={showStatusModal} onClose={onStatusModalClose} />
-      <EditModal isOpen={showEditModal} onClose={onEditModalClose} />
-    </div>
+          </thead>
+          <tbody>
+            {subscriptions.map((row, index) => (
+              <tr key={index} className="text-12">
+                <td className="align-middle text-12">{row.business_name}</td>
+                <td className="align-middle text-12">{row.package_name}</td>
+                <td className="align-middle">
+                  <span
+                    className={`rounded-100 px-10 text-center text-12 fw-500 ${
+                      {
+                        Declined: "bg-red-1 text-white",
+                        Approved: "bg-green-3 text-white",
+                      }[row.status] || "bg-light-2 text-light-1"
+                    }`}
+                  >
+                    {row.status}
+                  </span>
+                </td>
+                <td className="align-middle text-12">{row.created_at}</td>
+                <td className="align-middle text-12">{row.start_date}</td>
+                <td className="align-middle text-12">{row.trial_end_date}</td>
+                <td className="align-middle text-12">{row.end_date}</td>
+                <td className="align-middle text-12">{row.coupon_code}</td>
+                <td className="align-middle text-12">{row.original_price}</td>
+                <td className="align-middle text-12">{row.paid_amount}</td>
+                <td className="align-middle text-12">{row.paid_via}</td>
+                <td className="align-middle text-12">{row.transaction_id}</td>
+                <td className="align-middle d-flex items-center gap-1">
+                  <span
+                    className="border-blue-1 text-blue-1 rounded-8 px-10 text-center text-12 fw-500 cursor-pointer"
+                    onClick={() => setShowStatusModal(true)}
+                  >
+                    Status
+                  </span>
+                  <span
+                    className="border-green-2 text-green-2 rounded-8 px-10 text-center text-12 fw-500 cursor-pointer"
+                    onClick={() => setShowEditModal(true)}
+                  >
+                    Edit
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <StatusModal isOpen={showStatusModal} onClose={onStatusModalClose} />
+        <EditModal isOpen={showEditModal} onClose={onEditModalClose} />
+      </div>
+    </>
   );
 };
 

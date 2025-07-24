@@ -4,6 +4,7 @@ const FormInput = ({
   label,
   type,
   rows,
+  step,
   name,
   gridClass = "col-12",
   otherClass = "",
@@ -109,6 +110,7 @@ const FormInput = ({
             onChange={onChange}
             readOnly={readOnly}
             disabled={disable}
+            step={step}
             min={min}
             max={max}
           />

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 const index = () => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
+  const [planType, setPlanType] = useState("subscription");
 
   return (
     <AdminDashboardLayout>
@@ -133,8 +134,44 @@ const index = () => {
             placeholder="i.e. 1"
             gridClass="col-sm-6"
           />
-          <div className="col-sm-6 mt-5"></div>
 
+          <div className="col-sm-6 mt-5">
+            <h1 className="text-14 fw-500 lh-14">Plan Type</h1>
+            <select
+              className="form-select border-light rounded-8 h-45 mt-5 px-15"
+              onChange={() => setPlanType(event.target.value)}
+            >
+              <option value="subscription">Subscription</option>
+              <option value="fee">Fee per Booking</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+
+          {planType != "subscription" && (
+            <>
+              <div className="text-18 fw-500 lh-14 mt-10">
+                Percentage Markup
+              </div>
+              {[
+                "Hotels",
+                "Spaces",
+                "Event Venues",
+                "Vocation Rentals",
+                "Events",
+                "Tours",
+                "Activities",
+              ].map((item, index) => (
+                <FormInput
+                  key={index}
+                  label={item + "(%)"}
+                  type="number"
+                  step={0.01}
+                  gridClass="col-sm-3"
+                />
+              ))}
+            </>
+          )}
+          <div className="col-12"></div>
           {[
             "Channel Manager",
             "One time only subscription",
