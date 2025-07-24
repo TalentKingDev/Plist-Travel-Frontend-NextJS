@@ -7,88 +7,159 @@ import { useState } from "react";
 import { Dialog } from "@mui/material";
 import { Checkbox } from "@mui/material";
 import FormInput from "@/components/common/form/FormInput";
+import { InsertEmoticon } from "@mui/icons-material";
 const index = () => {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("category");
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
   };
-  const clients = [
+
+  const tabs = [
     {
+      label: "Category",
+      value: "category",
+    },
+    {
+      label: "Subcategory",
+      value: "subcategory",
+    }
+  ]
+
+  const Categories = [
+    {
+      id: 1,
       listing_type: "Events",
-      listing_subtype: "Events",
       category: "Concerts & Shows",
-      subcategory: "Theater",
       status: "Active",
       description: "Organizes large-scale musical and theater events in major venues.",
     },
     {
+      id: 2,
       listing_type: "Activities",
-      listing_subtype: "Activities",
       category: "Cultural Experiences",
-      subcategory: "City Tours",
       status: "Active",
-      description: "Offers immersive guided tours through historic city landmarks.",
+      description: "Immersive experiences that highlight local traditions.",
     },
     {
+      id: 3,
       listing_type: "Activities",
-      listing_subtype: "Activities",
       category: "Food & Drink",
-      subcategory: "Cooking Classes",
       status: "Active",
-      description: "Hosts hands-on cooking workshops with local chefs.",
+      description: "Experiences involving local cuisine and cooking.",
     },
     {
+      id: 4,
       listing_type: "Flights",
-      listing_subtype: "Flights",
       category: "Flights",
-      subcategory: "First Class",
       status: "Inactive",
-      description: "Premium international first-class flight booking service.",
+      description: "All commercial flight-related listings.",
     },
     {
+      id: 5,
       listing_type: "Properties",
-      listing_subtype: "Properties",
       category: "Hotels",
-      subcategory: "Airport Hotels",
       status: "Active",
-      description: "Luxury airport hotel listings with hourly and day-use rates.",
+      description: "Hotels of various types for short or long stays.",
     },
     {
+      id: 6,
       listing_type: "Flights",
-      listing_subtype: "Airport VIP Lounge",
       category: "Standard Lounges",
-      subcategory: "Economy Class",
       status: "Active",
-      description: "Access to economy class standard lounges at major international airports.",
+      description: "Lounges at airports for economy travelers.",
     },
     {
+      id: 7,
       listing_type: "Flights",
-      listing_subtype: "Concierge Services",
       category: "Corporate Concierge",
-      subcategory: "Travel Arrangements",
       status: "Active",
-      description: "Comprehensive corporate concierge services for business travel planning.",
+      description: "Business travel support services.",
     },
     {
+      id: 8,
       listing_type: "Flights",
-      listing_subtype: "Flights",
       category: "Business Class",
-      subcategory: "First Class",
       status: "Active",
-      description: "High-end business and first-class flight booking for international routes.",
+      description: "Bookings for business class travel.",
     },
     {
+      id: 9,
       listing_type: "Properties",
-      listing_subtype: "Hotels",
       category: "Airport Hotels",
-      subcategory: "Day Use",
       status: "Active",
-      description: "Day-use airport hotels ideal for layovers and short-term stays.",
+      description: "Hotels near or inside airports.",
     },
   ];
+  
+  const Subcategories = [
+    {
+      id: 1,
+      parent_category_id: 1, // Concerts & Shows
+      subcategory: "Theater",
+      status: "Active",
+      description: "Stage performances and live theater shows.",
+    },
+    {
+      id: 2,
+      parent_category_id: 2, // Cultural Experiences
+      subcategory: "City Tours",
+      status: "Active",
+      description: "Guided walking or driving tours in major cities.",
+    },
+    {
+      id: 3,
+      parent_category_id: 3, // Food & Drink
+      subcategory: "Cooking Classes",
+      status: "Active",
+      description: "Hands-on culinary sessions with local chefs.",
+    },
+    {
+      id: 4,
+      parent_category_id: 4, // Flights
+      subcategory: "First Class",
+      status: "Inactive",
+      description: "Premium international first-class bookings.",
+    },
+    {
+      id: 5,
+      parent_category_id: 5, // Hotels
+      subcategory: "Airport Hotels",
+      status: "Active",
+      description: "Hotels near airports offering premium services.",
+    },
+    {
+      id: 6,
+      parent_category_id: 6, // Standard Lounges
+      subcategory: "Economy Class",
+      status: "Active",
+      description: "Lounge access for economy ticket holders.",
+    },
+    {
+      id: 7,
+      parent_category_id: 7, // Corporate Concierge
+      subcategory: "Travel Arrangements",
+      status: "Active",
+      description: "Flight, hotel, and logistics planning for business travelers.",
+    },
+    {
+      id: 8,
+      parent_category_id: 8, // Business Class
+      subcategory: "First Class",
+      status: "Active",
+      description: "Luxury flight services for high-end travelers.",
+    },
+    {
+      id: 9,
+      parent_category_id: 9, // Airport Hotels
+      subcategory: "Day Use",
+      status: "Active",
+      description: "Hotels available for short-term day bookings.",
+    },
+  ];
+  
 
   return (
     <AdminDashboardLayout>
@@ -101,7 +172,7 @@ const index = () => {
         </div>
       </div>
       <div className="row y-gap-10 x-gap-10 items-center mb-10">
-        {/* <div className="col-auto">
+        <div className="col-auto">
           <div className="row px-10">
             {tabs.map((item) => (
               <div className="col-auto px-5" key={item.value}>
@@ -118,7 +189,7 @@ const index = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
         <div className="col-auto ms-auto">
           <button
@@ -131,10 +202,10 @@ const index = () => {
       </div>
 
       <div className="bg-white rounded-8 border-light px-20 py-15">
-        <h1 className="text-24 lh-14 fw-500">All Users</h1>
+        {/* <h1 className="text-24 lh-14 fw-500">All Cate</h1>
         <div className="text-14 lh-14 text-light-1">
           Manage all users across the platform
-        </div>
+        </div> */}
 
         <div className="row y-gap-10 x-gap-10 items-center mb-5 mt-10">
           
@@ -178,61 +249,93 @@ const index = () => {
           <div className="overflow-scroll scroll-bar-1">
             <table className="table-3 -border-bottom col-12">
               <thead className="bg-light-2">
-                <tr>
-                  <th>Listing Type</th>
-                  <th>Listing Subtype</th>
-                  <th>Category</th>
-                  <th>Subcategory</th>
-                  <th>Status</th>
-                  <th>Description</th>
-                  <th>Action</th>
-                </tr>
+                {activeTab === "category" ? (
+                  <tr>
+                    <th>Category</th>
+                    <th>Listing Type</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                  </tr>
+                ) : (
+                  <tr>
+                    <th>Subcategory</th>
+                    <th>Parent Category</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                  </tr>
+                )}
               </thead>
               <tbody>
-                {clients
-                  .filter((item) => {
-                    return activeTab === "all"
-                      ? true
-                      : item.role.toLowerCase() === activeTab;
-                  })
-                  .map((client, index) => (
-                    <tr key={index}>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.listing_type}
-                      </td>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.listing_subtype}
-                      </td>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.category}
-                      </td>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.subcategory}
-                      </td>
-                      <td className="align-middle">
-                        <span
-                          className={`rounded-100 py-4 px-10 text-center text-12 fw-500 ${
-                            client.status === "Active"
-                              ? "bg-green-1 text-green-2"
-                              : "bg-light-2 text-dark-1"
-                          }`}
-                        >
-                          {client.status}
-                        </span>
-                      </td>
-                      <td className="align-middle text-12 lh-16 fw-500">
-                        {client.description}
-                      </td>
-                      <td className="align-middle">
-                        <span className="text-12 border border-primary text-blue-1 fw-500 rounded-4 px-10 cursor-pointer">
-                          Edit
-                        </span>
-                        <span className="text-12 border border-danger text-red-2 fw-500 rounded-4 px-10 cursor-pointer mx-1">
-                          Delete
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                {activeTab == "category" ? (
+                  Categories
+                    .map((client, index) => (
+                      <tr key={index}>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {client.listing_type}
+                        </td>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {client.category}
+                        </td>
+                        <td className="align-middle">
+                          <span
+                            className={`rounded-100 py-4 px-10 text-center text-12 fw-500 ${
+                              client.status === "Active"
+                                ? "bg-green-1 text-green-2"
+                                : "bg-light-2 text-dark-1"
+                            }`}
+                          >
+                            {client.status}
+                          </span>
+                        </td>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {client.description}
+                        </td>
+                        <td className="align-middle">
+                          <span className="text-12 border border-primary text-blue-1 fw-500 rounded-4 px-10 cursor-pointer" onClick={() => setShowModal(true)}>
+                            Edit
+                          </span>
+                          <span className="text-12 border border-danger text-red-2 fw-500 rounded-4 px-10 cursor-pointer mx-1">
+                            Delete
+                          </span>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    Subcategories.map((item, index) => (
+                      <tr key={index}>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {item.subcategory}
+                        </td>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {Categories.find(cat => cat.id === item.parent_category_id)?.category}
+                        </td>
+                        <td className="align-middle">
+                          <span
+                            className={`rounded-100 py-4 px-10 text-center text-12 fw-500 ${
+                              item.status === "Active"
+                                ? "bg-green-1 text-green-2"
+                                : "bg-light-2 text-dark-1"
+                            }`}
+                          >
+                            {item.status}
+                          </span>
+                        </td>
+                        <td className="align-middle text-12 lh-16 fw-500">
+                          {item.description}
+                        </td>
+                        <td className="align-middle">
+                          <span className="text-12 border border-primary text-blue-1 fw-500 rounded-4 px-10 cursor-pointer" onClick={() => setShowModal(true)}>
+                            Edit
+                          </span>
+                          <span className="text-12 border border-danger text-red-2 fw-500 rounded-4 px-10 cursor-pointer mx-1">
+                            Delete
+                          </span>
+                        </td>
+                      </tr>
+                    ))
+                  )}
               </tbody>
             </table>
           </div>
@@ -245,7 +348,7 @@ const index = () => {
         aria-describedby="alert-dialog-title"
       >
         <div className="px-20 py-20 w-500 sm:w-full">
-          <ModalContent />
+          <ModalContent activeTab={activeTab}/>
           <div className="d-flex justify-end gap-2 mt-10">
             <button
               className="text-14 border-light rounded-8 px-10 py-5"
@@ -268,7 +371,7 @@ const index = () => {
   );
 };
 
-const ModalContent = () => {
+const ModalContent = ( {activeTab} ) => {
 
   const listingTypeOptions = [
     { value: "Properties", label: "Properties" },
@@ -278,6 +381,19 @@ const ModalContent = () => {
     { value: "Flights", label: "Flights" },
     { value: "Rides", label: "Rides" },
   ];
+
+  const categoryOptions = [
+    { value: "Hotels", label: "Hotels" },
+    { value: "Airport Hotels", label: "Airport Hotels" },
+    { value: "Flights", label: "Flights" },
+    { value: "Cultural Experiences", label: "Cultural Experiences" },
+    { value: "Concerts & Shows", label: "Concerts & Shows" },
+    { value: "Food & Drink", label: "Food & Drink" },
+    { value: "Corporate Concierge", label: "Corporate Concierge" },
+    { value: "Business Class", label: "Business Class" },
+    { value: "Standard Lounges", label: "Standard Lounges" },
+  ];
+  
 
   const listingSubTypeOptions = [
     { value: "default", label: "default" },
@@ -296,57 +412,83 @@ const ModalContent = () => {
 
   return (
     <div className="row x-gap-10 y-gap-10 items-center">
-      <h1 className="text-20 lh-14 fw-500">Create New Category</h1>
-      <div className="text-12 text-light-1 lh-14 mb-15">
-        Define a new category
-      </div>
-
-      <FormInput
-        label="Listing Type"
-        required={true}
-        type="select"
-        placeholder="What's the listing type?"
-        gridClass="col-12 mt-5"
-        options={listingTypeOptions}
-      />
-
-      <FormInput
-        label="Listing Subtype"
-        required={true}
-        type="select"
-        placeholder="What's the listing subtype?"
-        gridClass="col-12 mt-5"
-        options={listingSubTypeOptions}
-      />
-
-      <FormInput
-        label="Category"
-        type="text"
-        placeholder="Enter Category Name"
-        gridClass="col-12 mt-5"
-      />
-
-      <FormInput
-        label="Sub-Category"
-        type="text"
-        placeholder="Enter Sub-Category Name"
-        gridClass="col-12 mt-5"
-      />
-
-      <FormInput
-        label="Description"
-        type="textarea"
-        placeholder="Fill Description"
-        gridClass="col-12 mt-5"
-      />
-
-      <FormInput
-        label="Status"
-        type="select"
-        placeholder="What's the status?"
-        gridClass="col-12 mt-5"
-        options={status}
-      />
+      {activeTab === "category" ? (
+        <>
+          <h1 className="text-20 lh-14 fw-500">Create New Category</h1>
+          <div className="text-12 text-light-1 lh-14 mb-15">
+            Define a new category
+          </div>
+    
+          <FormInput
+            label="Listing Type"
+            required={true}
+            type="select"
+            placeholder="What's the listing type?"
+            gridClass="col-12 mt-5"
+            options={listingTypeOptions}
+          />
+    
+          <FormInput
+            label="Category"
+            type="text"
+            placeholder="Enter Category Name"
+            gridClass="col-12 mt-5"
+          />
+    
+          <FormInput
+            label="Description"
+            type="textarea"
+            placeholder="Fill Description"
+            gridClass="col-12 mt-5"
+          />
+    
+          <FormInput
+            label="Status"
+            type="select"
+            placeholder="What's the status?"
+            gridClass="col-12 mt-5"
+            options={status}
+          />
+        </>
+      ) : (
+        <>
+          <h1 className="text-20 lh-14 fw-500">Create New Sub-Category</h1>
+          <div className="text-12 text-light-1 lh-14 mb-15">
+            Define a new subcategory
+          </div>
+    
+          <FormInput
+            label="Parent Category"
+            required={true}
+            type="select"
+            placeholder="What's the parent category?"
+            gridClass="col-12 mt-5"
+            options={categoryOptions}
+          />
+    
+          <FormInput
+            label="Sub-Category"
+            type="text"
+            placeholder="Enter Sub-Category Name"
+            gridClass="col-12 mt-5"
+          />
+    
+          <FormInput
+            label="Description"
+            type="textarea"
+            placeholder="Fill Description"
+            gridClass="col-12 mt-5"
+          />
+    
+          <FormInput
+            label="Status"
+            type="select"
+            placeholder="What's the status?"
+            gridClass="col-12 mt-5"
+            options={status}
+          />
+        </>
+      )}
     </div>
   );
 };
