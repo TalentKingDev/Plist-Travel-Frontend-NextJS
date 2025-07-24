@@ -1,66 +1,50 @@
 "use client";
 
-import { CheckIcon, CreditCard, Edit, Plus, Star, Trash } from "lucide-react";
+import { Plus } from "lucide-react";
 import AdminDashboardLayout from "../../common/layout";
-import { ElectricBolt } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
+import svgIcon from "@/components/data/svgIcon";
+import SubscriptionPlan from "./SubscriptionPlan";
+import FeeBookingPlan from "./FeeBookingPlan";
+import BothPlan from "./BothPlan";
+import { useState } from "react";
 
 const index = () => {
+  const [selectedModel, setSelectedModel] = useState("subscription");
   const router = useRouter();
-  const subscriptionPlans = [
+  const paymentModel = [
     {
-      id: 1,
-      title: "Basic",
-      value: "basic",
-      description: "For new vendors",
+      title: "Subscription Plan",
+      value: "subscription",
+      description: "Pay a monthly/yearly fee with different features",
       icon: (
-        <div className="size-40 flex-center rounded-full bg-light-2 text-dark-1">
-          <CreditCard />
+        <div className="d-flex align-items-center justify-center">
+          {svgIcon.subscription_plan}
         </div>
       ),
-      price: 19.99,
-      services: ["Up to 5 listings", "Standard support", "Basic analytics"],
-      status: "Active",
+      content: <SubscriptionPlan />,
     },
     {
-      id: 2,
-      title: "Professional",
-      value: "professional",
-      description: "For established vendors",
+      title: "Fee Per Booking",
+      value: "fee-per-booking",
+      description: "Pay a monthly/yearly fee with different features",
       icon: (
-        <div className="size-40 flex-center rounded-full bg-blue-2 text-blue-1">
-          <Star />
+        <div className="d-flex align-items-center justify-center">
+          {svgIcon.fee_model}
         </div>
       ),
-      price: 49.99,
-      services: [
-        "Up to 25 listings",
-        "Priority support",
-        "Advanced analytics",
-        "Custom branding",
-      ],
-      isPopular: true,
-      status: "Active",
+      content: <FeeBookingPlan />,
     },
     {
-      id: 3,
-      title: "Premium",
-      value: "premium",
-      description: "For power vendors",
+      title: "Both",
+      value: "both",
+      description: "Pay a monthly/yearly fee with different features",
       icon: (
-        <div className="size-40 flex-center rounded-full bg-purple-2 text-purple-1">
-          <ElectricBolt />
+        <div className="d-flex align-items-center justify-center">
+          {svgIcon.subscription_plan} + {svgIcon.fee_model}
         </div>
       ),
-      services: [
-        "Unlimited listings",
-        "24/7 premium support",
-        "Advanced analytics & reports",
-        "Featured listings",
-        "Priority search placement",
-      ],
-      price: 99.99,
-      status: "Active",
+      content: <BothPlan />,
     },
   ];
 
@@ -84,53 +68,29 @@ const index = () => {
       </div>
 
       <div className="row y-gap-20 x-gap-20">
-        {subscriptionPlans.map((item, index) => (
-          <div className="col-md-4" key={index}>
+        {paymentModel.map((item, index) => (
+          <div
+            className="col-md-4"
+            key={index}
+            onClick={() => setSelectedModel(item.value)}
+          >
             <div
               className={
-                "rounded-8 bg-white px-15 py-15 h-100 d-flex flex-column justify-between " +
-                (item.isPopular ? "border-blue-1" : "border-light")
+                "d-flex flex-column items-center justify-between rounded-8 bg-white px-15 py-15 h-100 cursor-pointer " +
+                (selectedModel === item.value
+                  ? "border-blue-1"
+                  : "bg-light-2 border-light")
               }
             >
-              <div>
-                <div className="d-flex flex-wrap items-center">
-                  <div className="d-flex items-center">
-                    {item.icon}
-                    <h3 className="ml-10 text-24 lh-1 fw-600">{item.title}</h3>
-                  </div>
-                  {item.isPopular && (
-                    <div className="text-white px-10 rounded-100 bg-blue-1 text-10 fw-500 ms-auto">
-                      Popular
-                    </div>
-                  )}
-                </div>
-                <div className="text-12 lh-1 text-light-1 mt-5">
-                  {item.description}
-                </div>
-                <div className="d-flex items-end mt-20">
-                  <h1 className="text-30 fw-600 mr-5">${item.price} </h1>
-                  <div className="text-14 text-light-1 mb-5">/ month</div>
-                </div>
-                {item.services.map((service, idx) => (
-                  <div
-                    className="d-flex items-center text-14 gap-2 mt-5"
-                    key={"service" + idx}
-                  >
-                    <CheckIcon size={16} color="green" />
-                    {service}
-                  </div>
-                ))}
-              </div>
-              <div className="d-flex items-center justify-end gap-2 mt-auto">
-                <span className="text-12 fw-500 text-white bg-green-3 rounded-100 px-10">
-                  {item.status}
-                </span>
-                <Edit size={16} className="text-light-1 cursor-pointer" />
-                <Trash size={16} className="text-light-1 cursor-pointer" />
+              {item.icon}
+              <h3 className="text-14 lh-1 fw-500 mt-15 mb-5">{item.title}</h3>
+              <div className="text-12 lh-1 text-light-1 mb-10">
+                {item.description}
               </div>
             </div>
           </div>
         ))}
+        {paymentModel.find((item) => item.value === selectedModel)["content"]}
       </div>
     </AdminDashboardLayout>
   );

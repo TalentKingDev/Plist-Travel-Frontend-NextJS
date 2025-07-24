@@ -4,6 +4,7 @@ const FormInput = ({
   label,
   type,
   rows,
+  step,
   name,
   gridClass = "col-12",
   otherClass = "",
@@ -99,23 +100,19 @@ const FormInput = ({
 
     default:
       form = (
-        <>
-          <input
-            className="border-light rounded-8 py-5 px-15 w-full mt-10"
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeholder}
-            onChange={onChange}
-            readOnly={readOnly}
-            disabled={disable}
-            min={min}
-            max={max}
-          />
-          {description && (
-            <div className="text-12 text-light-1 lh-12 mt-5">{description}</div>
-          )}
-        </>
+        <input
+          className="border-light rounded-8 py-5 px-15 w-full mt-10"
+          type={type}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          onChange={onChange}
+          readOnly={readOnly}
+          disabled={disable}
+          step={step}
+          min={min}
+          max={max}
+        />
       );
       break;
   }
@@ -137,6 +134,9 @@ const FormInput = ({
         ) : null}
       </h1>
       {form}
+      {description && (
+        <div className="text-12 text-light-1 lh-12 mt-5">{description}</div>
+      )}
     </div>
   );
 };
